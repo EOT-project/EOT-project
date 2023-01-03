@@ -1,10 +1,11 @@
-import './App.css';
+import { Route, Routes } from 'react-router';
+import Nav from './components/Home/Nav.js';
 
 function App() {
   return (
-    <div className="App">
-      <h1>hola</h1>
-    </div>
+    <Routes>
+      <Route path='/' element={<Nav />}/>
+    </Routes>
   );
 }
 
