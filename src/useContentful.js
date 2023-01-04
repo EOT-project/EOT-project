@@ -11,7 +11,6 @@ const useContentful = () => {
   const getMembers = async () => {
     try {
       const entries = await client.getEntries({
-        // content_type: "steeringCommittee"
       });
       return entries
     } catch (error) {
