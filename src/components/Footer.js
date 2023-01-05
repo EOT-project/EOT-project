@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo_black.png"
+import logo from "../assets/logo_black.png"
 
 
 const Footer = () => {
@@ -25,15 +25,6 @@ const Footer = () => {
                     <li><a href="">pinterest</a></li>
                 </ul>
             </div>
-            {/* <div>
-                <ul>
-                    <li><a href="">twitter</a></li>
-                    <li><a href="">facebook</a></li>
-                    <li><a href="">linkedin</a></li>
-                    <li><a href="">youtube</a></li>
-                    <li><a href="">pinterest</a></li>
-                </ul>
-            </div> */}
         </footer>
     );
 }
