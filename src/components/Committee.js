@@ -37,7 +37,7 @@ const Committee = () => {
     }
     getMembers();
   }, []);
-  console.log(members);
+//   console.log(members);
   
   return (
     <div>

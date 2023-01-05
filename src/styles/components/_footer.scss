@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 800;
+  .logoContainer {
+    margin-bottom: 25px;
+  }
+  .socialMediaContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}

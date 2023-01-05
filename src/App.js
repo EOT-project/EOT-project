@@ -1,4 +1,7 @@
+// import { Route, Routes } from 'react-router';
 import './App.css';
+import Footer from './components/Footer.js';
+import Nav from './components/Nav.js';
 import { useEffect, useState } from 'react';
 import useContentful from './useContentful';
 import Committee from './components/Committee';
@@ -13,10 +16,16 @@ function App() {
   // })
 
   return (
-    <div className="App">
+    <>
+    <Nav/>
+  
+    <Footer/>
+    {/* <div className="App">
       <h1>working?</h1>
       <Committee />
-    </div>
+    </div> */}
+    </>
+
   );
 }
 
