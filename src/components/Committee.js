@@ -47,13 +47,27 @@ const Committee = () => {
         <>
           <h3>Steering Committee</h3>
           {
-            members.map((member) => 
+            members.length === 1
+            ?
+            members.reduce((member)=>
               <div>
                 <p>{member.dataName}</p>
                 <img style={{width: 100, height: 100}} src={member.dataProfilePic} alt="" />
                 <p>{member.dataIntro}</p>
               </div>
-              )
+            )
+            :
+            <>
+            {
+              members.map((member) => 
+                <div>
+                  <p>{member.dataName}</p>
+                  <img style={{width: 100, height: 100}} src={member.dataProfilePic} alt="" />
+                  <p>{member.dataIntro}</p>
+                </div>
+                )
+            }
+            </>
           }
         </>
         : null
