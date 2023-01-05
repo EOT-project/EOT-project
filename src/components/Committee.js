@@ -50,7 +50,7 @@ const Committee = () => {
             members.map((member) => 
               <div>
                 <p>{member.dataName}</p>
-                <img src={member.dataProfilePic} alt="" />
+                <img style={{width: 100, height: 100}} src={member.dataProfilePic} alt="" />
                 <p>{member.dataIntro}</p>
               </div>
               )
