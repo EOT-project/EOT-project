@@ -4,7 +4,8 @@ import Footer from './components/Footer.js';
 import Nav from './components/Nav.js';
 import { useEffect, useState } from 'react';
 import useContentful from './useContentful';
-import Committee from './components/Committee';
+// import Committee from './components/Committee';
+import Home from './pages/Home';
 
 function App() {
 
@@ -17,13 +18,14 @@ function App() {
 
   return (
     <>
-    <Nav/>
-  
-    <Footer/>
-    {/* <div className="App">
+    {/* <Nav/> */}
+
+    <div className="App">
       <h1>working?</h1>
-      <Committee />
-    </div> */}
+      <Home />
+    </div>
+  
+    {/* <Footer/> */}
     </>
 
   );
