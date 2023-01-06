@@ -6,13 +6,15 @@ import Committee from "../components/Committee";
 
 const Home = () => {
   return (
-    <>
+    <main>
       <Articles />
       <Uploads />
-      <Committee />
-      <Advisory />
-      <Supporters />
-    </>
+      <section className="members">
+        <Committee />
+        <Advisory />
+        <Supporters />
+      </section>
+    </main>
   )
 }
 

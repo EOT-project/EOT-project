@@ -10,14 +10,14 @@ import Opportunity from './pages/Opportunity';
 function App() {
 
   return (
-    <>
-    <Nav/>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/opportunity' element={<Opportunity/>}/>
-    </Routes>
-    <Footer/>
-    </>
+    <div className='wrapper'>
+      <Nav/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/opportunity' element={<Opportunity/>}/>
+      </Routes>
+      <Footer/>
+    </div>
   );
 }
 

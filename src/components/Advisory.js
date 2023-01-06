@@ -13,9 +13,9 @@ const Advisory = () => {
           content_type: "advisoryMembers"
         })
         if (!!res) {
-          // setMembers(res.items)
-          const cleanUpData = (rawData) => {
-            const cleanData = rawData.map((data) => {
+          setMembers(res.items)
+          const cleanUpData = (initData) => {
+            const cleanData = initData.map((data) => {
               const { sys, fields } = data
               const { id } = sys
               const dataTitle = fields.title
@@ -37,28 +37,34 @@ const Advisory = () => {
     }
     getMembers();
   }, []);
-//   console.log(members);
+  console.log(members);
   
   return (
-    // <div>
-    //   {
-    //     members.length !== 0
-    //     ?
-    //     <>
-          <h3>Advisory Members</h3>
-    //       {
-    //         members.map((member) => 
-    //           <div>
-    //             <p>{member.dataName}</p>
-    //             <img style={{width: 100, height: 100}} src={member.dataProfilePic} alt="" />
-    //             <p>{member.dataIntro}</p>
-    //           </div>
-    //           )
-    //       }
-    //     </>
-    //     : null
-    //   }
-    // </div>
+    <div>
+      {
+        members.length !== 0
+        ?
+        <div className="advisory">
+          <h4>Meet our advisory</h4>
+          <h2>Advisory Members</h2>
+          <ul className="membersListContainer">
+            {
+              members.map((member) => {
+                return (
+                  <li key={member.id} className="membersList">
+                    <img src={member.dataProfilePic} alt={member.dataName} className="membersPic"/>
+                    <h3 className="membersName">{member.dataName}</h3>
+                    <h4 className="membersTitle">{member.dataTitle}</h4>
+                    <p className="membersIntro">{member.dataIntro}</p>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+        : null
+      }
+    </div>
   )
 }
 

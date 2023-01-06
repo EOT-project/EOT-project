@@ -14,8 +14,8 @@ const Committee = () => {
         })
         if (!!res) {
           // setMembers(res.items)
-          const cleanUpData = (data) => {
-            const cleanData = data.map((data) => {
+          const cleanUpData = (initData) => {
+            const cleanData = initData.map((data) => {
               const { sys, fields } = data
               const { id } = sys
               const dataTitle = fields.title
@@ -44,18 +44,24 @@ const Committee = () => {
       {
         members.length !== 0
         ?
-        <>
-          <h3>Steering Committee</h3>
-          {
-            members.map((member) => 
-              <div>
-                <p>{member.dataName}</p>
-                <img style={{width: 100, height: 100}} src={member.dataProfilePic} alt={member.dataName} />
-                <p>{member.dataIntro}</p>
-              </div>
-              )
-          }
-        </>
+        <div className="committee">
+          <h4>Meet our committee</h4>
+          <h2>Steering Committee</h2>
+          <ul className="membersListContainer">
+            {
+              members.map((member) => {
+                return (
+                  <li key={member.id} className="membersList">
+                    <img src={member.dataProfilePic} alt={member.dataName} className="membersPic"/>
+                    <h3 className="membersName">{member.dataName}</h3>
+                    <h4 className="membersTitle">{member.dataTitle}</h4>
+                    <p className="membersIntro">{member.dataIntro}</p>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
         : null
       }
     </div>
