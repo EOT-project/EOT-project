@@ -14,8 +14,8 @@ const Committee = () => {
         })
         if (!!res) {
           // setMembers(res.items)
-          const cleanUpData = (rawData) => {
-            const cleanData = rawData.map((data) => {
+          const cleanUpData = (data) => {
+            const cleanData = data.map((data) => {
               const { sys, fields } = data
               const { id } = sys
               const dataTitle = fields.title
@@ -37,7 +37,7 @@ const Committee = () => {
     }
     getMembers();
   }, []);
-//   console.log(members);
+  // console.log(members);
   
   return (
     <div>
@@ -50,7 +50,7 @@ const Committee = () => {
             members.map((member) => 
               <div>
                 <p>{member.dataName}</p>
-                <img style={{width: 100, height: 100}} src={member.dataProfilePic} alt="" />
+                <img style={{width: 100, height: 100}} src={member.dataProfilePic} alt={member.dataName} />
                 <p>{member.dataIntro}</p>
               </div>
               )
