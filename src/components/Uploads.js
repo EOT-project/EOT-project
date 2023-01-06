@@ -8,21 +8,31 @@ import useContentful from "../useContentful";
 //render video carousel
 
 const Uploads = () => {
+  
   const [videos,setVideos] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const {client} = useContentful();
+  const [current, setCurrent] = useState(0);
+  const length = videos.length;
+  
+  const nxtVideo = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1)
+  }
+  const prevVideo = () => {
+    setCurrent(current === 0 ? length - 1 : current -1)
+  }
+
   useEffect(() => {
-    
     const getVideos = async () => {
       try {
         const res = await client.getEntries({
           content_type: "uploads"
         })
-        console.log(res.items)
+        // console.log(res.items)
         if(!!res){
           const items = res?.items || [];
           const itemFields = items.map(item => ({title: item?.fields?.title, video: item?.fields?.video}))
-          console.log(itemFields)
+          // console.log(itemFields)
           const cleanedItems = itemFields.map( (item) => {
             const title = item.title
             const video = item.video
@@ -31,7 +41,6 @@ const Uploads = () => {
             const updatedData = {title, videoId}
             return updatedData
           })
-
           setVideos(cleanedItems)
           setLoading(false)
         }
@@ -43,7 +52,7 @@ const Uploads = () => {
     }
     getVideos();
   }, [])
-  // console.log(videos)
+  console.log(videos)
 
   return (
     <section className="uploads">
@@ -53,11 +62,25 @@ const Uploads = () => {
         ? 
           "loading"
         : 
+          videos.length === 1
+          ?
           videos.map((item) => {
             return (
               <iframe className="uploadVideo" src={`https://www.youtube.com/embed/${item.videoId}`} title={item.title}></iframe>
             )
           })
+          :
+          <>
+            <button className="leftArrow" onClick={prevVideo}>ᐸ</button>
+            {
+            videos.map((item, index) => {
+              return (
+                <iframe className={index === current ? 'uploadVideo' : 'video'} src={`https://www.youtube.com/embed/${item.videoId}`} title={item.title}></iframe>
+                )
+              })
+            }
+            <button className="rightArrow" onClick={nxtVideo}>ᐳ</button>
+          </>
       }
       </div>
     </section>

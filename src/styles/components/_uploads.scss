@@ -1,5 +1,6 @@
 .uploadsContainer {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 700px;
@@ -10,4 +11,40 @@
   border-radius: 25px;
   width: 85%;
   height: 75%;
+  position: absolute;
+  opacity: 0.7;
+  transition-duration: 1s;
+  transform: scale(1.1);
+  border: none;
+}
+
+.video {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+button {
+  font-size: 3rem;
+  font-weight: bolder;
+  display: inline-block;
+  border: none;
+  background: none;
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  z-index: 100;
+  cursor: pointer;
+  color: $red;
+  text-shadow: 0 0 1rem $red;
+}
+
+button:hover{
+  scale: 1.5;
+}
+
+.leftArrow {
+  left: 10%;
+}
+
+.rightArrow {
+  right: 10%;
 }
