@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo_black.png"
 import useContentful from "../useContentful";
+import Logo from "./Logo";
 import NavItem from "./NavItem";
 
 const Nav = () => {
@@ -23,11 +23,12 @@ const Nav = () => {
                             const { sys, fields } = data
                             const { id } = sys
                             const menuItems= fields.menuItems 
-                            // const logo = fields.logo.fields.file.url
-                            const updatedData = { id, menuItems, logo }
+                            const updatedData = { id, menuItems }
                             return updatedData                            
                         });
                         setMenu(cleanData)
+                        console.log(cleanData);
+                        
                     }
                     cleanUpData(res.items);
                 } else {
@@ -40,22 +41,19 @@ const Nav = () => {
         }
         getMenu();
     },[]);
-
-    console.log(menu);
-    
+ 
 
     return (
         <header>
             <nav>
+                <Logo/>
                 <ul>
                     {
-                        menu.length !== 0 && menu.map((item) => {
-                            return <NavItem key={item.id} item={item}/>
-                        })         
-                    }
-        
+                        menu.length !== 0 && menu[0]?.menuItems?.map((item) => {
+                            return <NavItem key={item} item={item}/>
+                        })    
 
-                    
+                    }                   
                 </ul>
             </nav>
 

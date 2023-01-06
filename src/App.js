@@ -18,14 +18,15 @@ function App() {
 
   return (
     <>
-    {/* <Nav/> */}
-
-    <div className="App">
-      <h1>working?</h1>
-      <Home />
-    </div>
+    <Nav/>
   
     {/* <Footer/> */}
+    {/* <div className="App">
+      <h1>working?</h1>
+      </div>
+      
+      {/* <Footer/> */}
+    <Home />
     </>
 
   );
