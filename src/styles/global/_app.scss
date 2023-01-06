@@ -1,5 +1,4 @@
-// @import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 
 html {
   line-height: 1.15;
@@ -14,6 +13,8 @@ body {
   font-style: normal;
   line-height: 20px;
   font-size: 14px;
+  color: $darkGray;
+  font-weight: 600;
 }
 
 article,
@@ -292,4 +293,10 @@ html {
 
 ul {
   list-style: none;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 50px auto;
 }
