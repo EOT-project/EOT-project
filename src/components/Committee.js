@@ -40,7 +40,7 @@ const Committee = () => {
   // console.log(members);
   
   return (
-    <div>
+    <>
       {
         members.length !== 0
         ?
@@ -64,7 +64,7 @@ const Committee = () => {
         </div>
         : null
       }
-    </div>
+    </>
   )
 }
 

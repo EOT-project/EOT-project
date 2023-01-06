@@ -1,0 +1,13 @@
+.uploadsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.uploadVideo {
+  display: block;
+  border-radius: 25px;
+  width: 85%;
+  height: 75%;
+}

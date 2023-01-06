@@ -40,7 +40,7 @@ const Advisory = () => {
   console.log(members);
   
   return (
-    <div>
+    <>
       {
         members.length !== 0
         ?
@@ -64,7 +64,7 @@ const Advisory = () => {
         </div>
         : null
       }
-    </div>
+    </>
   )
 }
 

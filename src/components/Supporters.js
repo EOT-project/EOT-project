@@ -40,7 +40,7 @@ const Supporters = () => {
 //   console.log(members);
   
   return (
-    <div>
+    <>
       {
         members.length !== 0
         ?
@@ -64,7 +64,7 @@ const Supporters = () => {
         </div>
         : null
       }
-    </div>
+    </>
   )
 }
 
