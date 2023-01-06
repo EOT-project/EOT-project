@@ -19,7 +19,7 @@ function App() {
     <>
     <Nav/>
   
-    <Footer/>
+    {/* <Footer/> */}
     {/* <div className="App">
       <h1>working?</h1>
       <Committee />
