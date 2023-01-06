@@ -44,10 +44,11 @@
 
 .membersList {
   // flex-basis: 20%;
-  align-self: center;
+  // align-self: center;
   // padding: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
