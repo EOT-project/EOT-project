@@ -55,7 +55,7 @@ const Uploads = () => {
   console.log(videos)
 
   return (
-    <section className="uploads">
+    <section className="uploads wrapper">
       <div className="uploadsContainer">
       {
         loading
