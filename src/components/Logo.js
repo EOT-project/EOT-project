@@ -48,7 +48,7 @@ const Logo = () => {
         <div className="logoContainer">
             {
                 logo.length !== 0 && logo?.map((logo) => {
-                   return <img src={logo.logoUrl} alt={logo.name}/>
+                   return <img key={logo} src={logo.logoUrl} alt={logo.name}/>
                 })
             }
             
