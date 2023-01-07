@@ -17,17 +17,18 @@ const Nav = () => {
                 })
                 if(!!res) {
                     const cleanUpData = (rawData) => {
-                        console.log(rawData);
+                        console.log("raw data",rawData);
                         
                         const cleanData = rawData.map((data) => {
                             const { sys, fields } = data
                             const { id } = sys
                             const menuItems= fields.menuItems 
-                            const updatedData = { id, menuItems }
+                            const urlName = fields.urlName                            
+                            const updatedData = { id, menuItems, urlName }
                             return updatedData                            
                         });
                         setMenu(cleanData)
-                        console.log(cleanData);
+                        console.log("clean data" ,cleanData);
                         
                     }
                     cleanUpData(res.items);

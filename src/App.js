@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 import Footer from './components/Footer.js';
 import Nav from './components/Nav.js';
-import useContentful from './useContentful';
 import Home from "./pages/Home";
 import Opportunity from './pages/Opportunity';
+import CallToAction from './pages/CallToAction';
 
 
 function App() {
@@ -14,7 +14,8 @@ function App() {
     <Nav/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/opportunity' element={<Opportunity/>}/>
+      <Route path='/the opportunity' element={<Opportunity/>}/>
+      <Route path='/call to action'element={<CallToAction/>}/>
     </Routes>
     <Footer/>
     </>
