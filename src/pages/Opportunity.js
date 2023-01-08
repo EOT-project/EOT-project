@@ -3,15 +3,18 @@ import ImageGallery from "../components/ImageGallery";
 import ContentBlock from "../components/ContentBlock";
 
 const Opportunity = () => {
+
+    //send data from here to <ImageGallery/>
+
     return (
         <div className="wrapper">
             <Articles />
             <section className="factsStatements">
-                <ImageGallery/>
+                <ImageGallery content={true}/>
                 <ContentBlock />
-                <ImageGallery/>
+                <ImageGallery content={false}/>
                 <ContentBlock />
-                <ImageGallery/>
+                <ImageGallery  content={false}/>
             </section>
         </div>
     );

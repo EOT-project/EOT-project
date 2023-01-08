@@ -16,9 +16,7 @@ const Nav = () => {
                     content_type: "navHeader"
                 })
                 if(!!res) {
-                    const cleanUpData = (rawData) => {
-                        console.log("raw data",rawData);
-                        
+                    const cleanUpData = (rawData) => {                        
                         const cleanData = rawData.map((data) => {
                             const { sys, fields } = data
                             const { id } = sys
@@ -27,9 +25,7 @@ const Nav = () => {
                             const updatedData = { id, menuItems, urlName }
                             return updatedData                            
                         });
-                        setMenu(cleanData)
-                        console.log("clean data" ,cleanData);
-                        
+                        setMenu(cleanData)                        
                     }
                     cleanUpData(res.items);
                 } else {
@@ -57,19 +53,6 @@ const Nav = () => {
                     }                   
                 </ul>
             </nav>
-
-            {/* <nav>
-                <Link to="/">
-                    <div className="logoContainer">
-                        <img src={logo} alt="logo"/>
-                    </div>
-                </Link>
-                <ul>   
-                    <Link to="/the-opportunity"><li>The opportunity</li></Link>
-                    <Link to="/call-to-action"><li>Call To Action</li></Link>
-                    <Link to="/newsroom"><li>Newsroom</li></Link>
-                </ul>
-            </nav> */}
         </header>
     )
 };
