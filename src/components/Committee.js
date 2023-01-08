@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import useContentful from "../useContentful";
+// import useContentful from "../useContentful";
+import {client} from "../useContentful";
 
 const Committee = () => {
   
   const [members, setMembers] = useState([]);
-  const { client } = useContentful();
+  // const { client } = useContentful();
 
   useEffect(() => {
     const getMembers = async () => {
