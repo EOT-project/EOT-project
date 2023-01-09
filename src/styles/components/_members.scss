@@ -10,11 +10,13 @@
 }
 
 .members h4 {
+  display: inline-block;
+  text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
   font-weight: normal;
   line-height: 1.5rem;
-  // font-size: 1.02rem;
+  height: 3rem;
 }
 
 .members h2 {
@@ -31,11 +33,11 @@
   padding: 10px;
   font-weight: normal;
   line-height: 1.5rem;
+  margin-bottom: 10px;
+  height: 4rem;
 }
 
 .membersListContainer {
-  // display: flex;
-  // flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20%, 22%));
   justify-content: space-between;
@@ -43,9 +45,6 @@
 }
 
 .membersList {
-  // flex-basis: 20%;
-  // align-self: center;
-  // padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

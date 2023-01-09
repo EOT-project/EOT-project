@@ -21,9 +21,9 @@ const Uploads = () => {
         const res = await Client.getEntries({
           content_type: "uploads"
         })
-        
+        console.log(res.items);
         if(!!res){
-          const items = res?.items.map(item => ({title: item?.fields?.title, video: item?.fields?.video})) || [];
+          const items = res?.items.map(item => ({title: item?.fields?.title, video: item?.fields?.video, id: item?.sys?.id})) || [];
           
           setVideos(items);
           setLoading(false)
@@ -67,7 +67,7 @@ const Uploads = () => {
             {
               videos.map((item)=> {
                 return(
-                <div className='video'>
+                <div className='video' key={item.id}>
                   <ReactPlayer width='100%' height='500px' url={item.video}/>
                 </div>
               )
