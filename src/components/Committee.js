@@ -1,41 +1,28 @@
-import { useState, useEffect, useCallback } from "react";
-import useContentful from "../useContentful";
-
+import { useState, useEffect } from "react";
+import Client from "../useContentful";
 
 const Committee = () => {
   
   const [members, setMembers] = useState([]);
-  const { client } = useContentful();
+  // const { client } = useContentful();
 
-  // const cleanUpData = useCallback((rawData) => {
-  //   const cleanData = rawData.map((data) => {
-  //     const { sys, fields } = data
-  //     const { id } = sys
-  //     const dataTitle = fields.title
-  //     const dataName = fields.name
-  //     const updatedData = {id, dataTitle, dataName}
-  //     return updatedData
-  //   })
-
-  //   setMembers(cleanData)
-  // }, [])
-  
   useEffect(() => {
     const getMembers = async () => {
       try {
-        const res = await client.getEntries({
+        const res = await Client.getEntries({
           content_type: "steeringCommittee"
         })
         if (!!res) {
           // setMembers(res.items)
-          // cleanUpData(res.items)
-          const cleanUpData = (rawData) => {
-            const cleanData = rawData.map((data) => {
+          const cleanUpData = (initData) => {
+            const cleanData = initData.map((data) => {
               const { sys, fields } = data
               const { id } = sys
               const dataTitle = fields.title
               const dataName = fields.name
-              const updatedData = {id, dataTitle, dataName}
+              const dataProfilePic = fields.profilePic.fields.file.url
+              const dataIntro = fields.intro
+              const updatedData = {id, dataTitle, dataName, dataProfilePic, dataIntro}
               return updatedData
             })
             setMembers(cleanData)
@@ -48,23 +35,36 @@ const Committee = () => {
         console.log(`Error fetching members: ${error}`);
       }
     }
-    
     getMembers();
-
   }, []);
-//   console.log(members);
-  
-  // return {getMembers};
-    // getMembers({content_type: "steeringCommittee"}).then((res) => console.log(res.items));
-
+  // console.log(members);
   
   return (
-    <div>
-      <h3>Steering Committee</h3>
+    <>
       {
-        members.map((member)=><p>{member.dataName}</p>)
+        members.length !== 0
+        ?
+        <div className="committee">
+          <h4>Meet our committee</h4>
+          <h2>Steering Committee</h2>
+          <ul className="membersListContainer">
+            {
+              members.map((member) => {
+                return (
+                  <li key={member.id} className="membersList">
+                    <img src={member.dataProfilePic} alt={member.dataName} className="membersPic"/>
+                    <h3 className="membersName">{member.dataName}</h3>
+                    <h4 className="membersTitle">{member.dataTitle}</h4>
+                    <p className="membersIntro">{member.dataIntro}</p>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+        : null
       }
-    </div>
+    </>
   )
 }
 
