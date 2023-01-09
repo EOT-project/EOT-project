@@ -5,7 +5,7 @@ import MainCard from "../UI/MainCard";
 //Articles component renders MainCard component displaying title, context, and backgroundImage
 const Articles = (content) => {
     return (
-        <MainCard>
+        <MainCard className="wrapper">
             {!!content && (
                 <>
                 <h2>{content?.title || "The Opportunity"}</h2>
