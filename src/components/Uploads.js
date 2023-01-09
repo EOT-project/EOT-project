@@ -43,6 +43,16 @@ const Uploads = () => {
           })
           setVideos(cleanedItems)
           setLoading(false)
+
+        //   if(!!res){
+        //   const items = res?.items || [];
+        //   const itemFields = items.map(item => ({title: item?.fields?.title, video: item?.fields?.video}))
+        //   console.log(itemFields)
+        //   const cleanedItems = itemFields.map(item => ({video: item?.video, title: item?.title}))
+        //   setVideos(cleanedItems)
+        //   setLoading(false)
+        // }
+
         }
       } catch (error) {
         //todo: show user error retrieving videos
