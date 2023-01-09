@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useContentful from "../useContentful";
+import Client from "../useContentful";
 
 //create a container that is full width
 //get uploads from video content model
@@ -11,7 +11,7 @@ const Uploads = () => {
   
   const [videos,setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const {client} = useContentful();
+  // const {client} = useContentful();
   const [current, setCurrent] = useState(0);
   const length = videos.length;
   
@@ -25,7 +25,7 @@ const Uploads = () => {
   useEffect(() => {
     const getVideos = async () => {
       try {
-        const res = await client.getEntries({
+        const res = await Client.getEntries({
           content_type: "uploads"
         })
         // console.log(res.items)

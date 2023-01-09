@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { client } from "../useContentful";
+import Client from "../useContentful";
 
 const MediaList = () => {
 
@@ -8,7 +8,7 @@ const MediaList = () => {
   useEffect(() => {
     const getMedia = async () => {
       try {
-        const res = await client.getEntries({
+        const res = await Client.getEntries({
           content_type: "mediaList"
         })
         console.log(res.items);

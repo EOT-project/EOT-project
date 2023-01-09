@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { client } from "../useContentful";
+import Client from "../useContentful";
 
 const Report = () => {
 
@@ -8,17 +8,13 @@ const Report = () => {
   useEffect(() => {
     const getReport = async () => {
       try {
-        const res = await client.getEntries({
+        const res = await Client.getEntries({
           content_type: "reports"
         })
         console.log(res.items);
         if (!!res) {
           const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url})) || [];
-          // const items = res?.items || [];
-          // const itemsFields = items.map(item => ({url: item?.fields?.url}));
-          // console.log(itemsFields);
-          // const cleanData = itemsFields.map(item => ({url: item?.url}))
-          // setMedia(cleanData);
+
           setReport(items);
         }
       } catch (error) {

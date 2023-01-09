@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-// import useContentful from "../useContentful";
-import {client} from "../useContentful";
+import Client from "../useContentful";
 
 const Committee = () => {
   
@@ -10,7 +9,7 @@ const Committee = () => {
   useEffect(() => {
     const getMembers = async () => {
       try {
-        const res = await client.getEntries({
+        const res = await Client.getEntries({
           content_type: "steeringCommittee"
         })
         if (!!res) {

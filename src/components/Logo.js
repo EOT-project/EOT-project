@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useContentful from "../useContentful";
+import Client from "../useContentful";
 
 
 const Logo = () => {
 
     const [ logo, setLogo ] = useState([]); 
-    const { client } = useContentful();
 
     useEffect(() => {
         const getLogo = async () => {
             try {
-                const res = await client.getEntries({
+                const res = await Client.getEntries({
                     content_type: "logo"
                 })
                 console.log(res.items);

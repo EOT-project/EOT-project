@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import useContentful from "../useContentful";
+import Client from "../useContentful";
 
 const Advisory = () => {
   
   const [members, setMembers] = useState([]);
-  const { client } = useContentful();
+  // const { client } = useContentful();
 
   useEffect(() => {
     const getMembers = async () => {
       try {
-        const res = await client.getEntries({
+        const res = await Client.getEntries({
           content_type: "advisoryMembers"
         })
         if (!!res) {

@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useContentful from "../useContentful";
+// import useContentful from "../useContentful";
 import Logo from "./Logo";
 import NavItem from "./NavItem";
+import Client from "../useContentful";
 
 const Nav = () => {
 
     const [ menu, setMenu ] = useState([]); 
-    const { client } = useContentful();
 
     useEffect(() => {
         const getMenu = async () => {
             try {
-                const res = await client.getEntries({
+                const res = await Client.getEntries({
                     content_type: "navHeader"
                 })
                 if(!!res) {
