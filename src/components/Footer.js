@@ -1,8 +1,26 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo_black.png";
+import useContentful from "../useContentful";
 
 
 const Footer = () => {
+
+    const [ footer, setFooter ] = useState([]);
+    const { client } = useContentful();
+
+    useEffect(() => {
+        const getFooter = async () => {
+            try {
+                const res = await client.getEntries({
+                    content_type: "footerInfo"
+                })
+            } catch (error) {
+                
+            }
+        }
+    })
+
     return (
         <footer>
             <div>
