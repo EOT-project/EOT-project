@@ -19,6 +19,8 @@ const Articles = () => {
                             const { id } = sys
                             const title = fields.title
                             const content = fields.content.content[0].content[0].value
+                            console.log(content);
+                            
                             const image = fields.backgroundImage.fields.file.url  
                             const updatedData = { id, title, content, image }
                             return updatedData                          

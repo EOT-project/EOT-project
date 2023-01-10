@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import useContentful from "../useContentful";
 import Logo from "./Logo";
 import NavItem from "./NavItem";
 import Client from "../useContentful";
+import { FiMenu } from "react-icons/fi"
+import NavMobile from "./NavMobile";
 
 const Nav = () => {
 
     const [ menu, setMenu ] = useState([]); 
+    const [ isClicked, setIsClicked ] = useState(false);
 
     useEffect(() => {
         const getMenu = async () => {
@@ -38,6 +39,7 @@ const Nav = () => {
         }
         getMenu();
     },[]);
+
  
 
     return (
@@ -52,6 +54,8 @@ const Nav = () => {
 
                     }                   
                 </ul>
+                    <button className="burgerMenu" onClick={() => setIsClicked(true)}>{<FiMenu/>}</button>  
+                    <NavMobile className="" isClicked={isClicked} setIsClicked={setIsClicked}/>   
             </nav>
         </header>
     )
