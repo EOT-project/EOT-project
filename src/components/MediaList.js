@@ -39,7 +39,7 @@ const MediaList = () => {
           media.map((item, index) => {
             return (
               <li key={index}>
-              <a href={item.url}><img src={item.logo} alt=""/></a>
+              <a href={item.url} target="blank"><img src={item.logo} alt=""/></a>
               </li>
             )
           })
