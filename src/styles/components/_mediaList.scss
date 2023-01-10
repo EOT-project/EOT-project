@@ -1,0 +1,10 @@
+.mediaListContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  li {
+    flex-basis: calc((100% / 5) - 40px);
+    margin: 60px 20px;
+  }
+}

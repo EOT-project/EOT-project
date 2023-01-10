@@ -11,7 +11,6 @@ const Report = () => {
         const res = await Client.getEntries({
           content_type: "reports"
         })
-        console.log(res.items);
         if (!!res) {
           const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url})) || [];
 
@@ -23,7 +22,6 @@ const Report = () => {
     }
     getReport();
   }, []);
-  console.log(report);
 
   return (
     <section className="report">

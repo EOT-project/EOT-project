@@ -20,13 +20,12 @@ const Footer = () => {
                         const cleanData = rawData.map((data) => {
                             const { sys, fields } = data
                             const { id } = sys
-                            const address = fields.address
-                            const streetName = fields.streetName
-                            const provinceAndCountry = fields.provinceAndCountry
-                            const postalCode = fields.postalCode
+                            const address = fields.address[0]
+                            console.log(address);
+                            
                             const email = fields.email
                             const socialMedia = fields.socialMedia
-                            const updatedData = { id, streetName, provinceAndCountry, postalCode, email, socialMedia }
+                            const updatedData = { id, address, email, socialMedia }
                             return updatedData
                         })
                         setFooter(cleanData)
@@ -47,16 +46,18 @@ const Footer = () => {
             <div className="footerContainer">
               
                 {
-                    footer.length !== 0 && footer.map((item) => {
+                    footer.length !== 0 && footer.map((item, index) => {
                         return (<>
                                     <div>
                                         <Logo />
-                                        <p key={item.id}>{item.streetName}</p>
-                                        <p key={item.id}>{item.provinceAndCountry}</p>
-                                        <p key={item.id}>{item.postalCode}</p>
+                                            {
+                                                item.address.map((item, index) => {
+                                                   return <p>{item.streetName}</p>
+                                                })
+                                            }
                                     </div>
                                     <div className="socialMediaContainer">
-                                        <p key={item.id}>{item.email}</p>
+                                        <p key={index}>{item.email}</p>
                                         <ul>
                                             {
                                                 item.socialMedia.map((item, index) => {
