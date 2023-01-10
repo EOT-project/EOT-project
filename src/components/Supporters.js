@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
+import ErrorData from "./ErrorData";
 
 //create a member container displays maximum of 4 members
 //retrieve profilePic, name, title, intro uploads from supporters content model
@@ -11,6 +12,7 @@ const Supporters = () => {
   
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getMembers = async () => {
@@ -27,12 +29,19 @@ const Supporters = () => {
       } catch (error) {
         //ToDo: show user error retrieving member list
         console.log(`Error fetching members: ${error}`);
+        setError(error);
         setLoading(false);
       }
     }
     getMembers();
   }, []);
   
+  if (error) {
+    return (
+      <ErrorData/>
+    )
+  }
+
   return (
     <>
       {

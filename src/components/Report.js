@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
+import ErrorData from "./ErrorData";
 
 //create a report container displays 3 maximum reports per line
 //get data set from reports content model
@@ -12,6 +13,7 @@ const Report = () => {
 
   const [report, setReport] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getReport = async () => {
@@ -27,13 +29,21 @@ const Report = () => {
           setLoading(false);
         }
       } catch (error) {
-        console.log(error);
+        //ToDo: show user error retrieving member list
+        console.log(`Error fetching members: ${error}`);
+        setError(error);
         setLoading(false);
       }
     }
     getReport();
   }, []);
-console.log(report);
+
+  if (error) {
+    return (
+      <ErrorData/>
+    )
+  }
+
   return (
     <section className="report">
       <ul className="reportList">

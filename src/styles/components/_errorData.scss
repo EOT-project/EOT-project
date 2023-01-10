@@ -1,0 +1,10 @@
+.errorData {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-transform: uppercase;
+  margin: 50px 0px;
+  p {
+    width: 50%;
+  }
+}

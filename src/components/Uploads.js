@@ -3,6 +3,7 @@ import Client from "../useContentful";
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import ReactPlayer from 'react-player';
+import ErrorData from "./ErrorData";
 
 //create a container that is full width
 //get uploads from video content model
@@ -14,6 +15,7 @@ const Uploads = () => {
   
   const [videos,setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getVideos = async () => {
@@ -30,12 +32,19 @@ const Uploads = () => {
         }
       } catch (error) {
         //todo: show user error retrieving videos
-        console.log(error)
+        console.log(`Error fetching members: ${error}`);
+        setError(error);
         setLoading(false)
       }
     }
     getVideos();
   }, [])
+
+    if (error) {
+    return (
+      <ErrorData/>
+    )
+  }
 
   return (
     <section className="uploads wrapper">
