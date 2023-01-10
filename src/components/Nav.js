@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import useContentful from "../useContentful";
 import Logo from "./Logo";
 import NavItem from "./NavItem";
 import Client from "../useContentful";
@@ -38,20 +36,21 @@ const Nav = () => {
         }
         getMenu();
     },[]);
- 
 
     return (
         <header>
             <nav>
-                <Logo/>
-                <ul>
-                    {
-                        menu.length !== 0 && menu[0]?.menuItems?.map((item) => {
-                            return <NavItem key={item} item={item}/>
-                        })    
+                <div className='wrapper'>
+                    <Logo/>
+                    <ul>
+                        {
+                            menu.length !== 0 && menu[0]?.menuItems?.map((item) => {
+                                return <NavItem key={item} item={item}/>
+                            })    
 
-                    }                   
-                </ul>
+                        }                   
+                    </ul>
+                </div>
             </nav>
         </header>
     )

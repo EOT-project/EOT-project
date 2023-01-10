@@ -37,7 +37,7 @@ const Articles = () => {
     },[]);
 
     return (
-        <>
+        <section className="Article">
             {
                 mainCard.map((item) => {
                     return <MainCard image={item.image}>
@@ -50,7 +50,7 @@ const Articles = () => {
 
                 })
             }                
-        </>
+        </section>
     )
 }
 

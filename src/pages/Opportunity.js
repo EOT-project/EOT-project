@@ -7,7 +7,7 @@ const Opportunity = () => {
     //send data from here to <ImageGallery/>
 
     return (
-        <div className="wrapper">
+        <main className="wrapper">
             <Articles />
             <section className="factsStatements">
                 <ImageGallery content={true}/>
@@ -16,7 +16,7 @@ const Opportunity = () => {
                 <ContentBlock />
                 <ImageGallery  content={false}/>
             </section>
-        </div>
+        </main>
     );
 }
 

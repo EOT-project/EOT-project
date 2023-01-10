@@ -13,7 +13,7 @@ const MediaList = () => {
         })
         console.log(res.items);
         if (!!res) {
-          const items = res?.items.map(item => ({url: item?.fields?.url})) || [];
+          const items = res?.items.map(item => ({url: item?.fields?.url, logo: item?.fields?.icon?.fields?.file?.url})) || [];
           // const items = res?.items || [];
           // const itemsFields = items.map(item => ({url: item?.fields?.url}));
           // console.log(itemsFields);
@@ -28,16 +28,23 @@ const MediaList = () => {
     getMedia();
   }, []);
   console.log(media);
+  
+  
 
   return (
     <section className="mediaList">
-      {
-        media.map((item) => {
-          return (
-            <p>{item.url}</p>
-          )
-        })
-      }
+      <h2>Newsroom</h2>
+      <ul className="mediaListContainer">
+        {
+          media.map((item, index) => {
+            return (
+              <li key={index}>
+              <a href={item.url} target="blank"><img src={item.logo} alt=""/></a>
+              </li>
+            )
+          })
+        }
+      </ul>
     </section>
   )
 }

@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
+import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ReactPlayer from 'react-player';
+import ErrorData from "./ErrorData";
 
 //create a container that is full width
 //get uploads from video content model
@@ -11,16 +15,7 @@ const Uploads = () => {
   
   const [videos,setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const {client} = useContentful();
-  const [current, setCurrent] = useState(0);
-  const length = videos.length;
-  
-  const nxtVideo = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
-  }
-  const prevVideo = () => {
-    setCurrent(current === 0 ? length - 1 : current -1)
-  }
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getVideos = async () => {
@@ -28,44 +23,31 @@ const Uploads = () => {
         const res = await Client.getEntries({
           content_type: "uploads"
         })
-        // console.log(res.items)
+        
         if(!!res){
-          const items = res?.items || [];
-          const itemFields = items.map(item => ({title: item?.fields?.title, video: item?.fields?.video}))
-          // console.log(itemFields)
-          const cleanedItems = itemFields.map( (item) => {
-            const title = item.title
-            const video = item.video
-            let regex = /(youtu.*be.*)\/(watch\?v=|embed\/|v|shorts|)(.*?((?=[&#?])|$))/gm;
-            const videoId = regex.exec(video)[3];
-            const updatedData = {title, videoId}
-            return updatedData
-          })
-          setVideos(cleanedItems)
+          const items = res?.items.map(item => ({title: item?.fields?.title, video: item?.fields?.video, id: item?.sys?.id})) || [];
+          
+          setVideos(items);
           setLoading(false)
-
-        //   if(!!res){
-        //   const items = res?.items || [];
-        //   const itemFields = items.map(item => ({title: item?.fields?.title, video: item?.fields?.video}))
-        //   console.log(itemFields)
-        //   const cleanedItems = itemFields.map(item => ({video: item?.video, title: item?.title}))
-        //   setVideos(cleanedItems)
-        //   setLoading(false)
-        // }
-
         }
       } catch (error) {
         //todo: show user error retrieving videos
-        console.log(error)
+        console.log(`Error fetching members: ${error}`);
+        setError(error);
         setLoading(false)
       }
     }
     getVideos();
   }, [])
-  console.log(videos)
+
+    if (error) {
+    return (
+      <ErrorData/>
+    )
+  }
 
   return (
-    <section className="uploads wrapper">
+    <section className="uploads">
       <div className="uploadsContainer">
       {
         loading
@@ -76,21 +58,31 @@ const Uploads = () => {
           ?
           videos.map((item) => {
             return (
-              <iframe className="uploadVideo" src={`https://www.youtube.com/embed/${item.videoId}`} title={item.title}></iframe>
+              <ReactPlayer width='100%' height='90vh' url={item.video}/>
             )
           })
           :
-          <>
-            <button className="leftArrow" onClick={prevVideo}>ᐸ</button>
+          <Carousel infiniteLoop
+          centerMode='true'
+          centerSlidePercentage	='100'
+          renderArrowPrev={(clickHandler, hasPrev, label) => hasPrev && (
+            <button className="prevArrow" onClick={clickHandler}>ᐸ</button>
+          )}
+          renderArrowNext={(clickHandler, hasNext, label) => hasNext && (
+            <button className="nextArrow" onClick={clickHandler}>ᐳ</button>
+          )}
+          renderThumbs={() => null}
+          >
             {
-            videos.map((item, index) => {
-              return (
-                <iframe className={index === current ? 'uploadVideo' : 'video'} src={`https://www.youtube.com/embed/${item.videoId}`} title={item.title}></iframe>
-                )
-              })
+              videos.map((item)=> {
+                return(
+                <div className='video' key={item.id}>
+                  <ReactPlayer width='100%' height='80vh' url={item.video}/>
+                </div>
+              )
+            })
             }
-            <button className="rightArrow" onClick={nxtVideo}>ᐳ</button>
-          </>
+          </Carousel>
       }
       </div>
     </section>

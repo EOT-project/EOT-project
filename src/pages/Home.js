@@ -6,7 +6,7 @@ import Committee from "../components/Committee";
 
 const Home = () => {
   return (
-    <main className='wrapper'>
+    <main className="wrapper">
       <Articles />
       <Uploads />
       <section className="members">
