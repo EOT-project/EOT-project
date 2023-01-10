@@ -2,10 +2,10 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 import Footer from './components/Footer.js';
 import Nav from './components/Nav.js';
-import useContentful from './useContentful';
 import Home from "./pages/Home";
 import Opportunity from './pages/Opportunity';
 import NewsRoom from './pages/Newsroom';
+import ErrorPage from './pages/ErrorPage';
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/opportunity' element={<Opportunity/>}/>
         <Route path='/newsroom' element={<NewsRoom/>} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer/>
     </>
