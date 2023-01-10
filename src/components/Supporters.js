@@ -53,7 +53,7 @@ const Supporters = () => {
                         <img src={member.profilePic} alt={member.name} className="membersPic"/>
                         <h3 className="membersName">{member.name}</h3>
                         <h4 className="membersTitle">{member.title}</h4>
-                        <p className="membersIntro">{member.intro}</p>
+                        {/* <p className="membersIntro">{member.intro}</p> */}
                       </li>
                   )
                 })
