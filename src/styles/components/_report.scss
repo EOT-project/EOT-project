@@ -1,0 +1,62 @@
+.reportList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  .reportContainer {
+    flex: 1 0 20%;
+    div {
+      border-radius: 15px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 50px;
+    }
+  }
+  .reportContainer:nth-child(3),
+  .reportContainer:nth-child(4),
+  .reportContainer:nth-child(9),
+  .reportContainer:nth-child(10) {
+    flex: 1 0 40%;
+  }
+}
+
+.reportType {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.5rem;
+  height: 3rem;
+  color: $white;
+}
+
+.reportTitle {
+  font-size: 1.7rem;
+  text-align: center;
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.5rem;
+  height: 4rem;
+  color: $white;
+}
+
+.reportButton {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  font-weight: bold;
+  padding: 15px 35px;
+  border-radius: 10px;
+  background-color: $white;
+  &:hover {
+    scale: 1.08;
+    transition: 0.1s ease;
+    background-color: $lightBlue;
+    color: $white;
+  }
+}

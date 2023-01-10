@@ -1,0 +1,54 @@
+.carousel-status,
+.control-dots {
+  display: none;
+}
+
+.carousel .slide iframe {
+  width: 100%;
+  border-radius: 15px;
+  margin: 0;
+}
+
+.carousel-slider {
+  position: relative;
+}
+
+.carousel-slider button {
+  position: absolute;
+  display: inline-block;
+  border: none;
+  background: none;
+  font-size: 3rem;
+  font-weight: normal;
+  z-index: 100;
+  top: calc(50% - 1.5rem);
+  cursor: pointer;
+  color: $red;
+  text-shadow: 1px 1px 5px $white,
+    0 0 1em $white,
+    0 0 .2em $white;
+}
+
+.carousel-slider button:hover{
+  scale: 1.5;
+  transition: 0.2s ease;
+  text-shadow: inset 1px 1px 5px $white;
+}
+
+.prevArrow {
+  left: 2%;
+}
+
+.nextArrow {
+  right: 2%;
+}
+
+.uploads {
+  // height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // .uploadsContainer {
+  //   height: 90vh;
+  // }
+}
