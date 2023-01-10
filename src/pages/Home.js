@@ -9,7 +9,7 @@ const Home = () => {
     <main>
       <Articles />
       <Uploads />
-      <section className="members">
+      <section className="members wrapper">
         <Committee />
         <Advisory />
         <Supporters />
