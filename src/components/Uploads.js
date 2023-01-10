@@ -47,7 +47,7 @@ const Uploads = () => {
   }
 
   return (
-    <section className="uploads wrapper">
+    <section className="uploads">
       <div className="uploadsContainer">
       {
         loading
@@ -58,7 +58,7 @@ const Uploads = () => {
           ?
           videos.map((item) => {
             return (
-              <ReactPlayer width='100%' height='500px' url={item.video}/>
+              <ReactPlayer width='100%' height='90vh' url={item.video}/>
             )
           })
           :
@@ -77,7 +77,7 @@ const Uploads = () => {
               videos.map((item)=> {
                 return(
                 <div className='video' key={item.id}>
-                  <ReactPlayer width='100%' height='500px' url={item.video}/>
+                  <ReactPlayer width='100%' height='80vh' url={item.video}/>
                 </div>
               )
             })

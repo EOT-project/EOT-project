@@ -1,22 +1,57 @@
+import { useEffect, useState } from "react";
 import MainCard from "../UI/MainCard";
+import Client from "../useContentful";
 
-//Articles component takes content object
-//content object contains properties title, context, backgroundImage
-//Articles component renders MainCard component displaying title, context, and backgroundImage
-const Articles = (content) => {
+const Articles = () => {
+
+    const [ mainCard, setMainCard ] = useState([]);
+
+    useEffect(() => {
+        const getCardContent = async () => {
+            try {
+                const res = await Client.getEntries({
+                    content_type: "articles"
+                })
+                if(!!res) {
+                    const cleanUpData = (rawData) => {
+                        const cleanData = rawData.map((data) => {
+                            const { sys, fields } = data
+                            const { id } = sys
+                            const title = fields.title
+                            const content = fields.content.content[0].content[0].value
+                            const image = fields.backgroundImage.fields.file.url  
+                            const updatedData = { id, title, content, image }
+                            return updatedData                          
+                        })
+                        setMainCard(cleanData)
+                    }
+                    cleanUpData(res.items)
+                }else {
+                    setMainCard([])
+                }
+            } catch (error) {
+                console.log(`Error fetching card content: ${error}`);          
+            }
+        }
+        getCardContent();
+    },[]);
+
     return (
-        <MainCard className="wrapper">
-            {!!content && (
-                <>
-                <h2>{content?.title || "The Opportunity"}</h2>
-                <div className="contentBlockContainer">
-                    <p>{content?.context || "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."}</p>
-                </div>
-                </>
-            )}
-            
-        </MainCard>
-    );
+        <section className="Article">
+            {
+                mainCard.map((item) => {
+                    return <MainCard image={item.image}>
+                        <h2>{item.title}</h2>
+                        <div className="contentBlockContainer">
+                            <p>{item.content}</p>
+                        </div>
+
+                    </MainCard>
+
+                })
+            }                
+        </section>
+    )
 }
 
 export default Articles;

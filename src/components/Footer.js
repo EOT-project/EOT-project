@@ -1,29 +1,73 @@
-import { Link } from "react-router-dom";
-import logo from "../assets/logo_black.png"
+import { useEffect, useState } from "react";
+import Client from "../useContentful";
+import Logo from "./Logo";
 
 
 const Footer = () => {
+
+    const [ footer, setFooter ] = useState([]);
+
+    useEffect(() => {
+        const getFooter = async () => {
+            try {
+                const res = await Client.getEntries({
+                    content_type: "footer"
+                })
+                if(!!res) {
+                    const cleanUpData = (rawData) => {
+                        console.log(rawData);
+                        
+                        const cleanData = rawData.map((data) => {
+                            const { sys, fields } = data
+                            const { id } = sys
+                            const address = fields.address[0];
+                            const email = fields.email
+                            const socialMedia = fields.socialMedia
+                            const updatedData = { id, address, email, socialMedia }
+                            return updatedData
+                        })
+                        setFooter(cleanData)
+                    }
+                    cleanUpData(res.items)
+                } else {
+                    setFooter([])
+                }
+            } catch (error) {
+                console.log(`Error fetching footer: ${error}`);     
+            }
+        }
+        getFooter();
+
+        console.log(footer);
+    },[])
+
     return (
         <footer>
-            <div>
-                <Link to="/">
-                    <div className="logoContainer">
-                        <img src={logo} alt="logo"/>
-                    </div>
-                </Link>
-                <p>Employee Ownership</p>
-                <p>Ottawa, ON, Canada</p>
-                <p>O1A 1W1</p>
-            </div>
-            <div className="socialMediaContainer">
-                <p>info@employee-ownership.ca</p>
-                <ul>
-                    <li><a href="">twitter</a></li>
-                    <li><a href="">facebook</a></li>
-                    <li><a href="">linkedin</a></li>
-                    <li><a href="">youtube</a></li>
-                    <li><a href="">pinterest</a></li>
-                </ul>
+            <div className="footerContainer">
+              
+                {
+                    footer.length !== 0 && footer.map((item, index) => {
+                        return (<>
+                                    <div>
+                                        <Logo />
+                                            <p>{item.address.streetName}</p>
+                                            <p>{item.address.city}, {item.address.province}, {item.address.country}</p>
+                                            <p>{item.address.postalCode}</p>
+                                    </div>
+                                    <div className="socialMediaContainer">
+                                        <p key={index}>{item.email}</p>
+                                        <ul>
+                                            {
+                                                item.socialMedia.map((item, index) => {
+                                                   return <li key={index}><a href="">{item}</a></li>
+                                                })
+                                            }
+                                        </ul>
+                                    </div> 
+                                </>)
+                    })
+                }
+               
             </div>
         </footer>
     );

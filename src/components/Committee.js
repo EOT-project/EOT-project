@@ -24,7 +24,7 @@ const Committee = () => {
     const getMembers = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "steeringCommitte"
+          content_type: "steeringCommittee"
         })
 
         if (!!res) {
@@ -58,8 +58,8 @@ const Committee = () => {
           members.length !== 0
           ?
           <div className="committee">
-            <h4>Meet our committee</h4>
-            <h2>Steering Committee</h2>
+            <h4 className="memberSection">Meet our committee</h4>
+            <h1 className="memberType">Steering Committee</h1>
             <ul className="membersListContainer">
               {
                 members.map((member) => {
@@ -67,7 +67,7 @@ const Committee = () => {
                     <li key={member.id} className="membersList" >
                       
                       <img src={member.profilePic} alt={member.name} className="membersPic" />
-                      <h3 className="membersName">{member.name}</h3>
+                      <h2 className="membersName">{member.name}</h2>
                       <h4 className="membersTitle">{member.title}</h4>
                       <p className="membersIntro">{member.intro}</p>
                       {/* <button onClick={() => handleClick(member.id)}>click me

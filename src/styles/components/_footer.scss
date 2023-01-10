@@ -1,18 +1,26 @@
 footer {
-  display: flex;
-  justify-content: space-around;
+  box-shadow: 7px -1px 5px rgb(0 0 0 / 5%);
   font-weight: 800;
-  .logoContainer {
-    margin-bottom: 25px;
-  }
-  .socialMediaContainer {
+  padding: 20px 0 50px 0;
+  .footerContainer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    // align-items: end;
+    align-items: center;
     gap: 50px;
-    ul {
+    .logoContainer {
+      margin-bottom: 25px;
+    }
+    .socialMediaContainer {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-end;
+      gap: 80px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+      }
     }
   }
 }

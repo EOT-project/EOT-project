@@ -52,15 +52,15 @@ const Advisory = () => {
           members.length !== 0
           ?
           <div className="advisory">
-            <h4>Meet our advisory</h4>
-            <h2>Advisory Members</h2>
+            <h4 className="memberSection">Meet our advisory</h4>
+            <h1 className="memberType">Advisory Members</h1>
             <ul className="membersListContainer">
               {
                 members.map((member) => {
                   return (
                     <li key={member.id} className="membersList">
                       <img src={member.profilePic} alt={member.name} className="membersPic"/>
-                      <h3 className="membersName">{member.name}</h3>
+                      <h2 className="membersName">{member.name}</h2>
                       <h4 className="membersTitle">{member.title}</h4>
                       <p className="membersIntro">{member.intro}</p>
                     </li>

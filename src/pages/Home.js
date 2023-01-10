@@ -6,10 +6,10 @@ import Committee from "../components/Committee";
 
 const Home = () => {
   return (
-    <main>
+    <main className="wrapper">
       <Articles />
       <Uploads />
-      <section className="members wrapper">
+      <section className="members">
         <Committee />
         <Advisory />
         <Supporters />

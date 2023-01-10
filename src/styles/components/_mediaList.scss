@@ -1,0 +1,21 @@
+.mediaListContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  li {
+    flex-basis: calc((100% / 5) - 40px);
+    margin: 60px 20px;
+    @media (max-width: 890px) {
+      flex-basis: calc((100% / 4) - 40px);
+      margin: 40px 20px;
+    }
+    @media (max-width: 590px) {
+      flex-basis: calc((100% / 3) - 40px);
+    }
+    @media (max-width: 414px) {
+      flex-basis: calc((100% / 3) - 40px);
+      margin: 20px;
+    }
+  }
+}
