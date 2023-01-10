@@ -21,7 +21,7 @@ const Uploads = () => {
         const res = await Client.getEntries({
           content_type: "uploads"
         })
-        console.log(res.items);
+        
         if(!!res){
           const items = res?.items.map(item => ({title: item?.fields?.title, video: item?.fields?.video, id: item?.sys?.id})) || [];
           
