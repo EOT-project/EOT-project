@@ -13,6 +13,9 @@
   padding: 50px;
   .contentBlockContainer {
     width: 70%;
+    @media (max-width: 590px) {
+      width: 100%;
+    }
     p {
       text-align: left;
       margin-bottom: 10px;
