@@ -40,7 +40,6 @@ const Nav = () => {
     return (
         <header>
             <nav>
-                {/* <div className='wrapper'> */}
                     <Logo/>
                     <ul>
                         {
@@ -50,7 +49,6 @@ const Nav = () => {
 
                         }                   
                     </ul>
-                {/* </div> */}
             </nav>
         </header>
     )
