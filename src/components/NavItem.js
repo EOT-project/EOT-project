@@ -11,7 +11,7 @@ const NavItem = ({item}) => {
      }    
     
     return (
-        <Link to={decodeText(item)}><li>{item}</li></Link>
+        <Link to={decodeText(item)}><li><p>{item}</p></li></Link>
     );
 };
 

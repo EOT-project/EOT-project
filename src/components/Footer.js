@@ -59,7 +59,7 @@ const Footer = () => {
                                         <ul>
                                             {
                                                 item.socialMedia.map((item, index) => {
-                                                   return <li key={index}><a href="">{item}</a></li>
+                                                   return <li key={index}><a href=""><p>{item}</p></a></li>
                                                 })
                                             }
                                         </ul>
