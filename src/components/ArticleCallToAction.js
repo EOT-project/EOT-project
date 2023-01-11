@@ -4,13 +4,7 @@ import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import ErrorData from "./ErrorData";
 
-//create a article(aka main card) component
-// retrieve backgroundImage, title, and content from articles content model
-// show a loading card while retrieving data
-// set state to mainCard that were downloaded
-// render mainCard
-
-const Articles = () => {
+const ArtcicleCallToAction = () => {
 
     const [ mainCard, setMainCard ] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -20,9 +14,9 @@ const Articles = () => {
         const getCardContent = async () => {
             try {
                 const res = await Client.getEntries({
-                    content_type: "articles"
+                    content_type: "articleCallToAction"
                 })
-                
+                console.log(res.items);
                 if(!!res) {
                     const items = res?.items.map(item => ({id: item?.sys?.id, title: item?.fields?.title, image: item?.fields?.backgroundImage?.fields?.file?.url, content: item?.fields?.content})) || [];
                     setMainCard(items);
@@ -45,23 +39,23 @@ const Articles = () => {
 
     return (
         <section className="article">
-            {
-                loading
-                ?
-                "loading"
-                :
-                mainCard.map((item) => {
-                    return <MainCard key={item} image={item.image}>
-                        <h2>{item.title}</h2>
-                        <div className="contentBlockContainer">
-                            {documentToReactComponents(item.content)}
-                        </div>
-                    </MainCard>
+        {
+            loading
+            ?
+            "loading"
+            :
+            mainCard.map((item) => {
+                return <MainCard key={item} image={item.image}>
+                    <h2>{item.title}</h2>
+                    <div className="contentBlockContainer">
+                        {documentToReactComponents(item.content)}
+                    </div>
+                </MainCard>
 
-                })
-            }                
-        </section>
-    )
+            })
+        }                
+    </section>
+    );
 }
 
-export default Articles;
+export default ArtcicleCallToAction;
