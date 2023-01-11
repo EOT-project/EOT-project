@@ -61,7 +61,7 @@ const Report = () => {
                 backgroundPosition: `center`
               }}>
               <h4 className="reportType">{report[0].type}</h4>
-              <h2 className="reportTitle">{report[0].title}</h2>
+              <h3 className="reportTitle">{report[0].title}</h3>
               <a href={report[0].url} target="_blank" rel="noreferrer"><button className="reportButton">CTA</button></a>
             </div>
           </li>
@@ -76,7 +76,7 @@ const Report = () => {
                     backgroundPosition: `center`
                   }}>
                     <h4 className="reportType">{item.type}</h4>
-                    <h2 className="reportTitle">{item.title}</h2>
+                    <h3 className="reportTitle">{item.title}</h3>
                     <button className="reportButton"><a href={item.url} target="_blank" rel="noreferrer"><p>READ</p></a></button>
                   </div>
                 </li>
