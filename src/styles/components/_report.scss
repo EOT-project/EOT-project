@@ -1,0 +1,89 @@
+.reportList {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  .reportContainer {
+    flex-basis: calc(100%/3 - 100px);
+    margin-bottom: 60px;
+    div {
+      border-radius: 15px;
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 40px 50px;
+    }
+  }
+  .reportContainer:nth-child(3),
+  .reportContainer:nth-child(4),
+  .reportContainer:nth-child(9),
+  .reportContainer:nth-child(10) {
+    flex-basis: calc(45% - 30px);
+  }
+  .reportContainer:nth-child(3) {
+    flex-grow: 1;
+  }
+  @media(max-width: 753px) {
+    justify-content: center;
+    .reportContainer,
+    .reportContainer:nth-child(3),
+    .reportContainer:nth-child(4),
+    .reportContainer:nth-child(9),
+    .reportContainer:nth-child(10) {
+      flex-basis: calc(50% - 50px);
+    }
+  }
+  @media(max-width: 590px) {
+    justify-content: center;
+    .reportContainer,
+    .reportContainer:nth-child(3),
+    .reportContainer:nth-child(4),
+    .reportContainer:nth-child(9),
+    .reportContainer:nth-child(10) {
+      flex-basis: calc(100% - 50px);
+    }
+  }
+}
+
+.reportType {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: $white;
+}
+
+.reportTitle {
+  display: inline-block;
+  font-weight: 800;
+  color: $white;
+  height: 250px;
+}
+
+.reportButton {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  font-weight: bold;
+  padding: 10px 35px;
+  border-radius: 5px;
+  min-width: 50%;
+  background-color: $white;
+  p {
+    color: $gray;
+  }
+  &:hover {
+    scale: 1.08;
+    transition: 0.1s ease;
+    background-color: $lightBlue;
+    p {
+      color: $white;
+      color: rgb(255, 255, 255)
+    }
+  }
+}

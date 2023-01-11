@@ -1,0 +1,23 @@
+.mainCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+  padding: 50px;
+  min-height: 60vh;
+  h2 {
+    margin-bottom: 30px;
+  }
+  .contentBlockContainer {
+    width: 60%;
+    @media (max-width: 890px) {
+      width: 100%;
+    }
+
+    p {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+  }
+}

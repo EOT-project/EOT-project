@@ -1,0 +1,21 @@
+nav {
+  .wrapper {
+    width: 85%;
+  }
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  .logoContainer {
+    padding-top: 20px;
+  }
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+    align-items: center;
+    gap: 30px;
+    color: $darkGray;
+    // font-size: 14px;
+    font-weight: 800;
+  }
+}
