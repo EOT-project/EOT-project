@@ -91,6 +91,7 @@
 }
     
 .membersPic {
+  align-self: center;
   display: block;
   object-fit: cover;
   object-position: top;
@@ -143,6 +144,12 @@
   //   overflow: visible;
   //   scale: 1.05;
   // }
+}
+
+.picContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // .backdrop {

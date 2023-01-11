@@ -59,11 +59,13 @@ const Supporters = () => {
                 members.map((member) => {
                   return (
                     <li key={member.id} className="membersList">
+                      <div className='picContainer'>
                         <img src={member.profilePic} alt={member.name} className="membersPic"/>
-                        <h2 className="membersName">{member.name}</h2>
-                        <h4 className="membersTitle">{member.title}</h4>
-                        {/* <p className="membersIntro">{member.intro}</p> */}
-                      </li>
+                      </div>
+                      <h2 className="membersName">{member.name}</h2>
+                      <h4 className="membersTitle">{member.title}</h4>
+                      {/* <p className="membersIntro">{member.intro}</p> */}
+                    </li>
                   )
                 })
               }
