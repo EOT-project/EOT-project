@@ -40,7 +40,7 @@ const Nav = () => {
     return (
         <header>
             <nav>
-                    <Logo/>
+                    <h1><Logo/></h1>
                     <ul>
                         {
                             menu.length !== 0 && menu[0]?.menuItems?.map((item) => {

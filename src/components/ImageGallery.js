@@ -34,7 +34,6 @@ const ImageGallery = ({content}) => {
         }
     ];
 
-  
 
     const [ facts ] = useState(dummyContent);
 
