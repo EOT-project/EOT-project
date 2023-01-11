@@ -1,26 +1,51 @@
 .reportList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   .reportContainer {
-    flex: 1 0 20%;
+    flex-basis: calc(100%/3 - 100px);
+    margin-bottom: 60px;
     div {
       border-radius: 15px;
-      height: 350px;
+      height: 450px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 15px;
       align-items: flex-start;
-      padding: 50px;
+      padding: 40px 50px;
     }
   }
   .reportContainer:nth-child(3),
   .reportContainer:nth-child(4),
   .reportContainer:nth-child(9),
   .reportContainer:nth-child(10) {
-    flex: 1 0 40%;
+    flex-basis: calc(45% - 30px);
+  }
+  .reportContainer:nth-child(3) {
+    flex-grow: 1;
+  }
+  @media(max-width: 753px) {
+    justify-content: center;
+    .reportContainer,
+    .reportContainer:nth-child(3),
+    .reportContainer:nth-child(4),
+    .reportContainer:nth-child(9),
+    .reportContainer:nth-child(10) {
+      flex-basis: calc(50% - 50px);
+    }
+  }
+  @media(max-width: 590px) {
+    justify-content: center;
+    .reportContainer,
+    .reportContainer:nth-child(3),
+    .reportContainer:nth-child(4),
+    .reportContainer:nth-child(9),
+    .reportContainer:nth-child(10) {
+      flex-basis: calc(100% - 50px);
+    }
   }
 }
 
@@ -29,19 +54,14 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: normal;
-  line-height: 1.5rem;
-  height: 3rem;
   color: $white;
 }
 
 .reportTitle {
-  font-size: 1.7rem;
-  text-align: center;
   display: inline-block;
-  font-weight: normal;
-  line-height: 1.5rem;
-  height: 4rem;
+  font-weight: 800;
   color: $white;
+  height: 250px;
 }
 
 .reportButton {
@@ -50,13 +70,20 @@
   text-transform: uppercase;
   border: none;
   font-weight: bold;
-  padding: 15px 35px;
-  border-radius: 10px;
+  padding: 10px 35px;
+  border-radius: 5px;
+  min-width: 50%;
   background-color: $white;
+  p {
+    color: $gray;
+  }
   &:hover {
     scale: 1.08;
     transition: 0.1s ease;
     background-color: $lightBlue;
-    color: $white;
+    p {
+      color: $white;
+      color: rgb(255, 255, 255)
+    }
   }
 }

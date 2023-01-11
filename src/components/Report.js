@@ -23,7 +23,7 @@ const Report = () => {
         })
         console.log(res.items);
         if (!!res) {
-          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url, url: item?.fields?.url, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.asset?.fields?.file?.url, url: item?.fields?.url, id: item?.sys?.id})) || [];
 
           setReport(items);
           setLoading(false);
@@ -62,23 +62,23 @@ const Report = () => {
                 backgroundPosition: `center`
               }}>
               <h4 className="reportType">{report[0].type}</h4>
-              <h3 className="reportTitle">{report[0].title}</h3>
-              <a href={report[0].url} target="_blank"><button className="reportButton">CTA</button></a>
+              <h2 className="reportTitle">{report[0].title}</h2>
+              <a href={report[0].url} target="_blank" rel="noreferrer"><button className="reportButton">CTA</button></a>
             </div>
           </li>
           :
             report.map((item) => {
               return (
                 <li key={item.id} className="reportContainer">
-                  <div style={{
+                  <div className="reportBg" style={{
                     backgroundImage: `url(${item.image})`,
                     backgroundSize: `cover`,
                     backgroundRepeat: `no-repeat`,
-                    backgroundPosition: `center`,
+                    backgroundPosition: `center`
                   }}>
                     <h4 className="reportType">{item.type}</h4>
-                    <h3 className="reportTitle">{item.title}</h3>
-                    <a href={item.url} target="_blank"><button className="reportButton">CTA</button></a>
+                    <h2 className="reportTitle">{item.title}</h2>
+                    <button className="reportButton"><a href={item.url} target="_blank" rel="noreferrer"><p>READ</p></a></button>
                   </div>
                 </li>
               )
