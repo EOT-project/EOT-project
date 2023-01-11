@@ -59,11 +59,20 @@ const Supporters = () => {
                 members.map((member) => {
                   return (
                     <li key={member.id} className="membersList">
-                        <img src={member.profilePic} alt={member.name} className="membersPic"/>
-                        <h2 className="membersName">{member.name}</h2>
-                        <h4 className="membersTitle">{member.title}</h4>
-                        {/* <p className="membersIntro">{member.intro}</p> */}
-                      </li>
+                      <div className='picContainer'>
+                        {
+                          !member.profilePic
+                          ?
+                          <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
+                          } alt={member.name} className="membersPic"/>
+                          :
+                          <img src={member.profilePic} alt={member.name} className="membersPic"/>
+                        }
+                      </div>
+                      <h2 className="membersName">{member.name}</h2>
+                      <h4 className="membersTitle">{member.title}</h4>
+                      {/* <p className="membersIntro">{member.intro}</p> */}
+                    </li>
                   )
                 })
               }

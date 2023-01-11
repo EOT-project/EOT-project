@@ -22,7 +22,7 @@ const Report = () => {
           content_type: "reports"
         })
         if (!!res) {
-          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url, url: item?.fields?.url, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.asset?.fields?.file?.url, url: item?.fields?.url, id: item?.sys?.id})) || [];
 
           setReport(items);
           setLoading(false);
@@ -69,15 +69,15 @@ const Report = () => {
             report.map((item) => {
               return (
                 <li key={item.id} className="reportContainer">
-                  <div style={{
+                  <div className="reportBg" style={{
                     backgroundImage: `url(${item.image})`,
                     backgroundSize: `cover`,
                     backgroundRepeat: `no-repeat`,
-                    backgroundPosition: `center`,
+                    backgroundPosition: `center`
                   }}>
                     <h4 className="reportType">{item.type}</h4>
                     <h3 className="reportTitle">{item.title}</h3>
-                    <a href={item.url} target="_blank" rel="noreferrer"><button className="reportButton">CTA</button></a>
+                    <button className="reportButton"><a href={item.url} target="_blank" rel="noreferrer"><p>READ</p></a></button>
                   </div>
                 </li>
               )
