@@ -60,7 +60,14 @@ const Advisory = () => {
                   return (
                     <li key={member.id} className="membersList">
                       <div className='picContainer'>
-                        <img src={member.profilePic} alt={member.name} className="membersPic"/>
+                        {
+                          !member.profilePic
+                          ?
+                          <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
+                          } alt={member.name} className="membersPic"/>
+                          :
+                          <img src={member.profilePic} alt={member.name} className="membersPic"/>
+                        }
                       </div>
                       <h2 className="membersName">{member.name}</h2>
                       <h4 className="membersTitle">{member.title}</h4>
