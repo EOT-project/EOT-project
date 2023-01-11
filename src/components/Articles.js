@@ -51,12 +51,11 @@ const Articles = () => {
                 "loading"
                 :
                 mainCard.map((item) => {
-                    return <MainCard image={item.image}>
+                    return <MainCard key={item} image={item.image}>
                         <h2>{item.title}</h2>
                         <div className="contentBlockContainer">
                             {documentToReactComponents(item.content)}
                         </div>
-
                     </MainCard>
 
                 })

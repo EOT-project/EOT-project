@@ -16,8 +16,8 @@ function App() {
       <Nav/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/TheOpportunity' element={<Opportunity/>}/>
-        <Route path='/CallToAction'element={<CallToAction/>}/>
+        <Route path='/theopportunity' element={<Opportunity/>}/>
+        <Route path='/calltoaction'element={<CallToAction/>}/>
         <Route path='/newsroom' element={<NewsRoom/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

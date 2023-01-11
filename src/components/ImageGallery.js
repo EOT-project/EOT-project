@@ -36,7 +36,7 @@ const ImageGallery = ({content}) => {
 
   
 
-    const [ facts, setFacts ] = useState(dummyContent);
+    const [ facts ] = useState(dummyContent);
 
     return (
         <>
