@@ -1,16 +1,23 @@
 .mainCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 15px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
   padding: 50px;
-  height: 80vh;
+  min-height: 60vh;
+  h2 {
+    margin-bottom: 30px;
+  }
   .contentBlockContainer {
-    width: 70%;
-    @media (max-width: 590px) {
+    width: 60%;
+    @media (max-width: 890px) {
       width: 100%;
     }
+
     p {
       text-align: left;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
     }
   }
 }
