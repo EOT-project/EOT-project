@@ -1,10 +1,10 @@
-import Articles from "../components/Articles";
+import ArtcicleCallToAction from "../components/ArticleCallToAction";
 import ContentBlock from "../components/ContentBlock";
 
 const CallToAction = () => {
     return (
         <div className="wrapper">
-            <Articles />
+            <ArtcicleCallToAction />
             <section className="factsStatements">
                 <ContentBlock />
             </section>
