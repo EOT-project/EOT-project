@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import MainCard from "../UI/MainCard";
 import Client from "../useContentful";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 const Articles = () => {
 
@@ -18,7 +20,10 @@ const Articles = () => {
                             const { sys, fields } = data
                             const { id } = sys
                             const title = fields.title
-                            const content = fields.content.content[0].content[0].value
+                            // const content = fields.content.content[0].content[0].value
+                            const content = fields.content;
+                            console.log('content ', content);
+                            
                             const image = fields.backgroundImage.fields.file.url  
                             const updatedData = { id, title, content, image }
                             return updatedData                          
@@ -39,11 +44,12 @@ const Articles = () => {
     return (
         <section className="Article">
             {
+                
                 mainCard.map((item) => {
                     return <MainCard image={item.image}>
                         <h2>{item.title}</h2>
                         <div className="contentBlockContainer">
-                            <p>{item.content}</p>
+                            {documentToReactComponents(item.content)}
                         </div>
 
                     </MainCard>
