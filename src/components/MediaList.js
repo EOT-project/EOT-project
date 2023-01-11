@@ -11,7 +11,6 @@ const MediaList = () => {
         const res = await Client.getEntries({
           content_type: "mediaList"
         })
-        console.log(res.items);
         if (!!res) {
           const items = res?.items.map(item => ({url: item?.fields?.url, logo: item?.fields?.icon?.fields?.file?.url})) || [];
           // const items = res?.items || [];
@@ -26,9 +25,7 @@ const MediaList = () => {
       }
     }
     getMedia();
-  }, []);
-  console.log(media);
-  
+  }, []);  
   
 
   return (
