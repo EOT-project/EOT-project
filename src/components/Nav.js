@@ -41,6 +41,7 @@ const Nav = () => {
         <header>
             <nav>
                     <Logo/>
+                    <h1 className="visually-hidden">Canadian Employee Ownership Coalition</h1>
                     <ul>
                         {
                             menu.length !== 0 && menu[0]?.menuItems?.map((item) => {

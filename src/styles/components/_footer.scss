@@ -12,21 +12,14 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 70px;
-
-    p {
-      // font-size: 1rem;
-      font-size: 0.875rem;
-    }
+    gap: 30px;
     .logoContainer {
       margin-bottom: 25px;
     }
     .socialMediaContainer {
       display: flex;
       justify-content: flex-end;
-      font-size: 0.875rem;
-
-      gap: 80px;
+      gap: 100px;
       @media (max-width: 890px) {
         flex-direction: column;
         gap: 25px;

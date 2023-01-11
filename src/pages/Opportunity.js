@@ -18,6 +18,6 @@ const Opportunity = () => {
             </section>
         </main>
     );
-}
+} 
 
 export default Opportunity;

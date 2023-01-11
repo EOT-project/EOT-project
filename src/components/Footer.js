@@ -14,9 +14,7 @@ const Footer = () => {
                     content_type: "footer"
                 })
                 if(!!res) {
-                    const cleanUpData = (rawData) => {
-                        console.log(rawData);
-                        
+                    const cleanUpData = (rawData) => {                        
                         const cleanData = rawData.map((data) => {
                             const { sys, fields } = data
                             const { id } = sys
@@ -38,16 +36,14 @@ const Footer = () => {
         }
         getFooter();
 
-        console.log(footer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return (
-        <footer>
-            <div className="footerContainer">
-              
+        <footer>     
                 {
                     footer.length !== 0 && footer.map((item, index) => {
-                        return (<>
+                        return (<div className="footerContainer" key={item.id}>
                                     <div>
                                         <Logo />
                                             <p>{item.address.streetName}</p>
@@ -55,20 +51,21 @@ const Footer = () => {
                                             <p>{item.address.postalCode}</p>
                                     </div>
                                     <div className="socialMediaContainer">
-                                        <p key={index}>{item.email}</p>
-                                        <ul>
+                                        <p>{item.email}</p>
+                                        <ul >
                                             {
                                                 item.socialMedia.map((item, index) => {
-                                                   return <li key={index}><a href="">{item}</a></li>
+                                                   //WILL ADD href WHEN PROVIDED BY CLIENT
+                                                   // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                                                   return <li key={index}><a href=""><p>{item}</p></a></li>
                                                 })
                                             }
                                         </ul>
                                     </div> 
-                                </>)
+                                </div>)
                     })
                 }
-               
-            </div>
+                     
         </footer>
     );
 }

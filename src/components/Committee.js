@@ -14,7 +14,7 @@ const Committee = () => {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [click, setClick] = useState(false);
+  // const [click, setClick] = useState(false);
 
   // const handleClick = (id) => {
   //   setClick(!click)
