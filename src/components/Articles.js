@@ -2,11 +2,19 @@ import { useEffect, useState } from "react";
 import MainCard from "../UI/MainCard";
 import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import ErrorData from "./ErrorData";
 
+//create a article(aka main card) component
+// retrieve backgroundImage, title, and content from articles content model
+// show a loading card while retrieving data
+// set state to mainCard that were downloaded
+// render mainCard
 
 const Articles = () => {
 
     const [ mainCard, setMainCard ] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getCardContent = async () => {
@@ -14,37 +22,34 @@ const Articles = () => {
                 const res = await Client.getEntries({
                     content_type: "articles"
                 })
+                console.log(res.items);
                 if(!!res) {
-                    const cleanUpData = (rawData) => {
-                        const cleanData = rawData.map((data) => {
-                            const { sys, fields } = data
-                            const { id } = sys
-                            const title = fields.title
-                            // const content = fields.content.content[0].content[0].value
-                            const content = fields.content;
-                            console.log('content ', content);
-                            
-                            const image = fields.backgroundImage.fields.file.url  
-                            const updatedData = { id, title, content, image }
-                            return updatedData                          
-                        })
-                        setMainCard(cleanData)
-                    }
-                    cleanUpData(res.items)
-                }else {
-                    setMainCard([])
+                    const items = res?.items.map(item => ({id: item?.sys?.id, title: item?.fields?.title, image: item?.fields?.backgroundImage?.fields?.file?.url, content: item?.fields?.content})) || [];
+                    setMainCard(items);
+                    setLoading(false);
                 }
             } catch (error) {
-                console.log(`Error fetching card content: ${error}`);          
+                console.log(`Error fetching card content: ${error}`);
+                setError(error);
+                setLoading(false);
             }
         }
         getCardContent();
     },[]);
 
+    if (error) {
+    return (
+        <ErrorData/>
+    )
+    }
+
     return (
         <section className="Article">
             {
-                
+                loading
+                ?
+                "loading"
+                :
                 mainCard.map((item) => {
                     return <MainCard image={item.image}>
                         <h2>{item.title}</h2>
