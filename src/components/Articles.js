@@ -22,7 +22,7 @@ const Articles = () => {
                 const res = await Client.getEntries({
                     content_type: "articles"
                 })
-                console.log(res.items);
+                
                 if(!!res) {
                     const items = res?.items.map(item => ({id: item?.sys?.id, title: item?.fields?.title, image: item?.fields?.backgroundImage?.fields?.file?.url, content: item?.fields?.content})) || [];
                     setMainCard(items);
