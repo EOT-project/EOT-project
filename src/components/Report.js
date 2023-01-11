@@ -21,7 +21,7 @@ const Report = () => {
         const res = await Client.getEntries({
           content_type: "reports"
         })
-        
+        console.log(res.items);
         if (!!res) {
           const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url, url: item?.fields?.url, id: item?.sys?.id})) || [];
 

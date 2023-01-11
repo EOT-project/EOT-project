@@ -1,5 +1,5 @@
 .members {
-  width: 90%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@
 }
 
 .members h1 {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   font-weight: 600;
 }
 
@@ -30,28 +30,37 @@
   margin-bottom: 20px;
 }
 
-.members h2 {
-  margin-bottom: 50px;
-  font-weight: 600;
-}
-
 .membersListContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18%, 20%));
   justify-content: space-between;
   gap: 2rem;
-  @media(max-width: 890px) {
+  @media(max-width: 1101px) {
     grid-template-columns: repeat(auto-fill, minmax(25%, 30%));
+    gap: 1.5rem;
   }
-  @media(max-width: 590px) {
+  @media(max-width: 903px) {
+    // grid-template-columns: repeat(auto-fill, minmax(28%, 30%));
+    gap: 1.1rem;
+  }
+  @media(max-width: 752px) {
     grid-template-columns: repeat(auto-fill, minmax(40%, 45%));
   }
-  @media(max-width: 414px) {
+  @media(max-width: 558px) {
     grid-template-columns: none;
   }
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-around;
+  // align-items: flex-start;
+  // gap: 2rem;
 }
 
 .membersList {
+  // // flex-basis: 20%;
+  // // flex-shrink: 1;
+  // min-width: 20%;
+  // flex-basis: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,18 +84,23 @@
 
 .membersName {
   display: inline-block;
-  padding: 10px;
   text-align: center;
-  margin: 15px 0;
+  margin: 20px 0 30px 0;
   height: 3rem;
+  font-weight: 500;
 }
     
 .membersPic {
   display: block;
   object-fit: cover;
+  object-position: top;
   border-radius: 15px;
   max-width: 100%;
-  height: 150px;
+  // height: 130px;
+  // @media (max-width: 1292px) {
+  //   height: 125px;
+  // }
+  aspect-ratio: 4 / 3;
 }
 
 .membersTitle {
@@ -102,7 +116,7 @@
   height: 1.2rem;
   font-weight: 600;
   color: $gray;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   // text-overflow: ellipsis;
   // overflow: hidden;
   // white-space: nowrap;
@@ -119,6 +133,7 @@
   // white-space: nowrap;
   // width: 100px;
   // height: 200px;
+  max-width: 100%;
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 8;
