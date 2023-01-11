@@ -20,7 +20,7 @@ const Advisory = () => {
         const res = await Client.getEntries({
           content_type: "advisoryMembers"
         })
-        console.log(res.items);
+        
         if (!!res) {
           const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, intro: item?.fields?.intro, id: item?.sys?.id})) || [];
           setMembers(items);
