@@ -6,7 +6,7 @@ const NavItem = ({item}) => {
     const decodeText = (text) => {
         const textArea = document.createElement('textarea');
         textArea.innerHTML = text;
-        const url = textArea.value.replace(/ /g, "")
+        const url = textArea.value.replace(/ /g, "").toLowerCase()
         return url;
      }    
     
