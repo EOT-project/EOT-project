@@ -12,7 +12,7 @@ const Home = () => {
       <section className="members">
         <Committee />
         <Advisory />
-        <Supporters />
+        {/* <Supporters /> */}
       </section>
     </main>
   )
