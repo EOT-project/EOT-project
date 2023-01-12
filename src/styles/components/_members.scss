@@ -4,6 +4,9 @@
   flex-direction: column;
   justify-content: center;
   gap: 150px;
+  @media (max-width: 590px) {
+    width: 90%;
+  }
 }
 
 .memberType {
@@ -25,13 +28,14 @@
   grid-template-columns: repeat(auto-fill, minmax(18%, 20%));
   justify-content: space-between;
   grid-column-gap: 2rem;
-  grid-row-gap: 6rem;
-  @media(max-width: 1101px) {
+  grid-row-gap: 3rem;
+  @media (max-width: 1101px) {
     grid-template-columns: repeat(auto-fill, minmax(25%, 30%));
-    gap: 1.5rem;
+    grid-column-gap: 1.5rem;
+    // grid-row-gap: 3rem;
   }
-  @media (max-width: 903px) {
-    gap: 1.1rem;
+  @media (max-width: 890px) {
+    grid-column-gap: 1.1rem;
   }
   @media (max-width: 752px) {
     grid-template-columns: repeat(auto-fill, minmax(40%, 45%));
@@ -49,12 +53,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   &:hover {
     scale: 1.1;
     background-color: $white;
     z-index: 100;
-    transition: 0.3s ease;
+    transition: 0.6s ease-in-out;
     .membersTitle,
     .membersIntro {
       overflow: visible;
@@ -71,6 +76,9 @@
   margin: 20px 0 30px 0;
   height: 3rem;
   font-weight: 500;
+  @media (max-width: 558px) {
+    margin: 20px 0 0;
+  }
 }
 
 .membersPic {
