@@ -62,6 +62,24 @@ const Committee = () => {
             <h1 className="memberType">Steering Committee</h1>
             <ul className="membersListContainer">
               {
+              members.length === 1
+                ?
+                <li key={members[0].id} className="membersList" >
+                  <div className='picContainer'>
+                    {
+                      !members[0].profilePic
+                      ?
+                      <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
+                      } alt={members[0].name} className="membersPic"/>
+                      :
+                      <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
+                    }
+                  </div>
+                  <h2 className="membersName">{members[0].name}</h2>
+                  <h4 className="membersTitle">{members[0].title}</h4>
+                  <p className="membersIntro">{members[0].intro}</p>
+                </li>
+                :
                 members.map((member) => {
                   return (
                     <li key={member.id} className="membersList" >

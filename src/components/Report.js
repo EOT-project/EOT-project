@@ -51,37 +51,40 @@ const Report = () => {
         ?
           "loading"
         :
-          report.length === 1
+          report.length !== 0
           ?
-          <li key={report[0].id} className="reportContainer">
-            <div style={{
-                backgroundImage: `url(${report[0].image})`,
-                backgroundSize: `cover`,
-                backgroundRepeat: `no-repeat`,
-                backgroundPosition: `center`
-              }}>
-              <h4 className="reportType">{report[0].type}</h4>
-              <h3 className="reportTitle">{report[0].title}</h3>
-              <a href={report[0].url} target="_blank" rel="noreferrer"><button className="reportButton">CTA</button></a>
-            </div>
-          </li>
-          :
-            report.map((item) => {
-              return (
-                <li key={item.id} className="reportContainer">
-                  <div className="reportBg" style={{
-                    backgroundImage: `url(${item.image})`,
-                    backgroundSize: `cover`,
-                    backgroundRepeat: `no-repeat`,
-                    backgroundPosition: `center`
-                  }}>
-                    <h4 className="reportType">{item.type}</h4>
-                    <h3 className="reportTitle">{item.title}</h3>
-                    <button className="reportButton"><a href={item.url} target="_blank" rel="noreferrer"><p>READ</p></a></button>
-                  </div>
-                </li>
-              )
-            })
+            report.length === 1
+            ?
+            <li key={report[0].id} className="reportContainer">
+              <div style={{
+                  backgroundImage: `url(${report[0].image})`,
+                  backgroundSize: `cover`,
+                  backgroundRepeat: `no-repeat`,
+                  backgroundPosition: `center`
+                }}>
+                <h4 className="reportType">{report[0].type}</h4>
+                <h3 className="reportTitle">{report[0].title}</h3>
+                <a href={report[0].url} target="_blank" rel="noreferrer"><button className="reportButton">CTA</button></a>
+              </div>
+            </li>
+            :
+              report.map((item) => {
+                return (
+                  <li key={item.id} className="reportContainer">
+                    <div className="reportBg" style={{
+                      backgroundImage: `url(${item.image})`,
+                      backgroundSize: `cover`,
+                      backgroundRepeat: `no-repeat`,
+                      backgroundPosition: `center`
+                    }}>
+                      <h4 className="reportType">{item.type}</h4>
+                      <h3 className="reportTitle">{item.title}</h3>
+                      <button className="reportButton"><a href={item.url} target="_blank" rel="noreferrer"><p>READ</p></a></button>
+                    </div>
+                  </li>
+                )
+              })
+          : null
       }
       </ul>
     </section>
