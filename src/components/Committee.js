@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
-// import Modal from "./Modal";
 
 //create a member container displays maximum of 4 members
 //retrieve profilePic, name, title, intro uploads from steeringCommittee content model
@@ -14,11 +13,6 @@ const Committee = () => {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  // const [click, setClick] = useState(false);
-
-  // const handleClick = (id) => {
-  //   setClick(!click)
-  // }
 
   useEffect(() => {
     const getMembers = async () => {
@@ -96,11 +90,6 @@ const Committee = () => {
                       <h2 className="membersName">{member.name}</h2>
                       <h4 className="membersTitle">{member.title}</h4>
                       <p className="membersIntro">{member.intro}</p>
-                      {/* <button onClick={() => handleClick(member.id)}>click me
-                      {
-                        click && <Modal memberProfilePic={member.profilePic} memberName={member.name} memberTitle={member.title} memberIntro={member.intro}/>
-                      }
-                      </button> */}
                     </li>
                   )
                 })
