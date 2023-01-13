@@ -1,3 +1,7 @@
+.pageTitle {
+  margin-bottom: 80px;
+}
+
 .reportList {
   display: flex;
   flex-wrap: wrap;
@@ -103,6 +107,5 @@
     transition: 0.1s ease;
     background-color: $lightBlue;
     color: $white;
-    color: rgb(255, 255, 255)
   }
 }

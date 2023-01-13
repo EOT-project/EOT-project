@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Opportunity from './pages/Opportunity';
 import CallToAction from './pages/CallToAction';
 import NewsRoom from './pages/Newsroom';
+import Resources from './pages/Resources';
 import ErrorPage from './pages/ErrorPage';
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/theopportunity' element={<Opportunity/>}/>
         <Route path='/calltoaction'element={<CallToAction/>}/>
         <Route path='/newsroom' element={<NewsRoom/>} />
+        <Route path='/resources' element={<Resources/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer/>

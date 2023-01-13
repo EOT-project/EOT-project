@@ -28,7 +28,7 @@ const Report = () => {
           setLoading(false);
         }
       } catch (error) {
-        //ToDo: show user error retrieving member list
+        //show user error retrieving member list
         console.log(`Error fetching members: ${error}`);
         setError(error);
         setLoading(false);
@@ -45,6 +45,7 @@ const Report = () => {
 
   return (
     <section className="report">
+      <h2 className="pageTitle">Resources</h2>
       <ul className="reportList">
       {
         loading
