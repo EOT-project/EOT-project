@@ -22,7 +22,7 @@ const Supporters = () => {
         })
 
         if (!!res) {
-          const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, intro: item?.fields?.intro, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, id: item?.sys?.id})) || [];
           setMembers(items);
           setLoading(false);
           }
@@ -69,9 +69,8 @@ const Supporters = () => {
                       <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
                     }
                   </div>
-                  <h2 className="membersName">{members[0].name}</h2>
-                  <h4 className="membersTitle">{members[0].title}</h4>
-                  <p className="membersIntro">{members[0].intro}</p>
+                  <div className="membersName"><h3>{members[0].name}</h3></div>
+                  <div className="membersTitle"><h4>{members[0].title}</h4></div>
                 </li>
                 :
                 members.map((member) => {
@@ -87,8 +86,8 @@ const Supporters = () => {
                           <img src={member.profilePic} alt={member.name} className="membersPic"/>
                         }
                       </div>
-                      <h2 className="membersName">{member.name}</h2>
-                      <h4 className="membersTitle">{member.title}</h4>
+                      <div className="membersName"><h3>{member.name}</h3></div>
+                      <div className="membersTitle"><h4>{member.title}</h4></div>
                     </li>
                   )
                 })

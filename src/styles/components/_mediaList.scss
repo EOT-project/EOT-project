@@ -1,21 +1,97 @@
-.mediaListContainer {
+.mediaList {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  li {
-    flex-basis: calc((100% / 5) - 40px);
-    margin: 60px 20px;
-    @media (max-width: 890px) {
-      flex-basis: calc((100% / 4) - 40px);
-      margin: 40px 20px;
+  align-items: center;
+  gap: 30px;
+  .mediaContainer {
+    flex-basis: calc(100%/3 - 20px);
+    margin-bottom: 60px;
+    .mediaBg {
+      box-shadow: 5px 5px 5px $darkGray, -5px -5px 5px $darkGray;
+      border-radius: 10px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 30px 35px;
     }
-    @media (max-width: 590px) {
-      flex-basis: calc((100% / 3) - 40px);
+  }
+  @media(max-width: 753px) {
+    justify-content: space-between;
+    .mediaContainer{
+      flex-basis: calc(50% - 15px);
+      margin-bottom: 30px;
     }
-    @media (max-width: 414px) {
-      flex-basis: calc((100% / 3) - 40px);
-      margin: 20px;
+  }
+  @media(max-width: 590px) {
+    justify-content: center;
+    gap: 20px;
+    .mediaContainer {
+      flex-basis: calc(100% - 50px);
     }
+  }
+}
+
+.mediaType {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $white;
+  text-shadow: 0 2px 4px $darkGray;
+  @media(max-width: 845px) {
+    font-size: 0.6rem;
+    line-height: 1rem;
+  }
+  @media(max-width: 324px) {
+    font-size: 0.5rem;
+    line-height: 0.8rem;
+  }
+}
+
+.mediaTitle {
+  font-weight: 800;
+  color: $white;
+  height: 12rem;
+  max-width: 70%;
+  text-align: left;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  
+  @media(max-width: 845px) {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  @media(max-width: 324px) {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+}
+
+.mediaButton {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  font-weight: bold;
+  padding: 10px 35px;
+  border-radius: 5px;
+  min-width: 50%;
+  background-color: $white;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  color: $gray;
+  box-shadow: 2px 2px 5px $lightBlue, -2px -2px 5px $lightBlue;
+  &:hover {
+    scale: 1.05;
+    transition: 0.1s ease;
+    background-color: $lightBlue;
+    color: $white;
+    color: rgb(255, 255, 255)
   }
 }
