@@ -4,7 +4,7 @@ import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import ErrorData from "./ErrorData";
 
-const ArtcicleCallToAction = () => {
+const ArticleCallToAction = () => {
 
     const [ mainCard, setMainCard ] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -58,4 +58,4 @@ const ArtcicleCallToAction = () => {
     );
 }
 
-export default ArtcicleCallToAction;
+export default ArticleCallToAction;

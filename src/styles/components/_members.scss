@@ -64,8 +64,11 @@
     .membersIntro {
       overflow: visible;
       display: block;
-      height: auto;
-      overflow-wrap: break-word;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
+      max-width: 100%;
+      aspect-ratio: 132 / 101;
     }
   }
 }
