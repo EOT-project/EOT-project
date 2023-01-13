@@ -375,4 +375,10 @@ p {
 
 .factsStatements {
   width: 90%;
+  @media (max-width: 590px) {
+    width: 100%;
+  }
+  h2 {
+    margin-bottom: 50px;
+  }
 }
