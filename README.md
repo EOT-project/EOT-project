@@ -10,3 +10,29 @@ See it live [here.](https://eot-dev.netlify.app/)
 - JavaScript
 - React
 - Contentful
+
+## Setup
+
+Clone the project
+
+```bash
+ https://github.com/EOT-project/EOT-project.git
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
