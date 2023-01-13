@@ -16,7 +16,7 @@ const ArticleHome = () => {
                 const res = await Client.getEntries({
                     content_type: "articleHome"
                 })
-                console.log(res.items);
+                
                 if(!!res) {
                     const items = res?.items.map(item => ({id: item?.sys?.id, title: item?.fields?.title, image: item?.fields?.backgroundImage?.fields?.file?.url, content: item?.fields?.content})) || [];
                     setMainCard(items);

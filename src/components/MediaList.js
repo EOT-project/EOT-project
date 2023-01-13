@@ -45,8 +45,8 @@ const MediaList = () => {
   }
 
   return (
-    <section className="mediaList">
-      <h2>Newsroom</h2>
+    <section className="media">
+      <h2 className="pageTitle">Newsroom</h2>
       <ul className="mediaList">
         {
           loading
