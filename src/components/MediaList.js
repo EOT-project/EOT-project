@@ -23,8 +23,7 @@ const MediaList = () => {
         })
         
         if (!!res) {
-          const items = res?.items.map(item => ({type: item?.fields?.name, title: item?.fields?.title, url: item?.fields?.url, image: item?.fields?.icon?.fields?.file?.url})) || [];
-
+          const items = res?.items.map(item => ({type: item?.fields?.name, title: item?.fields?.title, url: item?.fields?.url, image: item?.fields?.icon?.fields?.file?.url, id: item?.sys?.id})) || [];
           setMedia(items);
           setLoading(false);
         }
