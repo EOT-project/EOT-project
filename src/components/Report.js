@@ -28,7 +28,7 @@ const Report = () => {
           setLoading(false);
         }
       } catch (error) {
-        //ToDo: show user error retrieving member list
+        //show user error retrieving member list
         console.log(`Error fetching members: ${error}`);
         setError(error);
         setLoading(false);

@@ -5,10 +5,19 @@
   border-radius: 10px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
   padding: 50px 50px 70px;
-  // min-height: 60vh;
+  @media (max-width: 425px) {
+    padding: 50px 30px 70px;
+  }
   h2 {
     margin-bottom: 30px;
     width: 50%;
+    //SHOULD WE JUST GO TO A 100%??
+    @media (max-width: 890px) {
+      width: 60%;
+    }
+    @media (max-width: 710px) {
+      width: 100%;
+    }
   }
   .contentBlockContainer {
     width: 60%;
