@@ -1,49 +1,50 @@
 .reportList {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   align-items: center;
   gap: 30px;
   .reportContainer {
-    flex-basis: calc(100%/3 - 100px);
+    flex-basis: calc(25% - 20px);
     margin-bottom: 60px;
-    div {
+    .reportBg {
       border-radius: 10px;
-      height: 350px;
+      height: auto;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 15px;
       align-items: flex-start;
-      padding: 40px 50px;
+      gap: 10px;
+      padding: 30px 35px;
     }
   }
-  .reportContainer:nth-child(3),
-  .reportContainer:nth-child(4),
-  .reportContainer:nth-child(9),
-  .reportContainer:nth-child(10) {
-    flex-basis: calc(45% - 30px);
+  .reportContainer:nth-child(6n-3),
+  .reportContainer:nth-child(6n-2) {
+    flex-basis: calc(50% - 20px);
   }
-  .reportContainer:nth-child(3) {
-    flex-grow: 1;
+  @media(max-width: 993px) {
+    justify-content: space-between;
+    .reportContainer,
+    .reportContainer:nth-child(6n-3),
+    .reportContainer:nth-child(6n-2) {
+      flex-basis: calc(50% - 15px);
+      margin-bottom: 40px;
+    }
   }
   @media(max-width: 753px) {
-    justify-content: center;
+    justify-content: space-between;
     .reportContainer,
-    .reportContainer:nth-child(3),
-    .reportContainer:nth-child(4),
-    .reportContainer:nth-child(9),
-    .reportContainer:nth-child(10) {
-      flex-basis: calc(50% - 50px);
+    .reportContainer:nth-child(6n-3),
+    .reportContainer:nth-child(6n-2) {
+      flex-basis: calc(50% - 15px);
+      margin-bottom: 30px;
     }
   }
   @media(max-width: 590px) {
     justify-content: center;
+    gap: 20px;
     .reportContainer,
-    .reportContainer:nth-child(3),
-    .reportContainer:nth-child(4),
-    .reportContainer:nth-child(9),
-    .reportContainer:nth-child(10) {
+    .reportContainer:nth-child(6n-3),
+    .reportContainer:nth-child(6n-2) {
       flex-basis: calc(100% - 50px);
     }
   }
@@ -53,8 +54,17 @@
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 500;
   color: $white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
+  @media(max-width: 845px) {
+    font-size: 0.6rem;
+    line-height: 1rem;
+  }
+  @media(max-width: 324px) {
+    font-size: 0.5rem;
+    line-height: 0.8rem;
+  }
 }
 
 .reportTitle {
@@ -62,8 +72,17 @@
   font-weight: 800;
   color: $white;
   height: 250px;
+  max-width: 70%;
   text-align: left;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
+  @media(max-width: 845px) {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  @media(max-width: 324px) {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
 }
 
 .reportButton {
@@ -76,16 +95,14 @@
   border-radius: 5px;
   min-width: 50%;
   background-color: $white;
-  p {
-    color: $gray;
-  }
+  font-size: 0.7rem;
+  line-height: 1rem;
+  color: $gray;
   &:hover {
-    scale: 1.08;
+    scale: 1.05;
     transition: 0.1s ease;
     background-color: $lightBlue;
-    p {
-      color: $white;
-      color: rgb(255, 255, 255)
-    }
+    color: $white;
+    color: rgb(255, 255, 255)
   }
 }
