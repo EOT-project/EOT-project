@@ -1,4 +1,10 @@
 nav {
+  @media (max-width: 890px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 20px;
+  }
   .wrapper {
     width: 85%;
   }
@@ -17,5 +23,8 @@ nav {
     color: $darkGray;
     // font-size: 14px;
     font-weight: 800;
+    @media (max-width: 425px) {
+      flex-direction: column;
+    }
   }
 }
