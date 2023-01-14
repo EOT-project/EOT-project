@@ -50,7 +50,10 @@ const ContentBlock = () => {
       {
         loading
         ?
-          "loading"
+        <div className='loadingContainer'>
+          <p>Loading</p>
+          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
         :
           contents.length !== 0
           ?

@@ -39,21 +39,28 @@ const ArticleCallToAction = () => {
 
     return (
         <section className="article">
-        {
+             <div className='loadingContainer'>
+          <p>Loading</p>
+          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        {/* {
             loading
             ?
-            "loading"
+            <div className='loadingContainer'>
+                <p>Loading</p>
+                <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
             :
             mainCard.map((item) => {
                 return <MainCard key={item} image={item.image}>
-                    <h2>{item.title}</h2>
-                    <div className="contentBlockContainer">
+                    <h2 className="loading">{item.title}</h2>
+                    <div className="contentBlockContainer loading">
                         {documentToReactComponents(item.content)}
                     </div>
                 </MainCard>
 
             })
-        }                
+        }                 */}
     </section>
     );
 }

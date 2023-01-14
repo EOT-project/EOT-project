@@ -4,6 +4,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 110px;
+  @media (max-width: 590px) {
+    width: 90%;
+  }
+
   .memberSection {
     color: $gray;
     display: inline-block;
@@ -35,11 +39,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     .membersPic {
       object-fit: cover;
       object-position: top;
       border-radius: 10px;
-      max-width: 100%;
+      width: 100%;
       aspect-ratio: 132 / 101;
     }
   }
@@ -47,6 +52,10 @@
     text-align: center;
     margin: 20px 0 10px 0;
     height: 3rem;
+    @media (max-width: 663px) {
+      margin: 20px 0 0;
+      height: 1.5rem;
+    }
     h3 {
       font-size: 1.3rem;
       font-weight: 500;
