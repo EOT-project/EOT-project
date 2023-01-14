@@ -53,7 +53,7 @@ const Supporters = () => {
           ?
           <div className="supporters">
             <h4 className="memberSection">Meet our supporters</h4>
-            <h1 className="memberType">Supporters</h1>
+            <h2 className="memberType">Supporters</h2>
             <ul className="membersListContainer">
               {
                 members.length === 1

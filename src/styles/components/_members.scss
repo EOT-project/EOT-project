@@ -15,6 +15,8 @@
   .memberType {
     margin-bottom: 50px;
     font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 2.2rem;
   }
 }
 
@@ -23,7 +25,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: 6rem 2rem;
+  gap: 4rem 2rem;
 }
 
 .membersList {
@@ -44,40 +46,43 @@
     }
   }
   .membersName {
-    text-align: center;
-    margin: 20px 0 10px 0;
-    height: 3rem;
     h3 {
+      text-align: center;
+      margin: 20px 0 10px 0;
+      height: 3rem;
       font-size: 1.3rem;
       font-weight: 500;
     }
   }
   .membersTitle {
-    text-align: center;
-    max-width: 100%;
-    height: auto;
-    font-weight: 600;
-    margin: 10px 0;
-    overflow: hidden;
-    letter-spacing: -1px;
     h4 {
+      text-align: center;
+      max-width: 100%;
+      height: auto;
+      font-weight: 600;
+      margin: 10px 0;
+      overflow: hidden;
+      letter-spacing: -1px;
       color: $gray;
     }
   }
   .membersIntro {
-    margin-top: 10px;
-    max-width: 100%;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
-    text-align: center;
+    p {
+      margin-top: 10px;
+      max-width: 100%;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      text-align: center;
+      word-break: break-word;
+    }
   }
 }
 
 @media(max-width: 1103px) {
   .membersListContainer {
-    gap: 5rem 1.5rem;
+    gap: 3.5rem 1.5rem;
     .membersList {
       flex-basis: calc(100% / 3 - 30px);
     }
@@ -86,7 +91,7 @@
 
 @media(max-width: 832px) {
   .membersListContainer {
-    gap: 3rem 1rem;
+    gap: 2.5rem 1rem;
     .membersList {
       flex-basis: calc(100% / 2 - 40px);
     }
@@ -95,7 +100,7 @@
 
 @media(max-width: 663px) {
   .membersListContainer {
-    gap: 3rem;
+    gap: 2rem;
     .membersList {
       flex-basis: calc(100% - 50px);
     }

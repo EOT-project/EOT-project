@@ -53,7 +53,7 @@ const Committee = () => {
           ?
           <div className="committee">
             <h4 className="memberSection">Meet our committee</h4>
-            <h1 className="memberType">Steering Committee</h1>
+            <h2 className="memberType">Steering Committee</h2>
             <ul className="membersListContainer">
               {
               members.length === 1
