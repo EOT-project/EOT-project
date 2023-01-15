@@ -3,8 +3,8 @@ import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const ContentOpportunity = () => {
-  
+const ContentOpportunity = (props) => {
+
   const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,11 +13,12 @@ const ContentOpportunity = () => {
     const getContents = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "contents"
+          content_type: "contentOpportunity",
+          order: "fields.order"
         })
-        console.log(res.items);
+        
         if (!!res) {
-          const items = res?.items.map(item => ({page: item?.fields?.page, title: item?.fields?.title, context: item?.fields?.context, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({title: item?.fields?.title, context: item?.fields?.context, id: item?.sys?.id})) || [];
           setContents(items);
           setLoading(false);
           }
@@ -46,39 +47,17 @@ const ContentOpportunity = () => {
         :
           contents.length !== 0
           ?
-            contents.length === 1
+            contents.length >= props.order
             ?
-              contents[0].page === 'opportunity'
-              ?
-                contents[0].title
-                  ? <>
-                      <h3>{contents[0].title}</h3>
-                      {documentToReactComponents(contents[0].context)}
-                    </>
-                  : <>
-                      {documentToReactComponents(contents[0].context)}
-                    </>
-              : null 
-            :
-              contents.map((content, index) => {
-                return (
-                  <>
-                  {
-                  content.page === 'opportunity'
-                  ?
-                    content.title
-                    ? <>
-                        <h3>{content.title}</h3>
-                        {documentToReactComponents(content.context)}
-                      </>
-                    : <>
-                        {documentToReactComponents(content.context)}
-                      </>
-                  : null
-                  }
-                  </>
-                )
-              })
+              contents[props.order - 1].title
+              ? <>
+                  <h3>{contents[props.order - 1].title}</h3>
+                  {documentToReactComponents(contents[props.order - 1].context)}
+                </>
+              : <>
+                  {documentToReactComponents(contents[props.order - 1].context)}
+                </>
+            : null
           : null
       }
     </div>

@@ -11,9 +11,9 @@ const Opportunity = () => {
             <Articles />
             <section className="factsStatements">
                 <ImageGallery content={true}/>
-                <ContentOpportunity />
+                <ContentOpportunity order={1}/>
                 <ImageGallery content={false}/>
-                <ContentOpportunity />
+                <ContentOpportunity order={2}/>
                 <ImageGallery  content={false}/>
             </section>
         </main>
