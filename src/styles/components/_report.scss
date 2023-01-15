@@ -49,7 +49,7 @@
     .reportContainer,
     .reportContainer:nth-child(6n-3),
     .reportContainer:nth-child(6n-2) {
-      flex-basis: calc(100% - 50px);
+      flex-basis: 100%;
     }
   }
 }

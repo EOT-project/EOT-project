@@ -10,19 +10,4 @@
   p {
     width: 30%;
   }
-  .goBackHome {
-    padding: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 15px 35px;
-    border-radius: 10px;
-    background-color: $lightBlue;
-    color: $white;
-    &:hover {
-      scale: 1.08;
-      transition: 0.1s ease;
-      background-color: $white;
-      color: $darkGray;
-    }
-  }
 }
