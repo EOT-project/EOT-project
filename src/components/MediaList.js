@@ -59,7 +59,7 @@ const MediaList = () => {
               <li key={media[0].id} className="mediaContainer">
                 <div style={{
                     backgroundImage: `url(${media[0].image})`,
-                    backgroundSize: `contain`,
+                    backgroundSize: `cover`,
                     backgroundRepeat: `no-repeat`,
                     backgroundPosition: `center`
                   }}>
@@ -74,7 +74,7 @@ const MediaList = () => {
                     <li key={item.id} className="mediaContainer">
                       <div className="mediaBg" style={{
                         backgroundImage: `url(${item.image})`,
-                        backgroundSize: `contain`,
+                        backgroundSize: `cover`,
                         backgroundRepeat: `no-repeat`,
                         backgroundPosition: `center`
                       }}>

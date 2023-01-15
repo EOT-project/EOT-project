@@ -107,7 +107,10 @@
   .membersListContainer {
     gap: 2rem;
     .membersList {
-      flex-basis: calc(100% - 50px);
+      flex-basis: 100%;
+    }
+    .membersName {
+      font-size: 1rem;
     }
   }
 }

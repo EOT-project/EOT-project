@@ -7,7 +7,7 @@ const CallToAction = () => {
         <div className="wrapper">
             <ArticleCallToAction />
             <section className="factsStatements">
-                <ContentCallToAction />
+                <ContentCallToAction order={1} />
             </section>
         </div>
     );

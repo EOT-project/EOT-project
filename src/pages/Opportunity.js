@@ -12,9 +12,9 @@ const Opportunity = () => {
             <section className="factsStatements">
                 <h2>The Benefits of Employee Ownership</h2>
                 <ImageGallery content={true}/>
-                <ContentOpportunity />
+                <ContentOpportunity order={1}/>
                 <ImageGallery content={false}/>
-                <ContentOpportunity />
+                <ContentOpportunity order={2}/>
                 <ImageGallery  content={false}/>
             </section>
         </main>
