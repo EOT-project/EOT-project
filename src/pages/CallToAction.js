@@ -1,5 +1,5 @@
 import ArticleCallToAction from "../components/ArticleCallToAction";
-import ContentBlock from "../components/ContentBlock";
+import ContentCallToAction from "../components/ContentCallToAction";
 
 const CallToAction = () => {
     
@@ -7,7 +7,7 @@ const CallToAction = () => {
         <div className="wrapper">
             <ArticleCallToAction />
             <section className="factsStatements">
-                <ContentBlock />
+                <ContentCallToAction />
             </section>
         </div>
     );

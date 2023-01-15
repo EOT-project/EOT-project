@@ -1,6 +1,6 @@
 import Articles from "../components/Articles";
 import ImageGallery from "../components/ImageGallery";
-import ContentBlock from "../components/ContentBlock";
+import ContentOpportunity from "../components/ContentOpportunity";
 
 const Opportunity = () => {
 
@@ -12,9 +12,9 @@ const Opportunity = () => {
             <section className="factsStatements">
                 <h2>The Benefits of Employee Ownership</h2>
                 <ImageGallery content={true}/>
-                <ContentBlock />
+                <ContentOpportunity />
                 <ImageGallery content={false}/>
-                <ContentBlock />
+                <ContentOpportunity />
                 <ImageGallery  content={false}/>
             </section>
         </main>
