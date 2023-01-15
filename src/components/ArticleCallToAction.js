@@ -40,7 +40,6 @@ const ArticleCallToAction = () => {
     return (
         <section className="article">
              <div className='loadingContainer'>
-          <p>Loading</p>
           <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
         {/* {
