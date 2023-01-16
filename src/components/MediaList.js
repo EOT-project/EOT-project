@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Loader from "../UI/Loader";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 
@@ -50,9 +51,7 @@ const MediaList = () => {
         {
           loading
           ?
-          <div className='loadingContainer'>
-            <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-          </div>
+          <Loader/>
           :
             media.length !== 0
             ?
@@ -78,7 +77,7 @@ const MediaList = () => {
                 media.map((item) => {
                   return (
                     <li key={item.id} className="mediaContainer">
-                      <img src={`${item.image}`} className="mediaImg"/>
+                      <img src={`${item.image}`}/>
                       {/* <div className="mediaBg" 
                       style={{
                         backgroundImage: `url(${item.image})`,

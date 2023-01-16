@@ -4,6 +4,7 @@ import ContentOpportunity from "./ContentOpportunity";
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import Loader from "../UI/Loader";
 
 // create a contentContainer
 // retrieve context, title, page uploads from Contents content model
@@ -50,9 +51,7 @@ const ContentBlock = () => {
       {
         loading
         ?
-        <div className='loadingContainer'>
-          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
+        <Loader/>
         :
           contents.length !== 0
           ?

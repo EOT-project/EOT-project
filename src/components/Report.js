@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Loader from "../UI/Loader";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 
@@ -50,9 +51,7 @@ const Report = () => {
       {
         loading
         ?
-        <div className='loadingContainer'>
-          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
+          <Loader/>
         :
           report.length !== 0
           ?

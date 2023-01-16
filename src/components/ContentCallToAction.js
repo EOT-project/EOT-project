@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Loader from "../UI/Loader";
 
 const ContentCallToAction = (props) => {
   
@@ -42,9 +43,7 @@ const ContentCallToAction = (props) => {
       {
         loading
         ?
-        <div className='loadingContainer'>
-          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
+        <Loader/>
         :
           contents.length !== 0
           ?
