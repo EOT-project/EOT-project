@@ -45,6 +45,7 @@ const Report = () => {
 
   return (
     <section className="report">
+      <h2 className="pageTitle">Resources</h2>
       <ul className="reportList">
       {
         loading

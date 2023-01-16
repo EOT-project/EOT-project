@@ -1,6 +1,6 @@
 import Articles from "../components/Articles";
 import ImageGallery from "../components/ImageGallery";
-import ContentBlock from "../components/ContentBlock";
+import ContentOpportunity from "../components/ContentOpportunity";
 
 const Opportunity = () => {
 
@@ -11,9 +11,9 @@ const Opportunity = () => {
             <Articles />
             <section className="factsStatements">
                 <ImageGallery content={true}/>
-                <ContentBlock />
+                <ContentOpportunity order={1}/>
                 <ImageGallery content={false}/>
-                <ContentBlock />
+                <ContentOpportunity order={2}/>
                 <ImageGallery  content={false}/>
             </section>
         </main>

@@ -23,8 +23,7 @@ const MediaList = () => {
         })
         
         if (!!res) {
-          const items = res?.items.map(item => ({type: item?.fields?.name, title: item?.fields?.title, url: item?.fields?.url, image: item?.fields?.icon?.fields?.file?.url})) || [];
-
+          const items = res?.items.map(item => ({type: item?.fields?.name, title: item?.fields?.title, url: item?.fields?.url, image: item?.fields?.icon?.fields?.file?.url, id: item?.sys?.id})) || [];
           setMedia(items);
           setLoading(false);
         }
@@ -45,8 +44,8 @@ const MediaList = () => {
   }
 
   return (
-    <section className="mediaList">
-      <h2>Newsroom</h2>
+    <section className="media">
+      <h2 className="pageTitle">Newsroom</h2>
       <ul className="mediaList">
         {
           loading
@@ -60,7 +59,7 @@ const MediaList = () => {
               <li key={media[0].id} className="mediaContainer">
                 <div style={{
                     backgroundImage: `url(${media[0].image})`,
-                    backgroundSize: `contain`,
+                    backgroundSize: `cover`,
                     backgroundRepeat: `no-repeat`,
                     backgroundPosition: `center`
                   }}>
@@ -75,7 +74,7 @@ const MediaList = () => {
                     <li key={item.id} className="mediaContainer">
                       <div className="mediaBg" style={{
                         backgroundImage: `url(${item.image})`,
-                        backgroundSize: `contain`,
+                        backgroundSize: `cover`,
                         backgroundRepeat: `no-repeat`,
                         backgroundPosition: `center`
                       }}>
