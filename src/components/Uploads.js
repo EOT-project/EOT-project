@@ -4,6 +4,7 @@ import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import ReactPlayer from 'react-player';
 import ErrorData from "./ErrorData";
+import Loader from "../UI/Loader";
 
 //create a container that is full width
 //get uploads from video content model
@@ -52,9 +53,7 @@ const Uploads = () => {
       {
         loading
         ? 
-        <div className='loadingContainer'>
-          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
+        <Loader/>
         : 
           videos.length === 1
           ?
