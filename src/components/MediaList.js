@@ -23,7 +23,7 @@ const MediaList = () => {
         })
         
         if (!!res) {
-          const items = res?.items.map(item => ({type: item?.fields?.name, title: item?.fields?.title, url: item?.fields?.url, image: item?.fields?.icon?.fields?.file?.url, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({type: item?.fields?.name, title: item?.fields?.title, url: item?.fields?.url, image: item?.fields?.icon?.fields?.file?.url, imageTitle: item?.fields?.icon?.fields?.title, id: item?.sys?.id})) || [];
           setMedia(items);
           setLoading(false);
         }
@@ -59,8 +59,7 @@ const MediaList = () => {
               media.length === 1
               ?
               <li key={media[0].id} className="mediaContainer">
-                <img src={`${media[0].image}`} className="mediaImg"/>
-                {/* <div 
+                <div 
                 style={{
                     backgroundImage: `url(${media[0].image})`,
                     backgroundSize: `cover`,
@@ -68,18 +67,16 @@ const MediaList = () => {
                     backgroundPosition: `center`
                   }}
                   >
-
-                </div> */}
-                <h4 className="mediaType">{media[0].type}</h4>
+                  <h4 className="mediaType">{media[0].type}</h4>
                   <h3 className="mediaTitle">{media[0].title}</h3>
                   <a href={media[0].url} target="_blank" rel="noreferrer" className="mediaButton">READ</a>
+                </div>
               </li>
               :
                 media.map((item) => {
                   return (
                     <li key={item.id} className="mediaContainer">
-                      <img src={`${item.image}`} className="mediaImg"/>
-                      {/* <div className="mediaBg" 
+                      <div className="mediaBg" 
                       style={{
                         backgroundImage: `url(${item.image})`,
                         backgroundSize: `cover`,
@@ -87,11 +84,10 @@ const MediaList = () => {
                         backgroundPosition: `center`
                       }}
                       >
-                       
-                      </div> */}
-                      <h4 className="mediaType">{item.type}</h4>
+                        <h4 className="mediaType">{item.type}</h4>
                         <h3 className="mediaTitle">{item.title}</h3>
                         <a href={item.url} target="_blank" rel="noreferrer" className="mediaButton">READ</a>
+                      </div>
                     </li>
                   )
                 })
