@@ -21,6 +21,16 @@
   }
   .contentBlockContainer {
     width: 60%;
+    // animation: fade-in 6s forwards;
+    // @keyframes fade-in {
+    //   0% {
+    //     opacity: 0;
+    //   }
+    //   100% {
+    //     opacity: 1;
+    //   }
+    // }
+
     @media (max-width: 890px) {
       width: 100%;
     }
@@ -28,6 +38,17 @@
     p {
       text-align: left;
       margin-bottom: 25px;
+    }
+  }
+  .loading {
+    animation: fade-in 6s forwards;
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   }
 }

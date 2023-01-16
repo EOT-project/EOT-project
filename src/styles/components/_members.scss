@@ -4,6 +4,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 110px;
+  @media (max-width: 590px) {
+    width: 90%;
+  }
+
   .memberSection {
     color: $gray;
     display: inline-block;
@@ -37,11 +41,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     .membersPic {
       object-fit: cover;
       object-position: top;
       border-radius: 10px;
-      max-width: 100%;
+      width: 100%;
       aspect-ratio: 132 / 101;
     }
   }
@@ -80,7 +85,7 @@
   }
 }
 
-@media(max-width: 1103px) {
+@media (max-width: 1103px) {
   .membersListContainer {
     gap: 3.5rem 1.5rem;
     .membersList {
@@ -89,7 +94,7 @@
   }
 }
 
-@media(max-width: 832px) {
+@media (max-width: 832px) {
   .membersListContainer {
     gap: 2.5rem 1rem;
     .membersList {
@@ -98,7 +103,7 @@
   }
 }
 
-@media(max-width: 663px) {
+@media (max-width: 663px) {
   .membersListContainer {
     gap: 2rem;
     .membersList {

@@ -47,7 +47,9 @@ const Committee = () => {
       {
         loading
         ?
-          "loading"
+        <div className='loadingContainer'>
+          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
         :
           members.length !== 0
           ?
