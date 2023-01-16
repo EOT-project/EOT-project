@@ -3,6 +3,7 @@ import MainCard from "../UI/MainCard";
 import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import ErrorData from "./ErrorData";
+import Loader from "../UI/Loader";
 
 const ArticleCallToAction = () => {
 
@@ -43,9 +44,7 @@ const ArticleCallToAction = () => {
         {
             loading
             ?
-            <div className='loadingContainer'>
-                <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            </div>
+            <Loader/>
             :
             mainCard.map((item) => {
                 return <MainCard key={item} image={item.image}>
