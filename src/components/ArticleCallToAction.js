@@ -39,16 +39,13 @@ const ArticleCallToAction = () => {
 
     return (
         <section className="article">
-             <div className='loadingContainer'>
-          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
-        {/* {
+        
+        {
             loading
             ?
             <div className='loadingContainer'>
-                <p>Loading</p>
                 <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-          </div>
+            </div>
             :
             mainCard.map((item) => {
                 return <MainCard key={item} image={item.image}>
@@ -59,7 +56,7 @@ const ArticleCallToAction = () => {
                 </MainCard>
 
             })
-        }                 */}
+        }                 
     </section>
     );
 }

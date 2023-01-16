@@ -51,7 +51,6 @@ const ContentBlock = () => {
         loading
         ?
         <div className='loadingContainer'>
-          <p>Loading</p>
           <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
         :

@@ -50,7 +50,9 @@ const Report = () => {
       {
         loading
         ?
-          "loading"
+        <div className='loadingContainer'>
+          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
         :
           report.length !== 0
           ?

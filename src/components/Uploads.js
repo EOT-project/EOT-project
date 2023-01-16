@@ -52,7 +52,9 @@ const Uploads = () => {
       {
         loading
         ? 
-          "loading"
+        <div className='loadingContainer'>
+          <div className='ldsRoller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
         : 
           videos.length === 1
           ?
