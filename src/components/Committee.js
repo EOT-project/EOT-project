@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import Loader from "../UI/Loader";
 
 //create a member container displays maximum of 4 members
 //retrieve profilePic, name, title, intro uploads from steeringCommittee content model
@@ -47,7 +48,7 @@ const Committee = () => {
       {
         loading
         ?
-          "loading"
+        <Loader/>
         :
           members.length !== 0
           ?

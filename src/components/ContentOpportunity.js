@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Loader from "../UI/Loader";
 
 const ContentOpportunity = (props) => {
 
@@ -43,7 +44,7 @@ const ContentOpportunity = (props) => {
       {
         loading
         ?
-          "loading"
+        <Loader/>
         :
           contents.length !== 0
           ?

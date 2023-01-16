@@ -2,20 +2,15 @@
   margin-bottom: 80px;
 }
 
-.mediaList {
+.blogList {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 30px;
-  .mediaContainer {
+  .blogContainer {
     flex-basis: calc(25% - 20px);
     margin-bottom: 60px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .mediaBg {
+    .blogBg {
       border-radius: 10px;
       height: auto;
       display: flex;
@@ -23,27 +18,27 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 10px;
-      padding: 30px 25px;
+      padding: 30px 35px;
     }
   }
-  .mediaContainer:nth-child(6n-3),
-  .mediaContainer:nth-child(6n-2) {
+  .blogContainer:nth-child(6n-3),
+  .blogContainer:nth-child(6n-2) {
     flex-basis: calc(50% - 20px);
   }
   @media(max-width: 993px) {
     justify-content: space-between;
-    .mediaContainer,
-    .mediaContainer:nth-child(6n-3),
-    .mediaContainer:nth-child(6n-2) {
+    .blogContainer,
+    .blogContainer:nth-child(6n-3),
+    .blogContainer:nth-child(6n-2) {
       flex-basis: calc(50% - 15px);
       margin-bottom: 40px;
     }
   }
   @media(max-width: 753px) {
     justify-content: space-between;
-    .mediaContainer,
-    .mediaContainer:nth-child(6n-3),
-    .mediaContainer:nth-child(6n-2) {
+    .blogContainer,
+    .blogContainer:nth-child(6n-3),
+    .blogContainer:nth-child(6n-2) {
       flex-basis: calc(50% - 15px);
       margin-bottom: 30px;
     }
@@ -51,22 +46,22 @@
   @media(max-width: 590px) {
     justify-content: center;
     gap: 20px;
-    .mediaContainer,
-    .mediaContainer:nth-child(6n-3),
-    .mediaContainer:nth-child(6n-2) {
+    .blogContainer,
+    .blogContainer:nth-child(6n-3),
+    .blogContainer:nth-child(6n-2) {
       flex-basis: 100%;
     }
   }
 }
 
-.mediaType {
+.blogType {
   display: inline-block;
   text-align: left;
   text-transform: uppercase;
   font-weight: 500;
   height: 2.5rem;
   color: $white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
   @media(max-width: 845px) {
     font-size: 0.6rem;
     line-height: 1rem;
@@ -77,13 +72,13 @@
   }
 }
 
-.mediaTitle {
+.blogTitle {
   font-weight: 800;
   color: $white;
   height: 12rem;
   max-width: 70%;
   text-align: left;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 8;
@@ -98,7 +93,7 @@
   }
 }
 
-.mediaButton {
+.blogButton {
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
@@ -106,8 +101,7 @@
   font-weight: bold;
   padding: 10px 35px;
   border-radius: 5px;
-  // min-width: 50%;
-  width: 100px;
+  min-width: 50%;
   background-color: $white;
   font-size: 0.7rem;
   line-height: 1rem;

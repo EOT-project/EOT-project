@@ -1,5 +1,5 @@
 nav {
-  @media (max-width: 890px) {
+  @media (max-width: 980px) {
     flex-direction: column;
     align-items: center;
     gap: 30px;
@@ -23,7 +23,7 @@ nav {
     color: $darkGray;
     // font-size: 14px;
     font-weight: 800;
-    @media (max-width: 425px) {
+    @media (max-width: 545px) {
       flex-direction: column;
     }
   }

@@ -10,6 +10,7 @@ const Opportunity = () => {
         <main className="wrapper">
             <Articles />
             <section className="factsStatements">
+                <h2>The Benefits of Employee Ownership</h2>
                 <ImageGallery content={true}/>
                 <ContentOpportunity order={1}/>
                 <ImageGallery content={false}/>
