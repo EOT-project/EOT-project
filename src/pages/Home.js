@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main>
       <ArticleHome />
-      <section className="members">
+      <section className="members wrapper">
         <Committee />
         <Advisory />
         <Supporters />

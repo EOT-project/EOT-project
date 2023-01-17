@@ -54,52 +54,46 @@ const Supporters = () => {
           ?
           <div className="supporters">
             <div className="memberTypeContainer">
-              <h2 className="memberType wrapper">Supporters</h2>
+              <h2 className="memberType">Supporters</h2>
             </div>
-            <ul className="membersListContainer wrapper">
+            <ul className="membersListContainer">
               {
                 members.length === 1
                 ?
-                <li key={members[0].id} className="membersList" >
-                  <div className="topContainer">
-                    <div className='picContainer'>
-                      {
-                        !members[0].profilePic
-                        ?
-                        <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
-                        } alt={members[0].name} className="membersPic"/>
-                        :
-                        <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
-                      }
-                    </div>
-                    <div className="rightContainer">
-                      <div className="membersName"><h3>{members[0].name}</h3></div>
-                      <div className="membersTitle"><h4>{members[0].title}</h4></div>
-                    </div>
-                    <div className="membersIntro"><p>{members[0].intro}</p></div>
+                <li key={members[0].id} className="supportersList" >
+                  <div className='supporterPicContainer'>
+                    {
+                      !members[0].profilePic
+                      ?
+                      <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
+                      } alt={members[0].name} className="supporterPic"/>
+                      :
+                      <img src={members[0].profilePic} alt={members[0].name} className="supporterPic"/>
+                    }
+                  </div>
+                  <div className="supporterTextContainer">
+                    <div className="membersName"><h3>{members[0].name}</h3></div>
+                    <div className="membersTitle"><h4>{members[0].title}</h4></div>
                   </div>
                 </li>
                 :
                 members.map((member) => {
                   return (
-                    <li key={member.id} className="membersList" >
-                      <div className="topContainer">
-                        <div className='picContainer'>
-                          {
-                            !member.profilePic
-                            ?
-                            <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
-                            } alt={member.name} className="membersPic"/>
-                            :
-                            <img src={member.profilePic} alt={member.name} className="membersPic"/>
-                          }
-                        </div>
-                        <div className="rightContainer">
-                          <div className="membersName"><h3>{member.name}</h3></div>
-                          <div className="membersTitle"><h4>{member.title}</h4></div>
-                        </div>
+                    <li key={member.id} className="supportersList" >
+                      <div className='supporterPicContainer'>
+                        {
+                          !member.profilePic
+                          ?
+                          <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
+                          } alt={member.name} className="supporterPic"/>
+                          :
+                          <img src={member.profilePic} alt={member.name} className="supporterPic"/>
+                        }
                       </div>
-                      <div className="membersIntro"><p>{member.intro}</p></div>
+                      <div className="supporterTextContainer">
+                        <div className="membersName"><h3>{member.name}</h3></div>
+                        <div className="membersTitle"><h4>{member.title}</h4></div>
+                      </div>
                     </li>
                   )
                 })

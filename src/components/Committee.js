@@ -54,9 +54,9 @@ const Committee = () => {
           ?
           <div className="committee">
             <div className="memberTypeContainer">
-              <h2 className="memberType wrapper">Steering Committee</h2>
+              <h2 className="memberType">Steering Committee</h2>
             </div>
-            <ul className="membersListContainer wrapper">
+            <ul className="membersListContainer">
               {
               members.length === 1
                 ?

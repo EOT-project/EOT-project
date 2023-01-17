@@ -54,9 +54,9 @@ const Advisory = () => {
           ?
           <div className="advisory">
             <div className="memberTypeContainer">
-              <h2 className="memberType wrapper">Advisory Members</h2>
+              <h2 className="memberType">Advisory Members</h2>
             </div>
-            <ul className="membersListContainer wrapper">
+            <ul className="membersListContainer">
               {
                 members.length === 1
                 ?
