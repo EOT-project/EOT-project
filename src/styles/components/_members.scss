@@ -1,5 +1,4 @@
 .members {
-  width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,24 +6,25 @@
   @media (max-width: 590px) {
     width: 90%;
   }
-
-  .memberSection {
-    color: $gray;
-    display: inline-block;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: normal;
-    margin-bottom: 20px;
-  }
-  .memberType {
-    margin-bottom: 50px;
-    font-weight: 600;
-    font-size: 1.9rem;
-    line-height: 2.2rem;
+  .memberTypeContainer{
+    background-color: $lightBlue;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .memberType {
+      font-weight: 600;
+      font-size: 1.9rem;
+      line-height: 2.2rem;
+      text-transform: uppercase;
+      color: $white;
+    }
   }
 }
 
 .membersListContainer {
+  margin-top: 110px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -33,44 +33,9 @@
 }
 
 .membersList {
-  flex-basis: calc(100% / 4 - 30px);
+  flex-basis: calc(100% / 3 - 30px);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  .picContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    .membersPic {
-      object-fit: cover;
-      object-position: top;
-      border-radius: 10px;
-      width: 100%;
-      aspect-ratio: 132 / 101;
-    }
-  }
-  .membersName {
-    h3 {
-      text-align: center;
-      margin: 20px 0 10px 0;
-      height: 3rem;
-      font-size: 1.3rem;
-      font-weight: 500;
-    }
-  }
-  .membersTitle {
-    h4 {
-      text-align: center;
-      max-width: 100%;
-      height: auto;
-      font-weight: 600;
-      margin: 10px 0;
-      overflow: hidden;
-      letter-spacing: -1px;
-      color: $gray;
-    }
-  }
   .membersIntro {
     p {
       margin-top: 10px;
@@ -79,8 +44,58 @@
       overflow: hidden;
       -webkit-line-clamp: 8;
       -webkit-box-orient: vertical;
-      text-align: center;
+      text-align: left;
       word-break: break-word;
+    }
+  }
+}
+
+.topContainer {
+  align-self: flex-start;
+  display: flex;
+  gap: 10px;
+  .picContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    .membersPic {
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.rightContainer {
+  align-self: center;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  .membersName {
+    h3 {
+      text-align: left;
+      // margin: 20px 0 10px 0;
+      height: auto;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+  .membersTitle {
+    h4 {
+      text-align: left;
+      max-width: 100%;
+      height: auto;
+      font-weight: 600;
+      // margin: 10px 0;
+      overflow: hidden;
+      letter-spacing: -1px;
+      color: $gray;
     }
   }
 }

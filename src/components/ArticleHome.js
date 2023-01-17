@@ -39,7 +39,7 @@ const ArticleHome = () => {
     }
 
     return (
-        <section className="article">
+        <section className="article wrapper">
               {
                 loading
                 ?

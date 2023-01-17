@@ -53,43 +53,52 @@ const Advisory = () => {
           members.length !== 0
           ?
           <div className="advisory">
-            <h4 className="memberSection">Meet our advisory</h4>
-            <h2 className="memberType">Advisory Members</h2>
-            <ul className="membersListContainer">
+            <div className="memberTypeContainer">
+              <h2 className="memberType wrapper">Advisory Members</h2>
+            </div>
+            <ul className="membersListContainer wrapper">
               {
                 members.length === 1
                 ?
                 <li key={members[0].id} className="membersList" >
-                  <div className='picContainer'>
-                    {
-                      !members[0].profilePic
-                      ?
-                      <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
-                      } alt={members[0].name} className="membersPic"/>
-                      :
-                      <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
-                    }
+                  <div className="topContainer">
+                    <div className='picContainer'>
+                      {
+                        !members[0].profilePic
+                        ?
+                        <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
+                        } alt={members[0].name} className="membersPic"/>
+                        :
+                        <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
+                      }
+                    </div>
+                    <div className="rightContainer">
+                      <div className="membersName"><h3>{members[0].name}</h3></div>
+                      <div className="membersTitle"><h4>{members[0].title}</h4></div>
+                    </div>
+                    <div className="membersIntro"><p>{members[0].intro}</p></div>
                   </div>
-                  <div className="membersName"><h3>{members[0].name}</h3></div>
-                  <div className="membersTitle"><h4>{members[0].title}</h4></div>
-                  <div className="membersIntro"><p>{members[0].intro}</p></div>
                 </li>
                 :
                 members.map((member) => {
                   return (
                     <li key={member.id} className="membersList" >
-                      <div className='picContainer'>
-                        {
-                          !member.profilePic
-                          ?
-                          <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
-                          } alt={member.name} className="membersPic"/>
-                          :
-                          <img src={member.profilePic} alt={member.name} className="membersPic"/>
-                        }
+                      <div className="topContainer">
+                        <div className='picContainer'>
+                          {
+                            !member.profilePic
+                            ?
+                            <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
+                            } alt={member.name} className="membersPic"/>
+                            :
+                            <img src={member.profilePic} alt={member.name} className="membersPic"/>
+                          }
+                        </div>
+                        <div className="rightContainer">
+                          <div className="membersName"><h3>{member.name}</h3></div>
+                          <div className="membersTitle"><h4>{member.title}</h4></div>
+                        </div>
                       </div>
-                      <div className="membersName"><h3>{member.name}</h3></div>
-                      <div className="membersTitle"><h4>{member.title}</h4></div>
                       <div className="membersIntro"><p>{member.intro}</p></div>
                     </li>
                   )
