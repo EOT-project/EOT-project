@@ -29,6 +29,7 @@ footer {
         flex-direction: column;
         justify-content: space-between;
         gap: 10px;
+        text-transform: capitalize;
       }
     }
     @media (max-width: 890px) {
