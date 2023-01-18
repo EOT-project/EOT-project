@@ -22,7 +22,7 @@ const Supporters = () => {
           content_type: "supporters",
           order: "fields.priority"
         })
-        console.log(res.items);
+        
         if (!!res) {
           const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, id: item?.sys?.id})) || [];
           setMembers(items);
