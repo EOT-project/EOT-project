@@ -51,12 +51,6 @@
   font-size: 0.7rem;
   line-height: 1rem;
   color: $gray;
-  &:hover {
-    scale: 1.05;
-    transition: 0.15s ease;
-    background-color: $lightBlue;
-    color: $white;
-  }
 }
 
 @media (max-width: 1008px) {

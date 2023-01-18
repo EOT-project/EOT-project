@@ -78,13 +78,6 @@
       content: "->";
       margin-left: 10px;
     }
-    &:hover {
-      scale: 1.05;
-      transition: 0.1s ease;
-      background-color: $lightBlue;
-      color: $white;
-      padding-right: 10px;
-    }
   }
 }
 
