@@ -17,7 +17,7 @@ const InfographicOnly = (props) => {
                     order: "fields.order"
                 })
                 if(!!res) {
-                    console.log(res.items);
+                    
                     const items = res?.items.map(item =>({id: item?.sys?.id, image: item?.fields?.image?.fields?.file?.url, order: item?.fields?.order})) || [];
                     setInfographic(items);
                     setLoading(false);
@@ -30,7 +30,6 @@ const InfographicOnly = (props) => {
         }
         getInfographics();
     }, []);
-console.log(infographic);
 
     if (error) {
         return (

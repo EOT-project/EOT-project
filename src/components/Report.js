@@ -22,8 +22,9 @@ const Report = () => {
         const res = await Client.getEntries({
           content_type: "reports"
         })
+
         if (!!res) {
-          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.asset?.fields?.file?.url, url: item?.fields?.url, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url, url: item?.fields?.url, file: item?.fields?.asset?.fields?.file?.url, id: item?.sys?.id})) || [];
 
           setReport(items);
           setLoading(false);
@@ -46,7 +47,9 @@ const Report = () => {
 
   return (
     <section className="report">
-      <h2 className="pageTitle">Resources</h2>
+      <div className="pageTitleContainer">
+        <h2 className="pageTitle">Resources</h2>
+      </div>
       <ul className="reportList">
       {
         loading
@@ -66,7 +69,7 @@ const Report = () => {
                 }}>
                 <h4 className="reportType">{report[0].type}</h4>
                 <h3 className="reportTitle">{report[0].title}</h3>
-                <a href={report[0].url} target="_blank" rel="noreferrer" className="reportButton">READ</a>
+                <a href={report[0].url?report[0].url:report[0].file} target="_blank" rel="noreferrer" className="reportButton">READ</a>
               </div>
             </li>
             :
@@ -81,7 +84,7 @@ const Report = () => {
                     }}>
                       <h4 className="reportType">{item.type}</h4>
                       <h3 className="reportTitle">{item.title}</h3>
-                      <a href={item.url} target="_blank" rel="noreferrer" className="reportButton">READ</a>
+                      <a href={item.url?item.url:item.file} target="_blank" rel="noreferrer" className="reportButton">READ</a>
                     </div>
                   </li>
                 )
