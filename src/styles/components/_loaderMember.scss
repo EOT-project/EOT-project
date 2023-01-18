@@ -1,18 +1,123 @@
-@keyframes loadingPlaceholder {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 .loaderContainer {
-  margin-bottom: 110px;
-  animation: blink 1.5s step-start 0s infinite;
+  margin-bottom: 100px;
+  .loaderTitle,
+  .membersPic,
+  .membersName,
+  .membersTitle,
+  .membersIntro {
+    background-color: $lightGray;
+    display: block;
+  }
   .loaderTitleContainer {
+    margin: 100px 0;
     .loaderTitle {
-      margin: 110px 0;
+      height: 100px;
+    }
+  }
+  .topContainer {
+    margin-bottom: 20px;
+  }
+  .membersPic {
+    width: 125px;
+  }
+  .membersName {
+    width: 160px;
+    height: 60px;
+  }
+  .membersTitle {
+    width: 160px;
+    height: 70px;
+  }
+  .membersIntro {
+    width: 100%;
+    height: 220px;
+  }
+  @media(max-width: 1075px) {
+    .membersName {
+      width: 145px;
+    }
+    .membersTitle {
+      width: 145px;
+    }
+  }
+  @media(max-width: 1020px) {
+    .membersName {
+      width: 125px;
+    }
+    .membersTitle {
+      width: 125px;
+    }
+  }
+  @media(max-width: 925px) {
+    .membersName {
+      width: 115px;
+    }
+    .membersTitle {
+      width: 115px;
+    }
+  }
+  @media(max-width: 877px) {
+    .membersName {
+      width: 235px;
+    }
+    .membersTitle {
+      width: 235px;
+    }
+  }
+  @media(max-width: 832px) {
+    .membersName {
+      width: 205px;
+    }
+    .membersTitle {
+      width: 205px;
+    }
+  }
+  @media(max-width: 777px) {
+    .membersName {
+      width: 180px;
+    }
+    .membersTitle {
+      width: 180px;
+    }
+  }
+  @media(max-width: 717px) {
+    .membersName {
+      width: 150px;
+    }
+    .membersTitle {
+      width: 150px;
+    }
+  }
+  @media(max-width: 663px) {
+    .membersName {
+      width: 350px;
+    }
+    .membersTitle {
+      width: 350px;
+    }
+  }
+  @media(max-width: 575px) {
+    .membersName {
+      width: 250px;
+    }
+    .membersTitle {
+      width: 250px;
+    }
+  }
+  @media(max-width: 482px) {
+    .membersName {
+      width: 150px;
+    }
+    .membersTitle {
+      width: 150px;
+    }
+  }
+  @media(max-width: 414px) {
+    .membersName {
+      width: 100px;
+    }
+    .membersTitle {
+      width: 100px;
     }
   }
 }
