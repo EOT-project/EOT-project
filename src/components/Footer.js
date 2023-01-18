@@ -41,27 +41,27 @@ const Footer = () => {
 
     return (
         <footer>     
-                {
-                    footer.length !== 0 && footer.map((item, index) => {
-                        return (<div className="footerContainer" key={item.id}>
-                                        <Logo />
-                                    </div>
-                                    <div className="socialMediaContainer">
-                                        <p>{item.email}</p>
-                                        <ul >
-                                            {
-                                                item.socialMedia.map((item, index) => {
-                                                   //WILL ADD href WHEN PROVIDED BY CLIENT
-                                                   // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                                                   return <li key={index}><a href=""><p>{item}</p></a></li>
-                                                })
-                                            }
-                                        </ul>
-                                    </div> 
-                                </div>)
-                    })
-                }
-                     
+            {
+                footer.length !== 0 && footer.map((item, index) => {
+                    return (
+                            <div className="footerContainer" key={item.id}>
+                                <Logo />
+                                <div className="socialMediaContainer">
+                                    <p>{item.email}</p>
+                                    <ul >
+                                        {
+                                            item.socialMedia.map((item, index) => {
+                                                //WILL ADD href WHEN PROVIDED BY CLIENT
+                                                // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                                                return <li key={index}><a href=""><p>{item}</p></a></li>
+                                            })
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        )
+                })
+            }
         </footer>
     );
 }
