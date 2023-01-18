@@ -21,7 +21,7 @@
       line-height: 2.2rem;
       text-transform: uppercase;
       color: $white;
-      margin-left: 30px;
+      margin: 0 30px;
     }
   }
 }
@@ -38,6 +38,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  gap: 20px;
   .membersIntro {
     p {
       margin-top: 10px;
@@ -83,7 +84,6 @@
 .topContainer {
   align-self: flex-start;
   display: flex;
-  align-items: center;
   gap: 8px;
   .picContainer {
     flex: 1 0 125px;
@@ -103,10 +103,9 @@
 .rightContainer {
   flex: 1 0 calc(100% - 133px);
   align-self: center;
-  height: 200px;
+  height: 125px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   gap: 10px;
 }
@@ -128,6 +127,10 @@
     overflow: hidden;
     letter-spacing: -1px;
     color: $gray;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 
@@ -143,18 +146,10 @@
     gap: 3rem 1.25rem;
   }
 }
-@media (max-width: 908px) {
-  .rightContainer {
-    height: 220px;
-  }
-}
 @media (max-width: 877px) {
   .membersListContainer {
     grid-template-columns: repeat(auto-fill, minmax(45%, calc(100% / 2 - 20px)));
     gap: 2.75rem 1.25rem;
-    .rightContainer {
-      height: 180px;
-    }
   }
 }
 @media (max-width: 832px) {
@@ -162,31 +157,32 @@
     gap: 2.5rem 1rem;
   }
 }
-@media (max-width: 748px) {
-  .membersListContainer {
-    .rightContainer {
-      height: 200px;
-    }
-  }
-}
 @media (max-width: 663px) {
   .membersListContainer {
     display: block;
     li {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
     .topContainer {
-      gap: 10px;
+      gap: 20px;
       .picContainer {
         flex: 1 0 135px;
       }
       .rightContainer {
         flex: 1 0 calc(100% - 145px);
-        height: 150px;
+        height: 135px;
       }
     }
     .supporterPicContainer {
       width: 135px;
+    }
+  }
+}
+@media (max-width: 534px) {
+  .memberTypeContainer {
+    .memberType {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
     }
   }
 }
@@ -198,6 +194,7 @@
       }
       .rightContainer {
         flex: 1 0 calc(100% - 155px);
+        height: 145px;
       }
     }
     .supporterPicContainer {
@@ -213,13 +210,19 @@
       }
       .rightContainer {
         flex: 1 0 calc(100% - 165px);
-        height: 150px;
+        height: 155px;
         .membersName h3 {
           font-size: 1rem;
         }
         .membersTitle h4 {
           font-size: 0.7rem;
         }
+      }
+    }
+    .membersIntro {
+      p {
+        font-size: 0.6rem;
+        line-height: 0.9rem;
       }
     }
     .supporterPicContainer {

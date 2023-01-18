@@ -78,6 +78,8 @@
       transition: 0.1s ease;
       background-color: $lightBlue;
       color: $white;
+      border-radius: 5px;
+      padding-right: 10px;
     }
   }
 }
@@ -142,6 +144,9 @@
     .mediaTitle {
       height: auto;
     }
+  }
+  .mediaLogoContainer {
+    margin: 15px 0;
   }
 }
 
