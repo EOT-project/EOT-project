@@ -44,7 +44,6 @@ const Footer = () => {
                 {
                     footer.length !== 0 && footer.map((item, index) => {
                         return (<div className="footerContainer" key={item.id}>
-                                    <div>
                                         <Logo />
                                     </div>
                                     <div className="socialMediaContainer">
