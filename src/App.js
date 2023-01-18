@@ -10,7 +10,6 @@ import Resources from './pages/Resources';
 import Blog from './pages/Blog';
 import ErrorPage from './pages/ErrorPage';
 
-
 function App() {
 
   return (

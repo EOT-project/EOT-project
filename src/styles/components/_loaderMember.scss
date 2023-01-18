@@ -1,0 +1,18 @@
+@keyframes loadingPlaceholder {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.loaderContainer {
+  margin-bottom: 110px;
+  animation: blink 1.5s step-start 0s infinite;
+  .loaderTitleContainer {
+    .loaderTitle {
+      margin: 110px 0;
+    }
+  }
+}
