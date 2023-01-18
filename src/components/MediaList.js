@@ -46,7 +46,9 @@ const MediaList = () => {
 
   return (
     <section className="media">
-      <h2 className="pageTitle">Newsroom</h2>
+      <div className="pageTitleContainer">
+        <h2 className="pageTitle">Newsroom</h2>
+      </div>
       <ul className="mediaList">
         {
           loading
@@ -58,34 +60,30 @@ const MediaList = () => {
               media.length === 1
               ?
               <li key={media[0].id} className="mediaContainer">
-                <div 
-                style={{
-                    backgroundImage: `url(${media[0].image})`,
-                    backgroundSize: `cover`,
-                    backgroundRepeat: `no-repeat`,
-                    backgroundPosition: `center`
-                  }}
-                  >
+                <div className="mediaTextContainer">
                   <h4 className="mediaType">{media[0].type}</h4>
                   <h3 className="mediaTitle">{media[0].title}</h3>
-                  <a href={media[0].url} target="_blank" rel="noreferrer" className="mediaButton">READ</a>
+                </div>
+                <div className="mediaLogoContainer">
+                  <img src={media[0].image} alt={media[0].title} className="mediaLogo"/>
+                </div>
+                <div className="mediaButtonContainer">
+                  <a href={media[0].url} target="_blank" rel="noreferrer" className="mediaButton">Read More</a>
                 </div>
               </li>
               :
                 media.map((item) => {
                   return (
                     <li key={item.id} className="mediaContainer">
-                      <div className="mediaBg" 
-                      style={{
-                        backgroundImage: `url(${item.image})`,
-                        backgroundSize: `cover`,
-                        backgroundRepeat: `no-repeat`,
-                        backgroundPosition: `center`
-                      }}
-                      >
+                      <div className="mediaTextContainer">
                         <h4 className="mediaType">{item.type}</h4>
                         <h3 className="mediaTitle">{item.title}</h3>
-                        <a href={item.url} target="_blank" rel="noreferrer" className="mediaButton">READ</a>
+                      </div>
+                      <div className="mediaLogoContainer">
+                        <img src={item.image} alt={item.title} className="mediaLogo"/>
+                      </div>
+                      <div className="mediaButtonContainer">
+                        <a href={item.url} target="_blank" rel="noreferrer" className="mediaButton">Read More</a>
                       </div>
                     </li>
                   )
