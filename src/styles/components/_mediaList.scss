@@ -148,9 +148,15 @@
 @media (max-width: 534px) {
   .pageTitleContainer {
     .pageTitle {
-      font-size: 1.5rem;
-      line-height: 1.5rem;
+      font-size: 1.3rem;
+      line-height: 1.7rem;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  .opportunityTitle {
+    height: 6rem;
   }
 }
 

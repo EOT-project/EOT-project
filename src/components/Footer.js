@@ -18,10 +18,9 @@ const Footer = () => {
                         const cleanData = rawData.map((data) => {
                             const { sys, fields } = data
                             const { id } = sys
-                            const address = fields.address[0];
                             const email = fields.email
                             const socialMedia = fields.socialMedia
-                            const updatedData = { id, address, email, socialMedia }
+                            const updatedData = { id, email, socialMedia }
                             return updatedData
                         })
                         setFooter(cleanData)
@@ -44,12 +43,7 @@ const Footer = () => {
                 {
                     footer.length !== 0 && footer.map((item, index) => {
                         return (<div className="footerContainer" key={item.id}>
-                                    <div>
                                         <Logo />
-                                            <p>{item.address.streetName}</p>
-                                            <p>{item.address.city}, {item.address.province}, {item.address.country}</p>
-                                            <p>{item.address.postalCode}</p>
-                                    </div>
                                     <div className="socialMediaContainer">
                                         <p>{item.email}</p>
                                         <ul >

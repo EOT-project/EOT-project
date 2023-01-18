@@ -3,7 +3,6 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    padding-bottom: 20px;
   }
   .wrapper {
     width: 85%;
@@ -20,7 +19,6 @@ nav {
     justify-items: center;
     align-items: center;
     gap: 30px;
-    // font-size: 14px;
     font-weight: 800;
     @media (max-width: 545px) {
       flex-direction: column;
