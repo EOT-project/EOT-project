@@ -44,10 +44,8 @@ const Footer = () => {
             {
                 footer.length !== 0 && footer.map((item, index) => {
                     return (
-                        <>
                             <div className="footerContainer" key={item.id}>
                                 <Logo />
-                            </div>
                                 <div className="socialMediaContainer">
                                     <p>{item.email}</p>
                                     <ul >
@@ -60,7 +58,7 @@ const Footer = () => {
                                         }
                                     </ul>
                                 </div>
-                        </>       
+                            </div>
                         )
                 })
             }
