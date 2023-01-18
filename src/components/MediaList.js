@@ -77,7 +77,7 @@ const MediaList = () => {
                 media.map((item) => {
                   return (
                     <li key={item.id} className="mediaContainer">
-                      <img src={`${item.image}`}/>
+                      <img alt={image.title} src={`${item.image}`}/>
                       {/* <div className="mediaBg" 
                       style={{
                         backgroundImage: `url(${item.image})`,
