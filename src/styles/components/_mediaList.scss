@@ -36,6 +36,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
+  margin-bottom: 10px;
   .mediaType {
     display: inline-block;
     text-align: left;
@@ -43,9 +44,13 @@
     font-weight: 500;
   }
   .mediaTitle {
+    height: 90px;
     font-weight: 600;
-    height: 250px;
     text-align: left;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 
@@ -73,14 +78,6 @@
       content: "->";
       margin-left: 10px;
     }
-    &:hover {
-      scale: 1.05;
-      transition: 0.1s ease;
-      background-color: $lightBlue;
-      color: $white;
-      border-radius: 5px;
-      padding-right: 10px;
-    }
   }
 }
 
@@ -101,15 +98,10 @@
   }
 }
 
-@media (max-width: 905px) {
+@media (max-width: 899px) {
   .mediaList {
     .mediaContainer {
       flex: 1 0 calc(50% - 20px);
-    }
-  }
-  .mediaTextContainer {
-    .mediaTitle {
-      height: 150px;
     }
   }
   .mediaLogoContainer {
@@ -129,6 +121,7 @@
     .mediaTitle {
       font-size: 1rem;
       line-height: 1.2rem;
+      height: 75px;
     }
   }
 }
@@ -141,6 +134,7 @@
     }
   }
   .mediaTextContainer {
+    margin-bottom: 5px;
     .mediaTitle {
       height: auto;
     }
@@ -161,6 +155,7 @@
 
 @media (max-width: 324px) {
   .mediaTextContainer {
+    margin-bottom: 0px;
     .mediaType {
       font-size: 0.6rem;
       line-height: 0.8rem;
