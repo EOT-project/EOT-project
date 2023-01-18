@@ -9,7 +9,9 @@ const Opportunity = () => {
         <main className="wrapper">
             <Articles />
             <section className="factsStatements">
-                <h2>The Benefits of Employee Ownership</h2>
+                <div className="pageTitleContainer">
+                    <h2 className="pageTitle">The Benefits of Employee Ownership</h2>
+                </div>
                 <InfographicWithContent/>
                 <ContentOpportunity order={1}/>
                 <InfographicOnly order={1}/>

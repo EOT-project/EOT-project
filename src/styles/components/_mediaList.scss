@@ -11,7 +11,7 @@
     line-height: 2.2rem;
     text-transform: uppercase;
     color: $white;
-    margin-left: 30px;
+    margin: 0 30px;
   }
 }
 
@@ -70,7 +70,7 @@
     line-height: 1rem;
     color: $gray;
     &::after {
-      content: '->';
+      content: "->";
       margin-left: 10px;
     }
     &:hover {
@@ -84,7 +84,7 @@
   }
 }
 
-@media(max-width: 995px) {
+@media (max-width: 995px) {
   .mediaTextContainer {
     .mediaTitle {
       letter-spacing: -1px;
@@ -92,7 +92,7 @@
   }
 }
 
-@media(max-width: 938px) {
+@media (max-width: 938px) {
   .mediaList {
     gap: 40px 20px;
     .mediaContainer {
@@ -101,7 +101,7 @@
   }
 }
 
-@media(max-width: 905px) {
+@media (max-width: 905px) {
   .mediaList {
     .mediaContainer {
       flex: 1 0 calc(50% - 20px);
@@ -120,7 +120,7 @@
   }
 }
 
-@media(max-width: 771px) {
+@media (max-width: 771px) {
   .mediaTextContainer {
     .mediaType {
       font-size: 0.7rem;
@@ -133,7 +133,7 @@
   }
 }
 
-@media(max-width: 607px) {
+@media (max-width: 607px) {
   .mediaList {
     display: block;
     .mediaContainer {
@@ -150,7 +150,16 @@
   }
 }
 
-@media(max-width: 324px) {
+@media (max-width: 534px) {
+  .pageTitleContainer {
+    .pageTitle {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 324px) {
   .mediaTextContainer {
     .mediaType {
       font-size: 0.6rem;
