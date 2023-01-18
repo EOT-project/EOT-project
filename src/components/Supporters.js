@@ -19,9 +19,10 @@ const Supporters = () => {
     const getMembers = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "supporters"
+          content_type: "supporters",
+          order: "fields.priority"
         })
-
+        
         if (!!res) {
           const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, id: item?.sys?.id})) || [];
           setMembers(items);

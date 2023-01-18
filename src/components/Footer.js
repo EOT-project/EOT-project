@@ -18,6 +18,7 @@ const Footer = () => {
                         const cleanData = rawData.map((data) => {
                             const { sys, fields } = data
                             const { id } = sys
+                            
                             const email = fields.email
                             const socialMedia = fields.socialMedia
                             const updatedData = { id, email, socialMedia }
@@ -44,6 +45,7 @@ const Footer = () => {
                     footer.length !== 0 && footer.map((item, index) => {
                         return (<div className="footerContainer" key={item.id}>
                                         <Logo />
+                                    </div>
                                     <div className="socialMediaContainer">
                                         <p>{item.email}</p>
                                         <ul >
