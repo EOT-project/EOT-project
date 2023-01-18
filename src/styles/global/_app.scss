@@ -347,13 +347,11 @@ h1 {
 h2 {
   font-size: 1.6rem;
   line-height: 1.8rem;
-  // margin-bottom: 20px;
 }
 
 h3 {
   font-size: 1.2rem;
   line-height: 1.5rem;
-  // margin-bottom: 20px;
 }
 
 h4 {
@@ -367,17 +365,14 @@ p {
 }
 
 .logoContainer {
-  width: 350px;
+  width: 280px;
+  padding: 20px 0 0;
   @media (max-width: 414px) {
-    width: clamp(250px, 75vw, 350px);
+    width: clamp(250px, 70vw, 280px);
   }
 }
 
 .factsStatements {
-  width: 90%;
-  @media (max-width: 590px) {
-    width: 100%;
-  }
   h2 {
     margin-bottom: 50px;
   }
