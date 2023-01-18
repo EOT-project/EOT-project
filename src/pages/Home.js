@@ -5,9 +5,9 @@ import ArticleHome from "../components/ArticleHome";
 
 const Home = () => {
   return (
-    <main className="wrapper">
+    <main>
       <ArticleHome />
-      <section className="members">
+      <section className="members wrapper">
         <Committee />
         <Advisory />
         <Supporters />
