@@ -58,7 +58,7 @@ const MediaList = () => {
               media.length === 1
               ?
               <li key={media[0].id} className="mediaContainer">
-                <img src={`${media[0].image}`} className="mediaImg"/>
+                <img alt={media[0].title} src={`${media[0].image}`} className="mediaImg"/>
                 {/* <div 
                 style={{
                     backgroundImage: `url(${media[0].image})`,
