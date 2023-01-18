@@ -1,21 +1,20 @@
 import Articles from "../components/Articles";
-import ImageGallery from "../components/ImageGallery";
 import ContentOpportunity from "../components/ContentOpportunity";
+import InfographicWithContent from "../components/InfographicWithContent";
+import InfographicOnly from "../components/InfographicOnly";
 
 const Opportunity = () => {
-
-    //send data from here to <ImageGallery/>
 
     return (
         <main className="wrapper">
             <Articles />
             <section className="factsStatements">
                 <h2>The Benefits of Employee Ownership</h2>
-                <ImageGallery content={true}/>
+                <InfographicWithContent/>
                 <ContentOpportunity order={1}/>
-                <ImageGallery content={false}/>
+                <InfographicOnly order={1}/>
                 <ContentOpportunity order={2}/>
-                <ImageGallery  content={false}/>
+                <InfographicOnly  order={2}/>
             </section>
         </main>
     );

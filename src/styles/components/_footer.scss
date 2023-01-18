@@ -13,6 +13,10 @@ footer {
     justify-content: space-around;
     align-items: center;
     gap: 30px;
+    p {
+      color: $darkGreen;
+    }
+
     .logoContainer {
       margin-bottom: 25px;
     }
