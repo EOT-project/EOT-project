@@ -18,7 +18,7 @@ const Nav = () => {
           content_type: "navHeader",
           order: "fields.order"
         })
-        console.log(res.items);
+        
         if(!!res) {
           const items = res?.items.map(item => ({name: item?.fields?.name, value: item?.fields?.value, id: item?.sys?.id})) || [];
           setMenu(items);
@@ -54,11 +54,11 @@ const Nav = () => {
               ?
                 menu.length === 1
                 ?
-                  <NavItem id={menu[0].id} name={menu[0].name} value={menu[0].value}/>
+                  <NavItem key={menu[0].id} name={menu[0].name} value={menu[0].value}/>
                 :
                   menu.map((item) => {
                     return (
-                      <NavItem id={item.id} name={item.name} value={item.value} />
+                      <NavItem key={item.id} name={item.name} value={item.value} />
                     )
                   })
               :null
