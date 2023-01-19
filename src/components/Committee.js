@@ -44,71 +44,67 @@ const Committee = () => {
   }
 
   return (
-    <>
-      {
-        loading
-        ?
-        <LoaderMember />
-        :
-          members.length !== 0
+    loading
+    ?
+    <LoaderMember />
+    :
+    members.length !== 0
+    ?
+    <div className="committee">
+      <div className="memberTypeContainer">
+        <h2 className="memberType">Steering Committee</h2>
+      </div>
+      <ul className="membersListContainer">
+        {
+          members.length === 1
           ?
-          <div className="committee">
-            <div className="memberTypeContainer">
-              <h2 className="memberType">Steering Committee</h2>
+          <li key={members[0].id} className="membersList" >
+            <div className="topContainer">
+              <div className='picContainer'>
+                {
+                  !members[0].profilePic
+                  ?
+                  <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
+                  } alt={members[0].name} className="membersPic"/>
+                  :
+                  <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
+                }
+              </div>
+              <div className="rightContainer">
+                <div className="membersName"><h3>{members[0].name}</h3></div>
+                <div className="membersTitle"><h4>{members[0].title}</h4></div>
+              </div>
+              <div className="membersIntro"><p>{members[0].intro}</p></div>
             </div>
-            <ul className="membersListContainer">
-              {
-              members.length === 1
-                ?
-                <li key={members[0].id} className="membersList" >
-                  <div className="topContainer">
-                    <div className='picContainer'>
-                      {
-                        !members[0].profilePic
-                        ?
-                        <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
-                        } alt={members[0].name} className="membersPic"/>
-                        :
-                        <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
-                      }
-                    </div>
-                    <div className="rightContainer">
-                      <div className="membersName"><h3>{members[0].name}</h3></div>
-                      <div className="membersTitle"><h4>{members[0].title}</h4></div>
-                    </div>
-                    <div className="membersIntro"><p>{members[0].intro}</p></div>
+          </li>
+          :
+          members.map((member) => {
+            return (
+              <li key={member.id} className="membersList" >
+                <div className="topContainer">
+                  <div className='picContainer'>
+                    {
+                      !member.profilePic
+                      ?
+                      <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
+                      } alt={member.name} className="membersPic"/>
+                      :
+                      <img src={member.profilePic} alt={member.name} className="membersPic"/>
+                    }
                   </div>
-                </li>
-                :
-                members.map((member) => {
-                  return (
-                    <li key={member.id} className="membersList" >
-                      <div className="topContainer">
-                        <div className='picContainer'>
-                          {
-                            !member.profilePic
-                            ?
-                            <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
-                            } alt={member.name} className="membersPic"/>
-                            :
-                            <img src={member.profilePic} alt={member.name} className="membersPic"/>
-                          }
-                        </div>
-                        <div className="rightContainer">
-                          <div className="membersName"><h3>{member.name}</h3></div>
-                          <div className="membersTitle"><h4>{member.title}</h4></div>
-                        </div>
-                      </div>
-                      <div className="membersIntro"><p>{member.intro}</p></div>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          </div>
-          : null
-      }
-    </>
+                  <div className="rightContainer">
+                    <div className="membersName"><h3>{member.name}</h3></div>
+                    <div className="membersTitle"><h4>{member.title}</h4></div>
+                  </div>
+                </div>
+                <div className="membersIntro"><p>{member.intro}</p></div>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+    : null
   )
 }
 

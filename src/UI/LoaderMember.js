@@ -1,15 +1,11 @@
 const LoaderMember = () => {
   return (
     <div className="loaderContainer wrapper">
-      <div className="loaderTitleContainer">
-        <div className="loaderTitle"></div>
-      </div>
+      <div className="loaderTitleContainer"></div>
       <ul className="membersListContainer">
         <li className="membersList">
           <div className="topContainer">
-            <div className="picContainer">
-              <div className="membersPic"></div>
-            </div>
+            <div className="picContainer"></div>
             <div className="rightContainer">
               <div className="membersName"></div>
               <div className="membersTitle"></div>
@@ -19,9 +15,7 @@ const LoaderMember = () => {
         </li>
         <li className="membersList">
           <div className="topContainer">
-            <div className="picContainer">
-              <div className="membersPic"></div>
-            </div>
+            <div className="picContainer"></div>
             <div className="rightContainer">
               <div className="membersName"></div>
               <div className="membersTitle"></div>
@@ -31,9 +25,7 @@ const LoaderMember = () => {
         </li>
         <li className="membersList">
           <div className="topContainer">
-            <div className="picContainer">
-              <div className="membersPic"></div>
-            </div>
+            <div className="picContainer"></div>
             <div className="rightContainer">
               <div className="membersName"></div>
               <div className="membersTitle"></div>

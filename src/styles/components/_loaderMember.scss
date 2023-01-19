@@ -1,7 +1,7 @@
 .loaderContainer {
   margin-bottom: 100px;
-  .loaderTitle,
-  .membersPic,
+  .loaderTitleContainer,
+  .picContainer,
   .membersName,
   .membersTitle,
   .membersIntro {
@@ -11,14 +11,13 @@
   }
   .loaderTitleContainer {
     margin: 100px 0;
-    .loaderTitle {
-      height: 100px;
-    }
+    height: 100px;
   }
   .topContainer {
     margin-bottom: 20px;
   }
-  .membersPic {
+  .picContainer {
+    border-radius: 50%;
     width: 125px;
   }
   .membersName {
