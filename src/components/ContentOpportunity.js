@@ -52,8 +52,8 @@ const ContentOpportunity = (props) => {
             ?
               contents[props.order - 1].title
               ? <>
-                  <div className="pageTitleContainer opportunityTitle loading">
-                   <h3 className="pageTitle loading">{contents[props.order - 1].title}</h3>
+                  <div className="pageTitleContainer opportunityTitle">
+                   <h3 className="pageTitle">{contents[props.order - 1].title}</h3>
                   </div>
                   {documentToReactComponents(contents[props.order - 1].context)}
                 </>
