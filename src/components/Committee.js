@@ -19,7 +19,8 @@ const Committee = () => {
     const getMembers = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "steeringCommittee"
+          content_type: "steeringCommittee",
+          order: "fields.order"
         })
 
         if (!!res) {

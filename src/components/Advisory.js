@@ -19,7 +19,8 @@ const Advisory = () => {
     const getMembers = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "advisoryMembers"
+          content_type: "advisoryMembers",
+          order: "fields.name"
         })
         
         if (!!res) {
@@ -52,7 +53,7 @@ const Advisory = () => {
     ?
     <div className="advisory loading">
       <div className="memberTypeContainer">
-        <h2 className="memberType">Advisory Members</h2>
+        <h2 className="memberType">Advisory Board</h2>
       </div>
       <ul className="membersListContainer">
         {
