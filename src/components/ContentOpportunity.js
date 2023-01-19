@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Loader from "../UI/Loader";
+import LoaderContentOpportunity from "../UI/LoaderContentOpportunity";
 
 const ContentOpportunity = (props) => {
 
@@ -44,7 +44,7 @@ const ContentOpportunity = (props) => {
       {
         loading
         ?
-        <Loader/>
+        <LoaderContentOpportunity/>
         :
           contents.length !== 0
           ?
@@ -52,8 +52,8 @@ const ContentOpportunity = (props) => {
             ?
               contents[props.order - 1].title
               ? <>
-                  <div className="pageTitleContainer opportunityTitle">
-                   <h3 className="pageTitle">{contents[props.order - 1].title}</h3>
+                  <div className="pageTitleContainer opportunityTitle loading">
+                   <h3 className="pageTitle loading">{contents[props.order - 1].title}</h3>
                   </div>
                   {documentToReactComponents(contents[props.order - 1].context)}
                 </>

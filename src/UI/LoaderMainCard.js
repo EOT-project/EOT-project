@@ -1,6 +1,6 @@
 const LoaderMainCard = () => {
     return (
-        <div className="mainCard"></div>
+        <div className="mainCardLoader"></div>
     );
 }
 

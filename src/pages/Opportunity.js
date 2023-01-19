@@ -1,23 +1,20 @@
 import Articles from "../components/Articles";
-// import ContentOpportunity from "../components/ContentOpportunity";
-// import InfographicWithContent from "../components/InfographicWithContent";
-// import InfographicOnly from "../components/InfographicOnly";
+import ContentOpportunity from "../components/ContentOpportunity";
+import InfographicWithContent from "../components/InfographicWithContent";
+import InfographicOnly from "../components/InfographicOnly";
 
 const Opportunity = () => {
 
     return (
         <main className="wrapper">
             <Articles />
-            {/* <section className="factsStatements">
-                <div className="pageTitleContainer opportunityTitle">
-                    <h2 className="pageTitle">The Benefits of Employee Ownership</h2>
-                </div>
+            <section className="factsStatements">
                 <InfographicWithContent/>
                 <ContentOpportunity order={1}/>
                 <InfographicOnly order={1}/>
                 <ContentOpportunity order={2}/>
                 <InfographicOnly  order={2}/>
-            </section> */}
+            </section>
         </main>
     );
 } 

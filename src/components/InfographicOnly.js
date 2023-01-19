@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Loader from "../UI/Loader";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import LoaderInfographic from "../UI/LoaderInfographic";
 
 const InfographicOnly = (props) => {
 
@@ -42,7 +42,7 @@ const InfographicOnly = (props) => {
         {
           loading
           ?
-            <Loader/>
+            <LoaderInfographic/>
           :
             infographic.length !== 0
             ?
@@ -53,8 +53,8 @@ const InfographicOnly = (props) => {
                       item.order === props.order
                       ?
                         <li className="imgOnly" key={item.id}>
-                          <div className="roundImgContainer">
-                              <img src={item.image} alt={item.title}/>
+                          <div className="roundImgContainer ">
+                              <img className="loading" src={item.image} alt={item.title}/>
                           </div>
                         </li>
                       : null
