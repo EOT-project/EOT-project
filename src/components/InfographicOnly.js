@@ -53,8 +53,8 @@ const InfographicOnly = (props) => {
                       item.order === props.order
                       ?
                         <li className="imgOnly" key={item.id}>
-                          <div className="roundImgContainer">
-                              <img src={item.image} alt={item.title}/>
+                          <div className="roundImgContainer ">
+                              <img className="loading" src={item.image} alt={item.title}/>
                           </div>
                         </li>
                       : null
