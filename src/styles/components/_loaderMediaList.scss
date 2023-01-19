@@ -1,0 +1,29 @@
+.loaderContainer {
+  .mediaContainer {
+    border: none;
+    background: linear-gradient(90deg, $white, $gray, $white);
+    animation: loading 8s linear infinite;
+    .mediaType,
+    .mediaTitle,
+    .mediaLogo,
+    .mediaButtonContainer {
+      background: linear-gradient(90deg, $white, $lightGray, $white);
+      display: block;
+    }
+    .mediaType {
+      height: 25px;
+    }
+    .mediaLogo {
+      height: 200px;
+    }
+    .mediaButtonContainer {
+      width: 100px;
+      height: 40px;
+    }
+  }
+  @media(max-width: 607px) {
+    .mediaTitle {
+      height: 50px;
+    }
+  }
+}

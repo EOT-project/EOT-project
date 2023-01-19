@@ -1,0 +1,41 @@
+.loaderContainer {
+  .reportContainer {
+    .reportBg,
+    .reportType,
+    .reportTitle,
+    .reportButton {
+      background: linear-gradient(90deg, $white, $lightGray, $white);
+      animation: loading 8s linear infinite;
+      display: block;
+    }
+    .reportBg {
+      background: linear-gradient(90deg, $white, $gray, $white);
+    }
+    .reportType {
+      width: 50%;
+      height: 25px;
+    }
+    .reportTitle {
+      width: 80%;
+      height: 250px;
+    }
+    .reportButton {
+      width: 40%;
+      height: 40px;
+    }
+    .reportType,
+    .reportTitle{
+      margin-bottom: 20px;
+    }
+    @media (max-width: 753px) {
+      .reportTitle {
+        height: 150px;
+      }
+    }
+    @media (max-width: 590px) {
+      .reportTitle {
+        height: 100px;
+      }
+    }
+  }
+}

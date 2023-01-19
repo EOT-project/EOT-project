@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Loader from "../UI/Loader";
+import LoaderInfWithContent from "../UI/LoaderInfWithContent";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 
@@ -46,8 +46,12 @@ const InfographicWithContent = () => {
            { 
                 loading
                 ?
-                <Loader/>
+                <LoaderInfWithContent/>
                 :
+                <>
+                <div className="pageTitleContainer opportunityTitle">
+                    <h2 className="pageTitle">The Benefits of Employee Ownership</h2>
+                </div>
                     <ul className="galleryContainer">
                         {
                             infoAndContent.map((item) => {
@@ -62,6 +66,7 @@ const InfographicWithContent = () => {
                         }
 
                     </ul>
+                </>
             }
         </>
     );
