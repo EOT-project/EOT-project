@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Loader from "../UI/Loader";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import LoaderMediaList from "../UI/LoaderMediaList";
 
 //create a news container displays name of media, title and link of the report
 // get data set from media list content model
@@ -45,50 +45,50 @@ const MediaList = () => {
   }
 
   return (
+    loading
+    ?
+    <LoaderMediaList/>
+    :
     <section className="media">
       <div className="pageTitleContainer">
         <h2 className="pageTitle">Newsroom</h2>
       </div>
       <ul className="mediaList">
         {
-          loading
+          media.length !== 0
           ?
-          <Loader/>
-          :
-            media.length !== 0
+            media.length === 1
             ?
-              media.length === 1
-              ?
-              <li key={media[0].id} className="mediaContainer">
-                <div className="mediaTextContainer">
-                  <h4 className="mediaType">{media[0].type}</h4>
-                  <h3 className="mediaTitle">{media[0].title}</h3>
-                </div>
-                <div className="mediaLogoContainer">
-                  <img src={media[0].image} alt={media[0].title} className="mediaLogo"/>
-                </div>
-                <div className="mediaButtonContainer">
-                  <a href={media[0].url} target="_blank" rel="noreferrer" className="mediaButton">Read More</a>
-                </div>
-              </li>
-              :
-                media.map((item) => {
-                  return (
-                    <li key={item.id} className="mediaContainer">
-                      <div className="mediaTextContainer">
-                        <h4 className="mediaType">{item.type}</h4>
-                        <h3 className="mediaTitle">{item.title}</h3>
-                      </div>
-                      <div className="mediaLogoContainer">
-                        <img src={item.image} alt={item.title} className="mediaLogo"/>
-                      </div>
-                      <div className="mediaButtonContainer">
-                        <a href={item.url} target="_blank" rel="noreferrer" className="mediaButton">Read More</a>
-                      </div>
-                    </li>
-                  )
-                })
-            : null
+            <li key={media[0].id} className="mediaContainer">
+              <div className="mediaTextContainer">
+                <h4 className="mediaType">{media[0].type}</h4>
+                <h3 className="mediaTitle">{media[0].title}</h3>
+              </div>
+              <div className="mediaLogoContainer">
+                <img src={media[0].image} alt={media[0].title} className="mediaLogo"/>
+              </div>
+              <div className="mediaButtonContainer">
+                <a href={media[0].url} target="_blank" rel="noreferrer" className="mediaButton">Read More</a>
+              </div>
+            </li>
+            :
+            media.map((item) => {
+              return (
+                <li key={item.id} className="mediaContainer">
+                  <div className="mediaTextContainer">
+                    <h4 className="mediaType">{item.type}</h4>
+                    <h3 className="mediaTitle">{item.title}</h3>
+                  </div>
+                  <div className="mediaLogoContainer">
+                    <img src={item.image} alt={item.title} className="mediaLogo"/>
+                  </div>
+                  <div className="mediaButtonContainer">
+                    <a href={item.url} target="_blank" rel="noreferrer" className="mediaButton">Read More</a>
+                  </div>
+                </li>
+              )
+            })
+          : null
         }
       </ul>
     </section>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Loader from "../UI/Loader";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import LoaderReport from "../UI/LoaderReport";
 
 //create a report container displays 3 maximum reports per line
 //get data set from reports content model
@@ -46,22 +46,22 @@ const Report = () => {
   }
 
   return (
+    loading
+    ?
+    <LoaderReport/>
+    :
     <section className="report">
       <div className="pageTitleContainer">
         <h2 className="pageTitle">Resources</h2>
       </div>
       <ul className="reportList">
-      {
-        loading
-        ?
-          <Loader/>
-        :
+        {
           report.length !== 0
           ?
             report.length === 1
             ?
             <li key={report[0].id} className="reportContainer">
-              <div style={{
+              <div className="reportBg" style={{
                   backgroundImage: `url(${report[0].image})`,
                   backgroundSize: `cover`,
                   backgroundRepeat: `no-repeat`,
@@ -73,24 +73,24 @@ const Report = () => {
               </div>
             </li>
             :
-              report.map((item) => {
-                return (
-                  <li key={item.id} className="reportContainer">
-                    <div className="reportBg" style={{
-                      backgroundImage: `url(${item.image})`,
-                      backgroundSize: `cover`,
-                      backgroundRepeat: `no-repeat`,
-                      backgroundPosition: `center`
-                    }}>
-                      <h4 className="reportType">{item.type}</h4>
-                      <h3 className="reportTitle">{item.title}</h3>
-                      <a href={item.url?item.url:item.file} target="_blank" rel="noreferrer" className="reportButton">READ</a>
-                    </div>
-                  </li>
-                )
-              })
+            report.map((item) => {
+              return (
+                <li key={item.id} className="reportContainer">
+                  <div className="reportBg" style={{
+                    backgroundImage: `url(${item.image})`,
+                    backgroundSize: `cover`,
+                    backgroundRepeat: `no-repeat`,
+                    backgroundPosition: `center`
+                  }}>
+                    <h4 className="reportType">{item.type}</h4>
+                    <h3 className="reportTitle">{item.title}</h3>
+                    <a href={item.url?item.url:item.file} target="_blank" rel="noreferrer" className="reportButton">READ</a>
+                  </div>
+                </li>
+              )
+            })
           : null
-      }
+        }
       </ul>
     </section>
   )

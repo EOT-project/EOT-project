@@ -9,7 +9,6 @@ import NewsRoom from './pages/Newsroom';
 import Resources from './pages/Resources';
 import Blog from './pages/Blog';
 import ErrorPage from './pages/ErrorPage';
-import LoaderMember from './UI/LoaderMember';
 
 function App() {
 
@@ -23,7 +22,6 @@ function App() {
         <Route path='/newsroom' element={<NewsRoom/>} />
         <Route path='/resources' element={<Resources/>}/>
         <Route path='/blog' element={<Blog/>}/>
-        <Route path='/load' element={<LoaderMember/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer/>
