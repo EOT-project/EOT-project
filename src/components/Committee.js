@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
-// import Loader from "../UI/Loader";
 import LoaderMember from "../UI/LoaderMember";
 
 //create a member container displays maximum of 4 members

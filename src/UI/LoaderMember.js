@@ -11,17 +11,11 @@ const LoaderMember = () => {
               <div className="membersPic"></div>
             </div>
             <div className="rightContainer">
-              <div className="membersName">
-                <div className="membersName"></div>
-              </div>
-              <div className="membersTitle">
-                <div className="membersTitle"></div>
-              </div>
+              <div className="membersName"></div>
+              <div className="membersTitle"></div>
             </div>
           </div>
-          <div className="membersIntro">
-            <div className="membersIntro"></div>
-          </div>
+          <div className="membersIntro"></div>
         </li>
         <li className="membersList">
           <div className="topContainer">
@@ -29,17 +23,11 @@ const LoaderMember = () => {
               <div className="membersPic"></div>
             </div>
             <div className="rightContainer">
-              <div className="membersName">
-                <div className="membersName"></div>
-              </div>
-              <div className="membersTitle">
-                <div className="membersTitle"></div>
-              </div>
+              <div className="membersName"></div>
+              <div className="membersTitle"></div>
             </div>
           </div>
-          <div className="membersIntro">
-            <div className="membersIntro"></div>
-          </div>
+          <div className="membersIntro"></div>
         </li>
         <li className="membersList">
           <div className="topContainer">
@@ -47,17 +35,11 @@ const LoaderMember = () => {
               <div className="membersPic"></div>
             </div>
             <div className="rightContainer">
-              <div className="membersName">
-                <div className="membersName"></div>
-              </div>
-              <div className="membersTitle">
-                <div className="membersTitle"></div>
-              </div>
+              <div className="membersName"></div>
+              <div className="membersTitle"></div>
             </div>
           </div>
-          <div className="membersIntro">
-            <div className="membersIntro"></div>
-          </div>
+          <div className="membersIntro"></div>
         </li>
       </ul>
     </div>

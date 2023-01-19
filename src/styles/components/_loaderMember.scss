@@ -5,7 +5,8 @@
   .membersName,
   .membersTitle,
   .membersIntro {
-    background-color: $lightGray;
+    background: linear-gradient(90deg, $white, $lightGray, $white);
+    animation: loading 8s linear infinite;
     display: block;
   }
   .loaderTitleContainer {

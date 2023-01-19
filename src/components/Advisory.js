@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Loader from "../UI/Loader";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import LoaderMember from "../UI/LoaderMember";
 
 //create a member container displays maximum of 4 members
 //retrieve profilePic, name, title, intro uploads from advisoryMembers content model
@@ -48,7 +48,7 @@ const Advisory = () => {
       {
         loading
         ?
-        <Loader/>
+        <LoaderMember/>
         :
           members.length !== 0
           ?
