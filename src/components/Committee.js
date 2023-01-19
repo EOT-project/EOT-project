@@ -19,7 +19,8 @@ const Committee = () => {
     const getMembers = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "steeringCommittee"
+          content_type: "steeringCommittee",
+          order: "fields.order"
         })
 
         if (!!res) {
@@ -50,7 +51,7 @@ const Committee = () => {
     :
     members.length !== 0
     ?
-    <div className="committee">
+    <div className="committee loading">
       <div className="memberTypeContainer">
         <h2 className="memberType">Steering Committee</h2>
       </div>

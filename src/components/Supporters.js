@@ -51,7 +51,7 @@ const Supporters = () => {
     :
     members.length !== 0
     ?
-    <div className="supporters">
+    <div className="supporters loading">
       <div className="memberTypeContainer">
         <h2 className="memberType">Supporters</h2>
       </div>

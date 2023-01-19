@@ -1,15 +1,17 @@
 .loaderContainer {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  width: 100%;
   .loaderTitleContainer,
   .picContainer,
   .membersName,
   .membersTitle,
   .membersIntro {
-    background: linear-gradient(90deg, $white, $lightGray, $white);
-    animation: loading 8s linear infinite;
+    background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+    animation: loading 20s linear infinite;
     display: block;
   }
   .loaderTitleContainer {
+    background: linear-gradient(90deg, $lightTeal, $darkTeal, $lightTeal);
     margin: 100px 0;
     height: 100px;
   }

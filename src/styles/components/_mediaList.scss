@@ -4,7 +4,8 @@
   height: 5rem;
   display: flex;
   align-items: center;
-  margin-bottom: 110px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   .pageTitle {
     font-weight: 600;
     font-size: 1.9rem;
@@ -15,17 +16,13 @@
   }
 }
 
-.opportunityTitle {
-  margin-bottom: 55px;
-}
-
 .mediaList {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   gap: 60px 30px;
   .mediaContainer {
-    flex: 1 0 calc(100% / 3 - 20px);
+    flex-basis: calc(100% / 3 - 20px);
     border: 1px solid $darkGray;
     padding: 20px 25px;
     display: flex;
@@ -105,7 +102,7 @@
 @media (max-width: 899px) {
   .mediaList {
     .mediaContainer {
-      flex: 1 0 calc(50% - 20px);
+      flex-basis: calc(50% - 10px);
     }
   }
   .mediaLogoContainer {
