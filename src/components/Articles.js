@@ -4,6 +4,7 @@ import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import ErrorData from "./ErrorData";
 import Loader from "../UI/Loader";
+import LoaderMainCard from "../UI/LoaderMainCard";
 
 //create a article(aka main card) component
 // retrieve backgroundImage, title, and content from articles content model
@@ -42,14 +43,14 @@ const Articles = () => {
     return (
         <ErrorData/>
     )
-    }
+    };
 
     return (
         <section className="article">
             {
                 loading
                 ?
-                <Loader/>
+                <LoaderMainCard/>
                 :
                 mainCard.map((item) => {
                     return <MainCard key={item} image={item.image}>

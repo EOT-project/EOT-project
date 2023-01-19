@@ -371,3 +371,8 @@ p {
     width: clamp(250px, 70vw, 280px);
   }
 }
+
+.mainCard {
+  height: 521px;
+  background-color: $lightGray;
+}

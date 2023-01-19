@@ -8,7 +8,7 @@ const Opportunity = () => {
     return (
         <main className="wrapper">
             <Articles />
-            <section className="factsStatements">
+            {/* <section className="factsStatements">
                 <div className="pageTitleContainer opportunityTitle">
                     <h2 className="pageTitle">The Benefits of Employee Ownership</h2>
                 </div>
@@ -17,7 +17,7 @@ const Opportunity = () => {
                 <InfographicOnly order={1}/>
                 <ContentOpportunity order={2}/>
                 <InfographicOnly  order={2}/>
-            </section>
+            </section> */}
         </main>
     );
 } 
