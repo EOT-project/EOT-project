@@ -50,7 +50,7 @@ const Committee = () => {
     :
     members.length !== 0
     ?
-    <div className="committee">
+    <div className="committee loading">
       <div className="memberTypeContainer">
         <h2 className="memberType">Steering Committee</h2>
       </div>

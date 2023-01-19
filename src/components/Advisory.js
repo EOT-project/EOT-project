@@ -50,7 +50,7 @@ const Advisory = () => {
     :
     members.length !== 0
     ?
-    <div className="advisory">
+    <div className="advisory loading">
       <div className="memberTypeContainer">
         <h2 className="memberType">Advisory Members</h2>
       </div>
