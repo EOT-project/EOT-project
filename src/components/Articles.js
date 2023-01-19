@@ -3,7 +3,6 @@ import MainCard from "../UI/MainCard";
 import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import ErrorData from "./ErrorData";
-import Loader from "../UI/Loader";
 import LoaderMainCard from "../UI/LoaderMainCard";
 
 //create a article(aka main card) component

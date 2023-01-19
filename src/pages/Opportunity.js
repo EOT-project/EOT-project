@@ -1,7 +1,7 @@
 import Articles from "../components/Articles";
-import ContentOpportunity from "../components/ContentOpportunity";
-import InfographicWithContent from "../components/InfographicWithContent";
-import InfographicOnly from "../components/InfographicOnly";
+// import ContentOpportunity from "../components/ContentOpportunity";
+// import InfographicWithContent from "../components/InfographicWithContent";
+// import InfographicOnly from "../components/InfographicOnly";
 
 const Opportunity = () => {
 
