@@ -1,13 +1,12 @@
 .loaderContainer {
   .mediaContainer {
     border: none;
-    background: linear-gradient(90deg, $white, $gray, $white);
-    animation: loading 8s linear infinite;
     .mediaType,
     .mediaTitle,
     .mediaLogo,
     .mediaButtonContainer {
-      background: linear-gradient(90deg, $white, $lightGray, $white);
+      background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+      animation: loading 20s linear infinite;
       display: block;
     }
     .mediaType {

@@ -50,7 +50,7 @@ const Report = () => {
     ?
     <LoaderReport/>
     :
-    <section className="report">
+    <section className="report loading">
       <div className="pageTitleContainer">
         <h2 className="pageTitle">Resources</h2>
       </div>

@@ -49,7 +49,7 @@ const MediaList = () => {
     ?
     <LoaderMediaList/>
     :
-    <section className="media">
+    <section className="media loading">
       <div className="pageTitleContainer">
         <h2 className="pageTitle">Newsroom</h2>
       </div>
