@@ -19,14 +19,14 @@
     .contentParagraph {
       width: 100%;
       height: 10rem;
-      background: linear-gradient(90deg, $white, $lightGray, $white);
-      animation: loading 8s linear infinite;
+      background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+      animation: loading 20s linear infinite;
     }
     .loaderTitleContainer {
       height: 100px;
       margin-bottom: 55px;
-      background: linear-gradient(90deg, $white, $lightGray, $white);
-      animation: loading 8s linear infinite;
+      background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+      animation: loading 20s linear infinite;
     }
   }
 }
