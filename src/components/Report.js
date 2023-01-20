@@ -20,7 +20,8 @@ const Report = () => {
     const getReport = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "reports"
+          content_type: "reports",
+          order: "fields.order"
         })
 
         if (!!res) {
@@ -31,7 +32,7 @@ const Report = () => {
         }
       } catch (error) {
         //show user error retrieving member list
-        console.log(`Error fetching members: ${error}`);
+        console.log(`Error fetching reports: ${error}`);
         setError(error);
         setLoading(false);
       }

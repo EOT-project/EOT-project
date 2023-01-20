@@ -20,11 +20,11 @@ const Advisory = () => {
       try {
         const res = await Client.getEntries({
           content_type: "advisoryMembers",
-          order: "fields.name"
+          order: "fields.lastname"
         })
         
         if (!!res) {
-          const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, intro: item?.fields?.intro, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, picTitle: item?.fields?.profilePic?.fields?.title, firstname: item?.fields?.firstname, lastname: item?.fields?.lastname, title: item?.fields?.title, intro: item?.fields?.intro, id: item?.sys?.id})) || [];
           setMembers(items);
           setLoading(false);
           }
@@ -65,14 +65,14 @@ const Advisory = () => {
                 {
                   !members[0].profilePic
                   ?
-                  <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
+                  <img src={`https://eu.ui-avatars.com/api/?name=${members[0].picTitle}&size=350`
                   } alt={members[0].name} className="membersPic"/>
                   :
-                  <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
+                  <img src={members[0].profilePic} alt={members[0].picTitle} className="membersPic"/>
                 }
               </div>
               <div className="rightContainer">
-                <div className="membersName"><h3>{members[0].name}</h3></div>
+                <div className="membersName"><h3>{members[0].firstname} {members[0].lastname}</h3></div>
                 <div className="membersTitle"><h4>{members[0].title}</h4></div>
               </div>
               <div className="membersIntro"><p>{members[0].intro}</p></div>
@@ -87,14 +87,14 @@ const Advisory = () => {
                     {
                       !member.profilePic
                       ?
-                      <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
-                      } alt={member.name} className="membersPic"/>
+                      <img src={`https://eu.ui-avatars.com/api/?name=${member.picTitle}&size=350`
+                      } alt={member.picTitle} className="membersPic"/>
                       :
-                      <img src={member.profilePic} alt={member.name} className="membersPic"/>
+                      <img src={member.profilePic} alt={member.picTitle} className="membersPic"/>
                     }
                   </div>
                   <div className="rightContainer">
-                    <div className="membersName"><h3>{member.name}</h3></div>
+                    <div className="membersName"><h3>{member.firstname} {member.lastname}</h3></div>
                     <div className="membersTitle"><h4>{member.title}</h4></div>
                   </div>
                 </div>

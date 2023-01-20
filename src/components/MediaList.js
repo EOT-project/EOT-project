@@ -30,7 +30,7 @@ const MediaList = () => {
         }
       } catch (error) {
         //show user error retrieving member list
-        console.log(`Error fetching members: ${error}`);
+        console.log(`Error fetching mediaList: ${error}`);
         setError(error);
         setLoading(false);
       }
