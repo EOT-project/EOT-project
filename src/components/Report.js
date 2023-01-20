@@ -20,7 +20,8 @@ const Report = () => {
     const getReport = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "reports"
+          content_type: "reports",
+          order: "fields.order"
         })
 
         if (!!res) {
