@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import Client from "../useContentful";
 import Logo from "./Logo";
+import ErrorData from "./ErrorData";
+import LoaderFooter from "../UI/LoaderFooter";
 
 
 const Footer = () => {
 
     const [ footer, setFooter ] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getFooter = async () => {
@@ -31,17 +35,31 @@ const Footer = () => {
                     setFooter([])
                 }
             } catch (error) {
-                console.log(`Error fetching footer: ${error}`);     
+                console.log(`Error fetching footer: ${error}`);
+                setError(error);
+                setLoading(false);     
             }
         }
         getFooter();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    },[]);
+
+    if (error) {
+        return (
+          <ErrorData/>
+        )
+      }
 
     return (
-        <footer>     
+       
+        <footer>  
+               
             {
+                loading
+                ?
+                <LoaderFooter/>
+                :
                 footer.length !== 0 && footer.map((item, index) => {
                     return (
                             <div className="footerContainer" key={item.id}>
