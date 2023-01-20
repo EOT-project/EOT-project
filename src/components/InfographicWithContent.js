@@ -47,7 +47,7 @@ const InfographicWithContent = () => {
         :
         <>
             <div className="pageTitleContainer opportunityTitle loading">
-                <h2 className="pageTitle">The Benefits of Employee Ownership</h2>
+                <h2 className="pageTitle">Delivering Benefits to Canada’s Economy</h2>
             </div>
             <ul className="galleryContainer loading">
                 {

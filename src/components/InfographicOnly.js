@@ -14,7 +14,7 @@ const InfographicOnly = (props) => {
             try {
                 const res = await Client.getEntries({
                     content_type: "infographicOnlyOpportunity",
-                    order: "fields.order"
+                    order: "fields.subOrder"
                 })
                 if(!!res) {
                     
