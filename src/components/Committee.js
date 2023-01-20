@@ -52,8 +52,8 @@ const Committee = () => {
     members.length !== 0
     ?
     <div className="committee loading">
-      <div className="memberTypeContainer">
-        <h2 className="memberType">Steering Committee</h2>
+      <div className="pageTitleContainer">
+        <h2 className="pageTitle">Steering Committee</h2>
       </div>
       <ul className="membersListContainer">
         {
