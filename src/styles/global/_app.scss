@@ -15,6 +15,7 @@ body {
   font-size: 14px;
   color: $darkGray;
   font-weight: 600;
+  position: relative;
 }
 
 article,
@@ -369,5 +370,11 @@ p {
   // padding: 20px 0 0;
   @media (max-width: 414px) {
     width: clamp(250px, 70vw, 280px);
+  }
+}
+
+.logoContainerMobile {
+  @media (max-width: 414px) {
+    width: clamp(200px, 50vw, 280px);
   }
 }

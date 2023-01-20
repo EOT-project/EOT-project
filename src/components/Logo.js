@@ -38,7 +38,7 @@ const Logo = () => {
 
     return (
         <Link to="/">
-        <div className="logoContainer loading">
+        <div className="logoContainer logoContainerMobile loading">
             {
                 logo.length !== 0 && logo?.map((logo) => {
                    return <img key={logo} src={logo.logoUrl} alt={logo.name}/>
