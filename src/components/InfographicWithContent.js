@@ -13,11 +13,10 @@ const InfographicWithContent = () => {
         const getInfoAndContent = async () => {
             try {
                 const res = await Client.getEntries({
-                    content_type: "infographicAndContentOpp"
+                    content_type: "infographicAndContentOpp",
+                    order: "fields.order"
                 })
                 if(!!res) {
-                    // console.log(res);
-                    
                     const items = res?.items.map(item => ({id: item?.sys?.id, content: item?.fields?.content, image: item?.fields?.image?.fields?.file?.url, title: item?.fields?.title})) || [];
                     setInfoAndContent(items);
                     setLoading(false);
@@ -59,8 +58,12 @@ const InfographicWithContent = () => {
                                             <div className="roundImgContainer">
                                                 <img className="loading" src={item.image} alt={item.title}/>
                                             </div>
-                                            <h4 className="loading">{item.title}</h4>
-                                            <p className="loading">{item.content}</p>
+                                            <div className="infographicTitle">
+                                                <h4>{item.title}</h4>
+                                            </div>
+                                            <div className="infographicContent">
+                                                <p>{item.content}</p>
+                                            </div>
                                         </li>
                             })
                         }

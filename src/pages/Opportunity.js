@@ -6,9 +6,9 @@ import InfographicOnly from "../components/InfographicOnly";
 const Opportunity = () => {
 
     return (
-        <main className="wrapper">
+        <main>
             <Articles />
-            <section className="factsStatements loading">
+            <section className="factsStatements wrapper">
                 <InfographicWithContent/>
                 <ContentOpportunity order={1}/>
                 <InfographicOnly order={1}/>
