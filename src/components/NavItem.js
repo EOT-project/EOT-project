@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
 
-const NavItem = ({item}) => {
+const NavItem = (props) => {
 
-    //function to remove space and special characters
-    const decodeText = (text) => {
-        const textArea = document.createElement('textarea');
-        textArea.innerHTML = text;
-        const url = textArea.value.replace(/ /g, "")
-        return url;
-     }    
-    
     return (
-        <Link to={decodeText(item)}><li>{item}</li></Link>
+        !props.value
+        ?
+            <li className="loading"><Link to="/" onClick={() => props.setIsClicked(false)} className="loading"><p className={`loading ${props.isClicked ? 'menuItem' : ''}`}>{props.name}</p></Link></li>
+        :
+            <li className="loading"><Link to={props.value} onClick={() => props.setIsClicked(false)} className="loading"><p className={`loading ${props.isClicked ? 'menuItem' : ''}`}>{props.name}</p></Link></li>
     );
 };
 
 export default NavItem;
+
+

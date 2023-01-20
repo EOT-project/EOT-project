@@ -1,14 +1,14 @@
-import Articles from "../components/Articles";
-import ContentBlock from "../components/ContentBlock";
+import ArticleCallToAction from "../components/ArticleCallToAction";
+import ContentCallToAction from "../components/ContentCallToAction";
 
 const CallToAction = () => {
     return (
-        <div className="wrapper">
-            <Articles />
-            <section className="factsStatements">
-                <ContentBlock />
+        <main>
+            <ArticleCallToAction />
+            <section className="factsStatements wrapper">
+                <ContentCallToAction order={1} />
             </section>
-        </div>
+        </main>
     );
 } 
 

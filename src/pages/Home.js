@@ -1,15 +1,13 @@
-import Articles from "../components/Articles";
-import Uploads from "../components/Uploads";
+import ArticleHome from "../components/ArticleHome";
+import Committee from "../components/Committee";
 import Advisory from "../components/Advisory";
 import Supporters from "../components/Supporters";
-import Committee from "../components/Committee";
 
 const Home = () => {
   return (
-    <main className="wrapper">
-      <Articles />
-      <Uploads />
-      <section className="members">
+    <main>
+      <ArticleHome />
+      <section className="members wrapper">
         <Committee />
         <Advisory />
         <Supporters />

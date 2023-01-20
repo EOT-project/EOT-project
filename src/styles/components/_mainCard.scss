@@ -1,16 +1,36 @@
 .mainCard {
-  border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
-  padding: 50px;
-  height: 80vh;
+  padding: 50px 50px 70px;
+  @media (max-width: 425px) {
+    padding: 50px 30px 70px;
+  }
+  h2 {
+    margin-bottom: 30px;
+    width: 50%;
+    //SHOULD WE JUST GO TO A 100%??
+    @media (max-width: 890px) {
+      width: 60%;
+    }
+    @media (max-width: 710px) {
+      width: 100%;
+    }
+  }
   .contentBlockContainer {
-    width: 70%;
+    width: 60%;
+
     @media (max-width: 590px) {
       width: 100%;
     }
+
     p {
       text-align: left;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
+      line-height: 1.3rem;
     }
   }
 }

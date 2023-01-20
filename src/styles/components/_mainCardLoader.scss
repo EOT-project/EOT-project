@@ -1,0 +1,5 @@
+.mainCardLoader {
+  height: 521px;
+  background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+  animation: loading 20s linear infinite;
+}

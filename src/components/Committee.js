@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
-// import Modal from "./Modal";
+import LoaderMember from "../UI/LoaderMember";
 
 //create a member container displays maximum of 4 members
 //retrieve profilePic, name, title, intro uploads from steeringCommittee content model
@@ -14,17 +14,13 @@ const Committee = () => {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [click, setClick] = useState(false);
-
-  // const handleClick = (id) => {
-  //   setClick(!click)
-  // }
 
   useEffect(() => {
     const getMembers = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "steeringCommittee"
+          content_type: "steeringCommittee",
+          order: "fields.order"
         })
 
         if (!!res) {
@@ -49,41 +45,67 @@ const Committee = () => {
   }
 
   return (
-    <>
-      {
-        loading
-        ?
-          "loading"
-        :
-          members.length !== 0
+    loading
+    ?
+    <LoaderMember />
+    :
+    members.length !== 0
+    ?
+    <div className="committee loading">
+      <div className="pageTitleContainer">
+        <h2 className="pageTitle">Steering Committee</h2>
+      </div>
+      <ul className="membersListContainer">
+        {
+          members.length === 1
           ?
-          <div className="committee">
-            <h4 className="memberSection">Meet our committee</h4>
-            <h1 className="memberType">Steering Committee</h1>
-            <ul className="membersListContainer">
-              {
-                members.map((member) => {
-                  return (
-                    <li key={member.id} className="membersList" >
-                      
-                      <img src={member.profilePic} alt={member.name} className="membersPic" />
-                      <h2 className="membersName">{member.name}</h2>
-                      <h4 className="membersTitle">{member.title}</h4>
-                      <p className="membersIntro">{member.intro}</p>
-                      {/* <button onClick={() => handleClick(member.id)}>click me
-                      {
-                        click && <Modal memberProfilePic={member.profilePic} memberName={member.name} memberTitle={member.title} memberIntro={member.intro}/>
-                      }
-                      </button> */}
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          </div>
-          : null
-      }
-    </>
+          <li key={members[0].id} className="membersList" >
+            <div className="topContainer">
+              <div className='picContainer'>
+                {
+                  !members[0].profilePic
+                  ?
+                  <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
+                  } alt={members[0].name} className="membersPic"/>
+                  :
+                  <img src={members[0].profilePic} alt={members[0].name} className="membersPic"/>
+                }
+              </div>
+              <div className="rightContainer">
+                <div className="membersName"><h3>{members[0].name}</h3></div>
+                <div className="membersTitle"><h4>{members[0].title}</h4></div>
+              </div>
+              <div className="membersIntro"><p>{members[0].intro}</p></div>
+            </div>
+          </li>
+          :
+          members.map((member) => {
+            return (
+              <li key={member.id} className="membersList" >
+                <div className="topContainer">
+                  <div className='picContainer'>
+                    {
+                      !member.profilePic
+                      ?
+                      <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
+                      } alt={member.name} className="membersPic"/>
+                      :
+                      <img src={member.profilePic} alt={member.name} className="membersPic"/>
+                    }
+                  </div>
+                  <div className="rightContainer">
+                    <div className="membersName"><h3>{member.name}</h3></div>
+                    <div className="membersTitle"><h4>{member.title}</h4></div>
+                  </div>
+                </div>
+                <div className="membersIntro"><p>{member.intro}</p></div>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+    : null
   )
 }
 

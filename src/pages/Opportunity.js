@@ -1,23 +1,22 @@
 import Articles from "../components/Articles";
-import ImageGallery from "../components/ImageGallery";
-import ContentBlock from "../components/ContentBlock";
+import InfographicWithContent from "../components/InfographicWithContent";
+import ContentOpportunity from "../components/ContentOpportunity";
+import InfographicOnly from "../components/InfographicOnly";
 
 const Opportunity = () => {
 
-    //send data from here to <ImageGallery/>
-
     return (
-        <main className="wrapper">
+        <main>
             <Articles />
-            <section className="factsStatements">
-                <ImageGallery content={true}/>
-                <ContentBlock />
-                <ImageGallery content={false}/>
-                <ContentBlock />
-                <ImageGallery  content={false}/>
+            <section className="factsStatements wrapper">
+                <InfographicWithContent/>
+                <ContentOpportunity order={1}/>
+                <InfographicOnly order={1}/>
+                <ContentOpportunity order={2}/>
+                <InfographicOnly  order={2}/>
             </section>
         </main>
     );
-}
+} 
 
 export default Opportunity;

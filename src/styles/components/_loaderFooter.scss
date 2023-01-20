@@ -1,0 +1,66 @@
+.loaderContainer {
+  margin-bottom: 0;
+  footer {
+    box-shadow: 7px -1px 5px rgb(0 0 0 / 5%);
+    padding: 20px 0 0;
+    .footerContainer {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 30px;
+      .logoContainer {
+        height: 70px;
+        width: 280px;
+        background: linear-gradient(
+          90deg,
+          $lighterGray,
+          $lightGray,
+          $lighterGray
+        );
+        animation: loading 20s linear infinite;
+        @media (max-width: 414px) {
+          width: clamp(250px, 70vw, 280px);
+        }
+      }
+
+      .socialMediaContainer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 100px;
+        .email {
+          width: 220px;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 10px;
+        }
+      }
+    }
+  }
+  .email,
+  .footerItem {
+    display: block;
+    width: 60px;
+    height: 20px;
+    background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+    animation: loading 20s linear infinite;
+  }
+}
+
+@media (max-width: 890px) {
+  .loaderContainer {
+    footer {
+      .footerContainer {
+        flex-direction: column;
+        align-items: self-start;
+        gap: 25px;
+        .socialMediaContainer {
+          flex-direction: column;
+          gap: 25px;
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,21 @@
 import { useEffect, useState } from "react";
-import MainCard from "../UI/MainCard";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Client from "../useContentful";
+import MainCard from "../UI/MainCard";
+import ErrorData from "./ErrorData";
+import LoaderMainCard from "../UI/LoaderMainCard";
+
+//create a article(aka main card) component
+// retrieve backgroundImage, title, and content from articles content model
+// show a loading card while retrieving data
+// set state to mainCard that were downloaded
+// render mainCard
 
 const Articles = () => {
 
     const [ mainCard, setMainCard ] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getCardContent = async () => {
@@ -12,46 +23,57 @@ const Articles = () => {
                 const res = await Client.getEntries({
                     content_type: "articles"
                 })
+                
                 if(!!res) {
-                    const cleanUpData = (rawData) => {
-                        const cleanData = rawData.map((data) => {
-                            const { sys, fields } = data
-                            const { id } = sys
-                            const title = fields.title
-                            const content = fields.content.content[0].content[0].value
-                            const image = fields.backgroundImage.fields.file.url  
-                            const updatedData = { id, title, content, image }
-                            return updatedData                          
-                        })
-                        setMainCard(cleanData)
-                    }
-                    cleanUpData(res.items)
-                }else {
-                    setMainCard([])
+                    const items = res?.items.map(item => ({id: item?.sys?.id, title: item?.fields?.title, image: item?.fields?.backgroundImage?.fields?.file?.url, content: item?.fields?.content})) || [];
+                    setMainCard(items);
+                    setLoading(false);
                 }
             } catch (error) {
-                console.log(`Error fetching card content: ${error}`);          
+                console.log(`Error fetching card content: ${error}`);
+                setError(error);
+                setLoading(false);
             }
         }
         getCardContent();
     },[]);
 
+    if (error) {
     return (
-        <section className="Article">
+        <ErrorData/>
+    )
+    };
+
+    return (
+        loading
+        ?
+        <LoaderMainCard/>
+        :
+        mainCard.length !== 0
+        ?
+        <section className="article wrapper loading">
             {
-                mainCard.map((item) => {
-                    return <MainCard image={item.image}>
-                        <h2>{item.title}</h2>
-                        <div className="contentBlockContainer">
-                            <p>{item.content}</p>
-                        </div>
-
-                    </MainCard>
-
+            mainCard.length === 1
+            ?
+            <MainCard key={mainCard[0]} image={mainCard[0].image}>
+                <h2>{mainCard[0].title}</h2>
+                <div className="contentBlockContainer">
+                    {documentToReactComponents(mainCard[0].content)}
+                </div>
+            </MainCard>
+            :
+            mainCard.map((item) => {
+                return <MainCard key={item} image={item.image}>
+                    <h2>{item.title}</h2>
+                    <div className="contentBlockContainer">
+                        {documentToReactComponents(item.content)}
+                    </div>
+                </MainCard>
                 })
             }                
         </section>
-    )
+        : null
+    );
 }
 
 export default Articles;

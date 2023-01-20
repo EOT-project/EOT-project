@@ -1,0 +1,52 @@
+.loaderContainer {
+  .supporterPicContainer {
+    background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+    animation: loading 20s linear infinite;
+    height: 125px;
+    display: block;
+    border-radius: 50%;
+  }
+  .supporterTextContainer {
+    .membersName,
+    .membersTitle {
+      width: 300px;
+    }
+  }
+  @media(max-width: 1075px) {
+    .supporterTextContainer {
+      .membersName,
+      .membersTitle {
+        width: 250px;
+      }
+    }
+  }
+  @media(max-width: 877px) {
+    .supporterTextContainer {
+      .membersName,
+      .membersTitle {
+        width: 300px;
+      }
+    }
+  }
+  @media(max-width: 663px) {
+    .supporterPicContainer {
+      height: 135px;
+    }
+  }
+  @media(max-width: 482px) {
+    .supporterPicContainer {
+      height: 145px;
+    }
+  }
+  @media(max-width: 414px) {
+    .supporterPicContainer {
+      height: 155px;
+    }
+    .supporterTextContainer {
+      .membersName,
+      .membersTitle {
+        width: 220px;
+      }
+    }
+  }
+}

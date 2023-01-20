@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import LoaderSupporter from "../UI/LoaderSupporter";
 
 //create a member container displays maximum of 4 members
 //retrieve profilePic, name, title, intro uploads from supporters content model
@@ -18,11 +19,12 @@ const Supporters = () => {
     const getMembers = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "supporters"
+          content_type: "supporters",
+          order: "fields.priority"
         })
-
+        
         if (!!res) {
-          const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, intro: item?.fields?.intro, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({profilePic: item?.fields?.profilePic?.fields?.file?.url, name: item?.fields?.name, title: item?.fields?.title, id: item?.sys?.id})) || [];
           setMembers(items);
           setLoading(false);
           }
@@ -43,35 +45,61 @@ const Supporters = () => {
   }
 
   return (
-    <>
-      {
-        loading
-        ?
-          "loading"
-        :
-          members.length !== 0
+    loading
+    ?
+    <LoaderSupporter/>
+    :
+    members.length !== 0
+    ?
+    <div className="supporters loading">
+      <div className="pageTitleContainer">
+        <h2 className="pageTitle">Supporters</h2>
+      </div>
+      <ul className="membersListContainer">
+        {
+          members.length === 1
           ?
-          <div className="supporters">
-            <h4>Meet our supporters</h4>
-            <h2>Supporters</h2>
-            <ul className="membersListContainer">
+          <li key={members[0].id} className="supportersList" >
+            <div className='supporterPicContainer'>
               {
-                members.map((member) => {
-                  return (
-                    <li key={member.id} className="membersList">
-                        <img src={member.profilePic} alt={member.name} className="membersPic"/>
-                        <h3 className="membersName">{member.name}</h3>
-                        <h4 className="membersTitle">{member.title}</h4>
-                        {/* <p className="membersIntro">{member.intro}</p> */}
-                      </li>
-                  )
-                })
+                !members[0].profilePic
+                ?
+                <img src={`https://eu.ui-avatars.com/api/?name=${members[0].name}&size=350`
+                } alt={members[0].name} className="supporterPic"/>
+                :
+                <img src={members[0].profilePic} alt={members[0].name} className="supporterPic"/>
               }
-            </ul>
-          </div>
-          : null
-      }
-    </>
+            </div>
+            <div className="supporterTextContainer">
+              <div className="membersName"><h3>{members[0].name}</h3></div>
+              <div className="membersTitle"><h4>{members[0].title}</h4></div>
+            </div>
+          </li>
+          :
+          members.map((member) => {
+            return (
+              <li key={member.id} className="supportersList" >
+                <div className='supporterPicContainer'>
+                  {
+                    !member.profilePic
+                    ?
+                    <img src={`https://eu.ui-avatars.com/api/?name=${member.name}&size=350`
+                    } alt={member.name} className="supporterPic"/>
+                    :
+                    <img src={member.profilePic} alt={member.name} className="supporterPic"/>
+                  }
+                </div>
+                <div className="supporterTextContainer">
+                  <div className="membersName"><h3>{member.name}</h3></div>
+                  <div className="membersTitle"><h4>{member.title}</h4></div>
+                </div>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+    : null
   )
 }
 

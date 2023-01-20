@@ -15,6 +15,7 @@ body {
   font-size: 14px;
   color: $darkGray;
   font-weight: 600;
+  position: relative;
 }
 
 article,
@@ -291,6 +292,29 @@ html {
   left: 0;
 }
 
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(
+    1px 1px 1px 1px
+  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(
+    1px,
+    1px,
+    1px,
+    1px
+  ); /*maybe deprecated but we need to support legacy browsers */
+  clip-path: inset(
+    50%
+  ); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
 * {
   font-size: 1rem;
   color: $darkGray;
@@ -304,7 +328,7 @@ ul {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 980px;
   width: 90%;
   margin: 0 auto;
 }
@@ -324,13 +348,11 @@ h1 {
 h2 {
   font-size: 1.6rem;
   line-height: 1.8rem;
-  // margin-bottom: 20px;
 }
 
 h3 {
   font-size: 1.2rem;
   line-height: 1.5rem;
-  // margin-bottom: 20px;
 }
 
 h4 {
@@ -339,13 +361,67 @@ h4 {
 }
 
 p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1rem;
 }
 
 .logoContainer {
-  width: 350px;
+  width: 280px;
+  // padding: 20px 0 0;
   @media (max-width: 414px) {
-    width: clamp(250px, 75vw, 350px);
+    width: clamp(250px, 70vw, 280px);
+  }
+}
+
+.pageTitleContainer {
+  background-color: $darkTeal;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  .pageTitle {
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+    text-transform: capitalize;
+    color: $white;
+    margin: 0 30px;
+  }
+  @media (max-width: 959px) {
+    .pageTitle {
+      font-size: 1.8rem;
+    }
+  }
+  @media (max-width: 899px) {
+    .pageTitle {
+      font-size: 1.7rem;
+    }
+  }
+  @media (max-width: 845px) {
+    .pageTitle {
+      font-size: 1.6rem;
+    }
+  }
+  @media (max-width: 815px) {
+    .pageTitle {
+      font-size: 1.5rem;
+      margin: 0 20px;
+    }
+  }
+  @media (max-width: 761px) {
+    .pageTitle {
+      font-size: 1.4rem;
+    }
+  }
+  @media (max-width: 636px) {
+    .pageTitle {
+      margin: 0 15px;
+    }
+  }
+  @media (max-width: 590px) {
+    .pageTitle {
+      margin: 0 10px;
+    }
   }
 }

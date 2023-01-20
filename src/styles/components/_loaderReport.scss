@@ -1,0 +1,17 @@
+.loaderContainer {
+  .reportContainer {
+    background: linear-gradient(90deg, $lighterGray, $lightGray, $lighterGray);
+    animation: loading 20s linear infinite;
+    display: block;
+    height: 394px;
+    @media (max-width: 1008px) {
+      height: 344px;
+    }
+    @media (max-width: 753px) {
+      height: 290px;
+    }
+    @media (max-width: 590px) {
+      height: 240px;
+    }
+  }
+}

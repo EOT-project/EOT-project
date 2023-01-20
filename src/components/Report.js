@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
+import LoaderReport from "../UI/LoaderReport";
 
 //create a report container displays 3 maximum reports per line
 //get data set from reports content model
@@ -19,18 +20,19 @@ const Report = () => {
     const getReport = async () => {
       try {
         const res = await Client.getEntries({
-          content_type: "reports"
+          content_type: "reports",
+          order: "fields.order"
         })
-        
+
         if (!!res) {
-          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url, url: item?.fields?.url, id: item?.sys?.id})) || [];
+          const items = res?.items.map(item => ({title: item?.fields?.title, type: item?.fields?.type, image: item?.fields?.backgroundImage?.fields?.file?.url, url: item?.fields?.url, file: item?.fields?.asset?.fields?.file?.url, id: item?.sys?.id})) || [];
 
           setReport(items);
           setLoading(false);
         }
       } catch (error) {
-        //ToDo: show user error retrieving member list
-        console.log(`Error fetching members: ${error}`);
+        //show user error retrieving member list
+        console.log(`Error fetching reports: ${error}`);
         setError(error);
         setLoading(false);
       }
@@ -45,45 +47,51 @@ const Report = () => {
   }
 
   return (
-    <section className="report">
+    loading
+    ?
+    <LoaderReport/>
+    :
+    <section className="report loading">
+      <div className="pageTitleContainer">
+        <h2 className="pageTitle">Resources</h2>
+      </div>
       <ul className="reportList">
-      {
-        loading
-        ?
-          "loading"
-        :
-          report.length === 1
+        {
+          report.length !== 0
           ?
-          <li key={report[0].id} className="reportContainer">
-            <div style={{
-                backgroundImage: `url(${report[0].image})`,
-                backgroundSize: `cover`,
-                backgroundRepeat: `no-repeat`,
-                backgroundPosition: `center`
-              }}>
-              <h4 className="reportType">{report[0].type}</h4>
-              <h3 className="reportTitle">{report[0].title}</h3>
-              <a href={report[0].url} target="_blank"><button className="reportButton">CTA</button></a>
-            </div>
-          </li>
-          :
+            report.length === 1
+            ?
+            <li key={report[0].id} className="reportContainer">
+              <div className="reportBg" style={{
+                  backgroundImage: `url(${report[0].image})`,
+                  backgroundSize: `cover`,
+                  backgroundRepeat: `no-repeat`,
+                  backgroundPosition: `center`
+                }}>
+                <h4 className="reportType">{report[0].type}</h4>
+                <h3 className="reportTitle">{report[0].title}</h3>
+                <a href={report[0].url?report[0].url:report[0].file} target="_blank" rel="noreferrer" className="reportButton">READ</a>
+              </div>
+            </li>
+            :
             report.map((item) => {
               return (
                 <li key={item.id} className="reportContainer">
-                  <div style={{
+                  <div className="reportBg" style={{
                     backgroundImage: `url(${item.image})`,
                     backgroundSize: `cover`,
                     backgroundRepeat: `no-repeat`,
-                    backgroundPosition: `center`,
+                    backgroundPosition: `center`
                   }}>
                     <h4 className="reportType">{item.type}</h4>
                     <h3 className="reportTitle">{item.title}</h3>
-                    <a href={item.url} target="_blank"><button className="reportButton">CTA</button></a>
+                    <a href={item.url?item.url:item.file} target="_blank" rel="noreferrer" className="reportButton">READ</a>
                   </div>
                 </li>
               )
             })
-      }
+          : null
+        }
       </ul>
     </section>
   )
