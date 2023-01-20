@@ -17,7 +17,7 @@
 
 .menuMobile {
   position: absolute;
-  right: -200vw;
+  right: -350%;
   &.showMenu {
     top: 0;
     right: 0;
@@ -34,8 +34,11 @@
       position: fixed;
       right: 30px;
       top: 25px;
-
       width: 60px;
+      @media (max-width: 414px) {
+        right: -4px;
+        top: 22px;
+      }
     }
   }
   @media (max-width: 980px) {

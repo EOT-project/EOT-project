@@ -46,13 +46,13 @@ nav {
     &.showMenuItems {
       justify-content: flex-start;
       opacity: 1;
-      right: -18px;
       visibility: visible;
       z-index: 99999;
       display: flex;
       flex-direction: column;
-      // justify-content: flex-start;
       align-items: flex-start;
+      position: fixed;
+      margin-left: 30px;
     }
     // @media (max-width: 980px) {
     //   bottom: 0;
@@ -100,7 +100,7 @@ nav {
       @media (max-width: 414px) {
         font-size: 1.5rem;
       }
-      font-size: 0.7rem;
+      // font-size: 0.7rem;
     }
   }
 }
