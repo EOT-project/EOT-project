@@ -39,28 +39,28 @@ const ContentCallToAction = (props) => {
   }
 
   return (
-    <div className="blockContentContainer loading">
-      {
-        loading
+    loading
+    ?
+    <LoaderContentOpportunity/>
+    :
+      contents.length !== 0
+      ?
+        contents.length >= props.order
         ?
-        <LoaderContentOpportunity/>
-        :
-          contents.length !== 0
-          ?
-            contents.length >= props.order
-            ?
-              contents[props.order - 1].title
-              ? <>
-                  <h3>{contents[props.order - 1].title}</h3>
-                  {documentToReactComponents(contents[props.order - 1].context)}
-                </>
-              : <>
-                  {documentToReactComponents(contents[props.order - 1].context)}
-                </>
-            : null
-          : null
-      }
-    </div>
+        <div className="blockContentContainer loading">
+          {
+          contents[props.order - 1].title
+          ? <>
+              <h3>{contents[props.order - 1].title}</h3>
+              {documentToReactComponents(contents[props.order - 1].context)}
+            </>
+          : <>
+              {documentToReactComponents(contents[props.order - 1].context)}
+            </>
+          }
+        </div>
+        : null
+      : null
   )
 }
 

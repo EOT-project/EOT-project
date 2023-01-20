@@ -38,34 +38,30 @@ const InfographicOnly = (props) => {
       }
 
     return (
-        <>
-        {
-          loading
-          ?
-            <LoaderInfographic/>
-          :
-            infographic.length !== 0
-            ?
-              <ul className="galleryContainer">
-                {
-                  infographic.map((item) => {
-                    return (
-                      item.order === props.order
-                      ?
-                        <li className="imgOnly" key={item.id}>
-                          <div className="roundImgContainer ">
-                              <img className="loading" src={item.image} alt={item.title}/>
-                          </div>
-                        </li>
-                      : null
-                      )
-                    })
-                }
-              </ul>
-          :
-          null
-        }
-      </>
+      loading
+      ?
+        <LoaderInfographic/>
+      :
+        infographic.length !== 0
+        ?
+        <ul className="galleryContainer loading">
+          {
+            infographic.map((item) => {
+              return (
+                item.order === props.order
+                ?
+                  <li className="imgOnly" key={item.id}>
+                    <div className="roundImgContainer ">
+                        <img src={item.image} alt={item.title}/>
+                    </div>
+                  </li>
+                : null
+                )
+              })
+          }
+        </ul>
+        :
+        null
     );
 }
 
