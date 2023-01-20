@@ -51,7 +51,7 @@ const ContentCallToAction = (props) => {
           {
           contents[props.order - 1].title
           ? <>
-              <h3>{contents[props.order - 1].title}</h3>
+              <h2>{contents[props.order - 1].title}</h2>
               {documentToReactComponents(contents[props.order - 1].context)}
             </>
           : <>

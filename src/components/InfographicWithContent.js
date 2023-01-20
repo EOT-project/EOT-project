@@ -49,6 +49,7 @@ const InfographicWithContent = () => {
             <div className="pageTitleContainer opportunityTitle loading">
                 <h2 className="pageTitle">Delivering Benefits to Canada’s Economy</h2>
             </div>
+                <h3 className="subHeadline">sub headline</h3>
             <ul className="galleryContainer loading">
                 {
                 infoAndContent.map((item) => {
