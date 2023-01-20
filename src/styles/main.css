@@ -368,6 +368,27 @@ p {
   }
 }
 
+.loaderContainer nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.loaderContainer nav .logoContainer {
+  height: 50px;
+  width: 250px;
+  background: linear-gradient(90deg, #eeeeee, #dddddd, #eeeeee);
+  -webkit-animation: loading 20s linear infinite;
+          animation: loading 20s linear infinite;
+}
+.loaderContainer nav ul li p {
+  display: block;
+  width: 75px;
+  height: 20px;
+  background: linear-gradient(90deg, #eeeeee, #dddddd, #eeeeee);
+  -webkit-animation: loading 20s linear infinite;
+          animation: loading 20s linear infinite;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -378,9 +399,6 @@ nav {
     align-items: center;
     gap: 30px;
   }
-}
-nav .wrapper {
-  width: 85%;
 }
 nav .logoContainer {
   padding-top: 20px;
@@ -1377,8 +1395,8 @@ footer .footerContainer .socialMediaContainer ul {
   }
 }
 .loading {
-  -webkit-animation: fade-in 10s forwards;
-          animation: fade-in 10s forwards;
+  -webkit-animation: fade-in 0.2s forwards;
+          animation: fade-in 0.2s forwards;
 }
 
 .loaderContainer {

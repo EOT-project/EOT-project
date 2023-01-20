@@ -1,10 +1,6 @@
 const LoaderLogo = () => {
     return (
-        <div className="loaderContainer">
-            <div className="logoContainer">
-                <div />
-            </div>
-        </div>
+            <div className="logoContainer"/>
     )
 };
 
