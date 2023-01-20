@@ -4,8 +4,8 @@
     justify-content: space-around;
     padding-top: 20px;
     .logoContainer {
-      height: 50px;
-      width: 250px;
+      height: 70px;
+      width: 280px;
       background: linear-gradient(
         90deg,
         $lighterGray,
@@ -13,12 +13,15 @@
         $lighterGray
       );
       animation: loading 20s linear infinite;
+      @media (max-width: 414px) {
+        width: clamp(250px, 70vw, 280px);
+      }
     }
     ul {
       li {
         p {
           display: block;
-          width: 75px;
+          width: 100px;
           height: 20px;
           background: linear-gradient(
             90deg,

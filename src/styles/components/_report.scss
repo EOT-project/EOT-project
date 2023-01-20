@@ -1,3 +1,8 @@
+.report {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .reportList {
   display: flex;
   flex-wrap: wrap;
@@ -34,9 +39,13 @@
   display: inline-block;
   font-weight: 800;
   color: $white;
-  height: 250px;
+  height: 12rem;
   text-align: left;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
 }
 
 .reportButton {
@@ -53,7 +62,7 @@
   color: $gray;
 }
 
-@media (max-width: 1008px) {
+@media (max-width: 1010px) {
   .reportList {
     justify-content: space-between;
     gap: 50px 30px;
@@ -64,7 +73,8 @@
     }
   }
   .reportTitle {
-    height: 200px;
+    height: 10.5rem;
+    -webkit-line-clamp: 7;
   }
 }
 
@@ -73,12 +83,13 @@
     gap: 40px 30px;
   }
   .reportType {
-    font-size: 0.6rem;
-    line-height: 1rem;
+    font-size: 0.7rem;
+    line-height: 1.1rem;
   }
   .reportTitle {
-    font-size: 1rem;
-    line-height: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.25rem;
+    height: 8.75rem;
   }
 }
 
@@ -91,7 +102,10 @@
     }
   }
   .reportTitle {
-    height: 150px;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    height: 7.5rem;
+    -webkit-line-clamp: 6;
   }
 }
 
@@ -102,18 +116,25 @@
       margin-bottom: 20px;
     }
   }
-  .reportTitle {
-    height: 100px;
+  .reportButton {
+    padding: 9px 25px;
+    min-width: 40%;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 397px) {
   .reportType {
-    font-size: 0.5rem;
-    line-height: 0.8rem;
+    font-size: 0.6rem;
+    line-height: 0.95rem;
   }
   .reportTitle {
     font-size: 0.9rem;
     line-height: 1rem;
+    height: 6rem;
+    -webkit-line-clamp: 6;
+  }
+  .reportButton {
+    padding: 8px 20px;
+    min-width: 40%;
   }
 }

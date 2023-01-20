@@ -52,8 +52,8 @@ const Advisory = () => {
     members.length !== 0
     ?
     <div className="advisory loading">
-      <div className="memberTypeContainer">
-        <h2 className="memberType">Advisory Board</h2>
+      <div className="pageTitleContainer">
+        <h2 className="pageTitle">Advisory Board</h2>
       </div>
       <ul className="membersListContainer">
         {

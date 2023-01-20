@@ -10,6 +10,7 @@ const LoaderNav = () => {
                         <li><p className="navListItem"/></li>
                         <li><p className="navListItem"/></li>
                         <li><p className="navListItem"/></li>
+                        <li><p className="navListItem"/></li>
                     </ul>
                 </nav>
         </div>

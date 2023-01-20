@@ -2,14 +2,13 @@ import ArticleCallToAction from "../components/ArticleCallToAction";
 import ContentCallToAction from "../components/ContentCallToAction";
 
 const CallToAction = () => {
-    
     return (
-        <div className="wrapper">
+        <main>
             <ArticleCallToAction />
-            <section className="factsStatements">
+            <section className="factsStatements wrapper">
                 <ContentCallToAction order={1} />
             </section>
-        </div>
+        </main>
     );
 } 
 

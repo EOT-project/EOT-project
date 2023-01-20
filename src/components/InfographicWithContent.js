@@ -41,36 +41,31 @@ const InfographicWithContent = () => {
     
 
     return (
+        loading
+        ?
+        <LoaderInfWithContent/>
+        :
         <>
-           { 
-                loading
-                ?
-                <LoaderInfWithContent/>
-                :
-                <>
-                <div className="pageTitleContainer opportunityTitle">
-                    <h2 className="pageTitle loading">The Benefits of Employee Ownership</h2>
-                </div>
-                    <ul className="galleryContainer">
-                        {
-                            infoAndContent.map((item) => {
-                                return <li key={item.id}>
-                                            <div className="roundImgContainer">
-                                                <img className="loading" src={item.image} alt={item.title}/>
-                                            </div>
-                                            <div className="infographicTitle">
-                                                <h4>{item.title}</h4>
-                                            </div>
-                                            <div className="infographicContent">
-                                                <p>{item.content}</p>
-                                            </div>
-                                        </li>
-                            })
-                        }
-
-                    </ul>
-                </>
-            }
+            <div className="pageTitleContainer opportunityTitle loading">
+                <h2 className="pageTitle">Delivering Benefits to Canada’s Economy</h2>
+            </div>
+            <ul className="galleryContainer loading">
+                {
+                infoAndContent.map((item) => {
+                    return <li key={item.id}>
+                                <div className="roundImgContainer">
+                                    <img src={item.image} alt={item.title}/>
+                                </div>
+                                <div className="infographicTitle">
+                                    <h4>{item.title}</h4>
+                                </div>
+                                <div className="infographicContent">
+                                    <p>{item.content}</p>
+                                </div>
+                            </li>
+                })
+                }
+            </ul>
         </>
     );
 }

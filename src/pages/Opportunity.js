@@ -1,6 +1,6 @@
 import Articles from "../components/Articles";
-import ContentOpportunity from "../components/ContentOpportunity";
 import InfographicWithContent from "../components/InfographicWithContent";
+import ContentOpportunity from "../components/ContentOpportunity";
 import InfographicOnly from "../components/InfographicOnly";
 
 const Opportunity = () => {

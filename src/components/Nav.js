@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import NavItem from "./NavItem";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
-import LoaderNav from "../UI/LoaderNav";
+import LoaderNav from "../UI/LoaderNav"
 
 const Nav = () => {
 

@@ -39,13 +39,12 @@ const ArticleCallToAction = () => {
     }
 
     return (
-        <section className="article loading">
-        
-        {
-            loading
-            ?
-            <LoaderMainCard/>
-            :
+        loading
+        ?
+        <LoaderMainCard/>
+        :
+        <section className="article wrapper loading">
+            {
             mainCard.map((item) => {
                 return <MainCard key={item} image={item.image}>
                     <h2>{item.title}</h2>
@@ -53,10 +52,9 @@ const ArticleCallToAction = () => {
                         {documentToReactComponents(item.content)}
                     </div>
                 </MainCard>
-
-            })
-        }                 
-    </section>
+                })
+            }
+        </section>
     );
 }
 

@@ -1,19 +1,6 @@
-.pageTitleContainer {
-  background-color: $darkTeal;
-  width: 100%;
-  height: 5rem;
-  display: flex;
-  align-items: center;
+.media {
   margin-top: 50px;
   margin-bottom: 50px;
-  .pageTitle {
-    font-weight: 600;
-    font-size: 1.9rem;
-    line-height: 2.2rem;
-    text-transform: uppercase;
-    color: $white;
-    margin: 0 30px;
-  }
 }
 
 .mediaList {
@@ -60,6 +47,7 @@
   justify-content: center;
   align-items: center;
   .mediaLogo {
+    width: 40%;
     align-self: center;
     aspect-ratio: 1 / 1;
   }
@@ -105,12 +93,6 @@
       flex-basis: calc(50% - 10px);
     }
   }
-  .mediaLogoContainer {
-    .mediaLogo {
-      height: 200px;
-      width: 200px;
-    }
-  }
 }
 
 @media (max-width: 771px) {
@@ -142,6 +124,9 @@
   }
   .mediaLogoContainer {
     margin: 15px 0;
+    .mediaLogo {
+      width: 30%;
+    }
   }
 }
 
@@ -158,6 +143,11 @@
   .opportunityTitle {
     height: 6rem;
   }
+  .mediaLogoContainer {
+    .mediaLogo {
+      width: 40%;
+    }
+  }
 }
 
 @media (max-width: 324px) {
@@ -170,12 +160,6 @@
     .mediaTitle {
       font-size: 0.9rem;
       line-height: 1rem;
-    }
-  }
-  .mediaLogoContainer {
-    .mediaLogo {
-      height: 150px;
-      width: 150px;
     }
   }
 }

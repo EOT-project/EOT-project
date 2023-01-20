@@ -1,5 +1,4 @@
 .members {
-  margin-top: 50px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -7,22 +6,6 @@
   gap: 50px;
   @media (max-width: 590px) {
     width: 90%;
-  }
-  .memberTypeContainer{
-    background-color: $darkTeal;
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    .memberType {
-      font-weight: 600;
-      font-size: 1.9rem;
-      line-height: 2.2rem;
-      text-transform: uppercase;
-      color: $white;
-      margin: 0 30px;
-    }
   }
 }
 
@@ -41,6 +24,7 @@
   gap: 20px;
   .membersIntro {
     p {
+      font-size: 0.7rem;
       margin-top: 10px;
       max-width: 100%;
       text-align: left;
@@ -113,7 +97,7 @@
 .membersName {
   h3 {
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: -1px;
   }
