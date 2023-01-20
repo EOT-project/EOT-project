@@ -8,7 +8,7 @@ const Opportunity = () => {
     return (
         <main className="wrapper">
             <Articles />
-            <section className="factsStatements">
+            <section className="factsStatements loading">
                 <InfographicWithContent/>
                 <ContentOpportunity order={1}/>
                 <InfographicOnly order={1}/>

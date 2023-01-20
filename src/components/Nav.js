@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import NavItem from "./NavItem";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
-import Loader from "../UI/Loader";
+import LoaderNav from "../UI/LoaderNav";
 
 const Nav = () => {
 
@@ -40,17 +40,16 @@ const Nav = () => {
   }
 
   return (
-    <header>
-      <nav>
-        <Logo/>
-        <h1 className="visually-hidden">Canadian Employee Ownership Coalition</h1>
-        <ul>
-          {
             loading
             ?
-              <Loader/>
+              <LoaderNav/>
             :
-              menu.length !== 0
+            <header>
+              <nav>
+                <Logo/>
+                <h1 className="visually-hidden">Canadian Employee Ownership Coalition</h1>
+              <ul>
+            { menu.length !== 0
               ?
                 menu.length === 1
                 ?
@@ -62,8 +61,8 @@ const Nav = () => {
                     )
                   })
               :null
-          }                   
-        </ul>
+            }               
+            </ul>
       </nav>
     </header>
   )

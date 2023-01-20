@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NavItem = (props) => {
 
     return (
-        <li><Link to={props.value}><p>{props.name}</p></Link></li>
+        <li className="loading"><Link to={props.value} className="loading"><p className="loading">{props.name}</p></Link></li>
     );
 };
 

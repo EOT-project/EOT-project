@@ -3,7 +3,7 @@ import MainCard from "../UI/MainCard";
 import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import ErrorData from "./ErrorData";
-import Loader from "../UI/Loader";
+import LoaderMainCard from "../UI/LoaderMainCard";
 
 const ArticleHome = () => {
 
@@ -39,16 +39,16 @@ const ArticleHome = () => {
     }
 
     return (
-        <section className="article wrapper">
+        <section className="article wrapper loading">
               {
                 loading
                 ?
-                <Loader/>
+                <LoaderMainCard/>
                 :
                 mainCard.map((item) => {
                     return <MainCard key={item} image={item.image}>
-                        <h2 className="loading">{item.title}</h2>
-                        <div className="contentBlockContainer loading">
+                        <h2>{item.title}</h2>
+                        <div className="contentBlockContainer">
                             {documentToReactComponents(item.content)}
                         </div>
                     </MainCard>

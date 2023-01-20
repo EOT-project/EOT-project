@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Loader from "../UI/Loader";
+import LoaderContentOpportunity from "../UI/LoaderContentOpportunity";
 
 const ContentCallToAction = (props) => {
   
@@ -39,11 +39,11 @@ const ContentCallToAction = (props) => {
   }
 
   return (
-    <div className="blockContentContainer">
+    <div className="blockContentContainer loading">
       {
         loading
         ?
-        <Loader/>
+        <LoaderContentOpportunity/>
         :
           contents.length !== 0
           ?

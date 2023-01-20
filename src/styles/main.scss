@@ -1,5 +1,6 @@
 @import "./global/variables.scss";
 @import "./global/app.scss";
+@import "./components/loaderNav";
 @import "./components/nav";
 @import "./components/footer";
 @import "./components/mainCard";
@@ -20,3 +21,4 @@
 @import "./components/mainCardLoader";
 @import "./components/loaderInfographics";
 @import "./components/loaderContentOpportunity";
+@import "./components/loaderFooter";
