@@ -60,7 +60,7 @@ const InfographicWithContent = () => {
                                 <img src={infoAndContent[0].image} alt={infoAndContent[0].title}/>
                             </div>
                             <div className="infographicTitle">
-                                <h4>{infoAndContent[0].title}</h4>
+                                <h3>{infoAndContent[0].title}</h3>
                             </div>
                             <div className="infographicContent">
                                 <p>{infoAndContent[0].content}</p>
@@ -74,7 +74,7 @@ const InfographicWithContent = () => {
                                         <img src={item.image} alt={item.title}/>
                                     </div>
                                     <div className="infographicTitle">
-                                        <h4>{item.title}</h4>
+                                        <h3>{item.title}</h3>
                                     </div>
                                     <div className="infographicContent">
                                         <p>{item.content}</p>

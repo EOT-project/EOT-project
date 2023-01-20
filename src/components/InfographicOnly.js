@@ -16,9 +16,10 @@ const InfographicOnly = (props) => {
                     content_type: "infographicOnlyOpportunity",
                     order: "fields.subOrder"
                 })
+                
                 if(!!res) {
                     
-                    const items = res?.items.map(item =>({id: item?.sys?.id, image: item?.fields?.image?.fields?.file?.url, order: item?.fields?.order})) || [];
+                    const items = res?.items.map(item =>({id: item?.sys?.id, image: item?.fields?.image?.fields?.file?.url, order: item?.fields?.order, title: item?.fields?.title})) || [];
                     setInfographic(items);
                     setLoading(false);
                 }
