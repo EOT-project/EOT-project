@@ -1,0 +1,44 @@
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $lighterGray;
+  z-index: 999;
+
+  &.backdrop {
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+  }
+}
+
+.menuMobile {
+  position: absolute;
+  right: -200vw;
+  &.showMenu {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 85%;
+    z-index: 9999;
+    transition: right 0.3s;
+    .closeMenuIcon {
+      display: block;
+      cursor: pointer;
+      font-size: 2rem;
+      color: #1f4a68;
+      padding: 0;
+      position: fixed;
+      right: 30px;
+      top: 25px;
+
+      width: 60px;
+    }
+  }
+  @media (max-width: 980px) {
+    background-color: $lightGray;
+  }
+}
