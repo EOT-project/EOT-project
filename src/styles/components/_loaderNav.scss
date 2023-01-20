@@ -1,0 +1,34 @@
+.loaderContainer {
+  nav {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    .logoContainer {
+      height: 50px;
+      width: 250px;
+      background: linear-gradient(
+        90deg,
+        $lighterGray,
+        $lightGray,
+        $lighterGray
+      );
+      animation: loading 20s linear infinite;
+    }
+    ul {
+      li {
+        p {
+          display: block;
+          width: 75px;
+          height: 20px;
+          background: linear-gradient(
+            90deg,
+            $lighterGray,
+            $lightGray,
+            $lighterGray
+          );
+          animation: loading 20s linear infinite;
+        }
+      }
+    }
+  }
+}
