@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import MainCard from "../UI/MainCard";
-import Client from "../useContentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Client from "../useContentful";
+import MainCard from "../UI/MainCard";
 import ErrorData from "./ErrorData";
 import LoaderMainCard from "../UI/LoaderMainCard";
 
@@ -39,22 +39,21 @@ const ArticleHome = () => {
     }
 
     return (
+        loading
+        ?
+        <LoaderMainCard/>
+        :
         <section className="article wrapper loading">
-              {
-                loading
-                ?
-                <LoaderMainCard/>
-                :
-                mainCard.map((item) => {
-                    return <MainCard key={item} image={item.image}>
-                        <h2>{item.title}</h2>
-                        <div className="contentBlockContainer">
-                            {documentToReactComponents(item.content)}
-                        </div>
-                    </MainCard>
-
+            {
+            mainCard.map((item) => {
+                return <MainCard key={item} image={item.image}>
+                    <h2>{item.title}</h2>
+                    <div className="contentBlockContainer">
+                        {documentToReactComponents(item.content)}
+                    </div>
+                </MainCard>
                 })
-            } 
+            }
         </section>
     );
 }
