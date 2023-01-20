@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import LoaderContentOpportunity from "../UI/LoaderContentOpportunity";
 
 const ContentOpportunity = (props) => {
@@ -25,7 +25,7 @@ const ContentOpportunity = (props) => {
           }
       } catch (error) {
         // show user error retrieving member list
-        console.log(`Error fetching members: ${error}`);
+        console.log(`Error fetching contents: ${error}`);
         setError(error);
         setLoading(false);
       }
@@ -55,7 +55,6 @@ const ContentOpportunity = (props) => {
               <div className="pageTitleContainer opportunityTitle">
                 <h2 className="pageTitle">{contents[props.order - 1].title}</h2>
               </div>
-                <h3 className="subHeadline">sub headline</h3>
               {documentToReactComponents(contents[props.order - 1].context)}
             </>
           : <>

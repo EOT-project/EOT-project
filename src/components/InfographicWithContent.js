@@ -35,39 +35,57 @@ const InfographicWithContent = () => {
 
     if (error) {
         return (
-          <ErrorData/>
+            <ErrorData/>
         )
-      }
+    }
     
 
     return (
         loading
         ?
-        <LoaderInfWithContent/>
+            <LoaderInfWithContent/>
         :
-        <>
-            <div className="pageTitleContainer opportunityTitle loading">
-                <h2 className="pageTitle">Delivering Benefits to Canada’s Economy</h2>
-            </div>
-                <h3 className="subHeadline">sub headline</h3>
-            <ul className="galleryContainer loading">
-                {
-                infoAndContent.map((item) => {
-                    return <li key={item.id}>
-                                <div className="roundImgContainer">
-                                    <img src={item.image} alt={item.title}/>
-                                </div>
-                                <div className="infographicTitle">
-                                    <h4>{item.title}</h4>
-                                </div>
-                                <div className="infographicContent">
-                                    <p>{item.content}</p>
-                                </div>
-                            </li>
-                })
-                }
-            </ul>
-        </>
+            infoAndContent.length !== 0
+            ?
+            <>
+                <div className="pageTitleContainer opportunityTitle loading">
+                    <h2 className="pageTitle">Delivering Benefits to Canada’s Economy</h2>
+                </div>
+                <ul className="galleryContainer">
+                    {
+                        infoAndContent.length === 1
+                        ? 
+                        <li key={infoAndContent[0].id}>
+                            <div className="roundImgContainer">
+                                <img src={infoAndContent[0].image} alt={infoAndContent[0].title}/>
+                            </div>
+                            <div className="infographicTitle">
+                                <h3>{infoAndContent[0].title}</h3>
+                            </div>
+                            <div className="infographicContent">
+                                <p>{infoAndContent[0].content}</p>
+                            </div>
+                        </li>
+                        :
+                        infoAndContent.map((item) => {
+                            return (
+                                <li key={item.id}>
+                                    <div className="roundImgContainer">
+                                        <img src={item.image} alt={item.title}/>
+                                    </div>
+                                    <div className="infographicTitle">
+                                        <h3>{item.title}</h3>
+                                    </div>
+                                    <div className="infographicContent">
+                                        <p>{item.content}</p>
+                                    </div>
+                                </li>
+                                )
+                        })
+                    }
+                </ul>
+            </>
+            : null
     );
 }
 

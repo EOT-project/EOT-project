@@ -2,12 +2,6 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.subHeadline {
-  text-align: center;
-  display: block;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-}
 .galleryContainer {
   display: flex;
   justify-content: space-between;
@@ -23,12 +17,14 @@
       justify-content: center;
       align-items: center;
       img {
-        width: 100%;
+        width: 170px;
       }
     }
     .infographicTitle {
-      h4 {
+      h3 {
         font-weight: 800;
+        font-size: 19px;
+        line-height: 1.2rem;
       }
     }
     .infographicContent {
@@ -50,11 +46,6 @@
   .galleryContainer {
     li {
       flex-basis: calc(50% - 20px);
-      .roundImgContainer {
-        img {
-          width: 75%;
-        }
-      }
     }
   }
 }
@@ -71,11 +62,6 @@
     display: block;
     li {
       margin-bottom: 30px;
-      .roundImgContainer {
-        img {
-          width: 65%;
-        }
-      }
     }
   }
 }
