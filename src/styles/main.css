@@ -374,15 +374,20 @@ p {
   padding-top: 20px;
 }
 .loaderContainer nav .logoContainer {
-  height: 50px;
-  width: 250px;
+  height: 70px;
+  width: 280px;
   background: linear-gradient(90deg, #eeeeee, #dddddd, #eeeeee);
   -webkit-animation: loading 20s linear infinite;
           animation: loading 20s linear infinite;
 }
+@media (max-width: 414px) {
+  .loaderContainer nav .logoContainer {
+    width: clamp(250px, 70vw, 280px);
+  }
+}
 .loaderContainer nav ul li p {
   display: block;
-  width: 75px;
+  width: 100px;
   height: 20px;
   background: linear-gradient(90deg, #eeeeee, #dddddd, #eeeeee);
   -webkit-animation: loading 20s linear infinite;
@@ -454,7 +459,7 @@ footer .footerContainer .socialMediaContainer ul {
 
 @media (max-width: 890px) {
   footer {
-    padding: 20px 50px;
+    padding: 20px 25px;
   }
   footer .footerContainer {
     flex-direction: column;
@@ -1697,4 +1702,65 @@ footer .footerContainer .socialMediaContainer ul {
   background: linear-gradient(90deg, #ffffff, #dddddd, #ffffff);
   -webkit-animation: loading 8s linear infinite;
           animation: loading 8s linear infinite;
+}
+
+.loaderContainer {
+  margin-bottom: 0;
+}
+.loaderContainer footer {
+  box-shadow: 7px -1px 5px rgba(0, 0, 0, 0.05);
+  padding: 20px 0 0;
+}
+.loaderContainer footer .footerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+}
+.loaderContainer footer .footerContainer .logoContainer {
+  height: 70px;
+  width: 280px;
+  background: linear-gradient(90deg, #eeeeee, #dddddd, #eeeeee);
+  -webkit-animation: loading 20s linear infinite;
+          animation: loading 20s linear infinite;
+}
+@media (max-width: 414px) {
+  .loaderContainer footer .footerContainer .logoContainer {
+    width: clamp(250px, 70vw, 280px);
+  }
+}
+.loaderContainer footer .footerContainer .socialMediaContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 100px;
+}
+.loaderContainer footer .footerContainer .socialMediaContainer .email {
+  width: 220px;
+}
+.loaderContainer footer .footerContainer .socialMediaContainer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.loaderContainer .email,
+.loaderContainer .footerItem {
+  display: block;
+  width: 60px;
+  height: 20px;
+  background: linear-gradient(90deg, #eeeeee, #dddddd, #eeeeee);
+  -webkit-animation: loading 20s linear infinite;
+          animation: loading 20s linear infinite;
+}
+
+@media (max-width: 890px) {
+  .loaderContainer footer .footerContainer {
+    flex-direction: column;
+    align-items: self-start;
+    gap: 25px;
+  }
+  .loaderContainer footer .footerContainer .socialMediaContainer {
+    flex-direction: column;
+    gap: 25px;
+  }
 }/*# sourceMappingURL=main.css.map */
