@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Client from "../useContentful";
 import ErrorData from "./ErrorData";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import LoaderContentOpportunity from "../UI/LoaderContentOpportunity";
 
 const ContentCallToAction = (props) => {
@@ -24,7 +24,7 @@ const ContentCallToAction = (props) => {
           }
       } catch (error) {
         // show user error retrieving member list
-        console.log(`Error fetching members: ${error}`);
+        console.log(`Error fetching contents: ${error}`);
         setError(error);
         setLoading(false);
       }

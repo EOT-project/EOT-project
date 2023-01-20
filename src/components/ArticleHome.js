@@ -43,8 +43,19 @@ const ArticleHome = () => {
         ?
         <LoaderMainCard/>
         :
+        mainCard.length !== 0
+        ?
         <section className="article wrapper loading">
             {
+            mainCard.length === 1
+            ?
+            <MainCard key={mainCard[0]} image={mainCard[0].image}>
+                <h2>{mainCard[0].title}</h2>
+                <div className="contentBlockContainer">
+                    {documentToReactComponents(mainCard[0].content)}
+                </div>
+            </MainCard>
+            :
             mainCard.map((item) => {
                 return <MainCard key={item} image={item.image}>
                     <h2>{item.title}</h2>
@@ -55,6 +66,7 @@ const ArticleHome = () => {
                 })
             }
         </section>
+        : null
     );
 }
 

@@ -46,18 +46,29 @@ const InfographicOnly = (props) => {
         ?
         <ul className="galleryContainer loading">
           {
-            infographic.map((item) => {
-              return (
-                item.order === props.order
-                ?
-                  <li className="imgOnly" key={item.id}>
-                    <div className="roundImgContainer ">
-                        <img src={item.image} alt={item.title}/>
-                    </div>
-                  </li>
-                : null
-                )
-              })
+            infographic.length === 1
+            ?
+              infographic[0].order === props.order
+              ?
+                <li className="imgOnly" key={infographic[0].id}>
+                  <div className="roundImgContainer ">
+                      <img src={infographic[0].image} alt={infographic[0].title}/>
+                  </div>
+                </li>
+              : null
+            :
+              infographic.map((item) => {
+                return (
+                  item.order === props.order
+                  ?
+                    <li className="imgOnly" key={item.id}>
+                      <div className="roundImgContainer ">
+                          <img src={item.image} alt={item.title}/>
+                      </div>
+                    </li>
+                  : null
+                  )
+                })
           }
         </ul>
         :

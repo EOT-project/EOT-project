@@ -8,7 +8,7 @@ import LoaderFooter from "../UI/LoaderFooter";
 const Footer = () => {
 
     const [ footer, setFooter ] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -17,22 +17,11 @@ const Footer = () => {
                 const res = await Client.getEntries({
                     content_type: "footer"
                 })
+                
                 if(!!res) {
-                    const cleanUpData = (rawData) => {                        
-                        const cleanData = rawData.map((data) => {
-                            const { sys, fields } = data
-                            const { id } = sys
-                            
-                            const email = fields.email
-                            const socialMedia = fields.socialMedia
-                            const updatedData = { id, email, socialMedia }
-                            return updatedData
-                        })
-                        setFooter(cleanData)
-                    }
-                    cleanUpData(res.items)
-                } else {
-                    setFooter([])
+                    const items = res?.items.map(item => ({email: item?.fields?.email, socialMedia: item?.fields?.socialMedia, id: item?.sys?.id})) || [];
+                    setFooter(items);
+                    setLoading(false);
                 }
             } catch (error) {
                 console.log(`Error fetching footer: ${error}`);
@@ -47,20 +36,18 @@ const Footer = () => {
 
     if (error) {
         return (
-          <ErrorData/>
+            <ErrorData/>
         )
-      }
+    }
 
     return (
-       
         <footer>  
-               
             {
                 loading
                 ?
                 <LoaderFooter/>
                 :
-                footer.length !== 0 && footer.map((item, index) => {
+                footer.length !== 0 && footer.map((item) => {
                     return (
                             <div className="footerContainer" key={item.id}>
                                 <Logo />
