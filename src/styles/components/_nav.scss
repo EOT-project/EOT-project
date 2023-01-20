@@ -1,27 +1,105 @@
 nav {
   @media (max-width: 980px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+    max-width: 980px;
+    width: 90%;
+    margin: 0 auto;
+    // flex-direction: column;
+    // align-items: center;
+    // gap: 30px;
   }
   display: flex;
   justify-content: space-around;
   .logoContainer {
     padding-top: 20px;
   }
-  ul {
+  ul.desktopMenu {
     display: flex;
     justify-content: flex-end;
     justify-items: center;
     align-items: center;
     gap: 30px;
     font-weight: 800;
-    @media (max-width: 545px) {
-      flex-direction: column;
+    @media (max-width: 980px) {
+      bottom: 0;
+      display: block;
+      opacity: 0;
+      margin-top: 8rem;
+      position: fixed;
+      right: -44.7%;
+      top: 0;
+      visibility: hidden;
+      width: 85%;
+      z-index: 20;
     }
+  }
+  ul.menuMobileItems {
+    margin-top: 8rem;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: 800;
+
+    &.showMenuItems {
+      justify-content: flex-start;
+      opacity: 1;
+      right: -18px;
+      visibility: visible;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      // justify-content: flex-start;
+      align-items: flex-start;
+    }
+    // @media (max-width: 980px) {
+    //   bottom: 0;
+    //   display: block;
+    //   opacity: 0;
+    //   margin-top: 8rem;
+    //   position: fixed;
+    //   right: -44.7%;
+    //   top: 0;
+    //   visibility: hidden;
+    //   width: 85%;
+    //   z-index: 20;
+    // }
     p {
       color: $darkGreen;
-      font-size: 0.7rem;
+      &.menuItem {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        z-index: 99999;
+      }
+    }
+  }
+  .burgerMenu {
+    display: none;
+    @media (max-width: 980px) {
+      display: block;
+      cursor: pointer;
+      color: $darkGreen;
+      padding: 0;
+      position: fixed;
+      right: 30px;
+      top: 25px;
+      width: 60px;
+      z-index: 100;
+      border: none;
+      background-color: transparent;
+    }
+    @media (max-width: 414px) {
+      right: -4px;
+      top: 22px;
+    }
+    .burgerIcon {
+      font-size: 2rem;
+      color: $darkGreen;
+      @media (max-width: 414px) {
+        font-size: 1.5rem;
+      }
     }
   }
 }
