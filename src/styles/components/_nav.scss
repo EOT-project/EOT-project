@@ -44,9 +44,9 @@ nav {
     font-weight: 800;
 
     &.showMenuItems {
+      position: fixed;
       justify-content: flex-start;
       opacity: 1;
-      right: -18px;
       visibility: visible;
       z-index: 99999;
       display: flex;
