@@ -4,6 +4,7 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
   color: $darkGray;
   font-weight: 600;
   position: relative;
+  overflow-x: hidden;
 }
 
 article,
@@ -369,7 +371,7 @@ p {
   width: 280px;
   // padding: 20px 0 0;
   @media (max-width: 414px) {
-    width: clamp(250px, 70vw, 280px);
+    width: clamp(200px, 50vw, 280px);
   }
 }
 
