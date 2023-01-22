@@ -28,9 +28,10 @@
       font-size: 0.7rem;
     }
   }
-  a {
+  a,
+  u {
     color: $darkTeal;
-    font-size: inherit;
+    font-size: 0.8rem;
     text-decoration: underline;
   }
 }
