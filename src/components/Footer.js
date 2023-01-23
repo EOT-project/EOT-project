@@ -17,7 +17,7 @@ const Footer = () => {
                 const res = await Client.getEntries({
                     content_type: "contact"
                 })
-                console.log(res.items);
+
                 if(!!res) {
                     const items = res?.items.map(item => ({type: item?.fields?.type, url: item?.fields?.url, id: item?.sys?.id})) || [];
                     setContact(items);
@@ -36,7 +36,7 @@ const Footer = () => {
                 const res = await Client.getEntries({
                     content_type: "socialMedia"
                 })
-                console.log(res.items);
+
                 if(!!res) {
                     const items = res?.items.map(item => ({type: item?.fields?.type, url: item?.fields?.url, id: item?.sys?.id})) || [];
                     setSocialMedia(items);
@@ -72,7 +72,7 @@ const Footer = () => {
                         {
                         contact.map((contact) => {
                             return (
-                                <p>{contact.url}</p>
+                                <p key={contact.id}>{contact.url}</p>
                             )
                         })
                         }
