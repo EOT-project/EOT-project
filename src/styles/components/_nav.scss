@@ -34,9 +34,6 @@ nav {
     }
     p {
       color: $darkTeal;
-      &:active {
-        color: $lightBlue;
-      }
     }
   }
   ul.menuMobileItems {
@@ -49,12 +46,6 @@ nav {
     @media (max-height: 414px) {
       margin-top: 4rem;
     }
-    // @media (max-height: 375px) {
-    //   gap: 15px;
-    // }
-    // @media (max-width: 320px) {
-    //   margin-left: 1rem;
-    // }
 
     &.showMenuItems {
       position: fixed;
@@ -91,7 +82,7 @@ nav {
       }
     }
   }
-  .burgerMenu {
+  .mobileMenuBtn {
     display: none;
     @media (max-width: 980px) {
       display: block;

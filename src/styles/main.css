@@ -490,9 +490,6 @@ nav ul.desktopMenu {
 nav ul.desktopMenu p {
   color: #1f4a68;
 }
-nav ul.desktopMenu p:active {
-  color: #1991eb;
-}
 nav ul.menuMobileItems {
   margin-top: 8rem;
   display: flex;
@@ -543,11 +540,11 @@ nav ul.menuMobileItems.showMenuItems li p.menuItem {
 nav ul.menuMobileItems.showMenuItems li:hover {
   background-color: #eeeeee;
 }
-nav .burgerMenu {
+nav .mobileMenuBtn {
   display: none;
 }
 @media (max-width: 980px) {
-  nav .burgerMenu {
+  nav .mobileMenuBtn {
     display: block;
     cursor: pointer;
     color: #1f4a68;
@@ -562,17 +559,17 @@ nav .burgerMenu {
   }
 }
 @media (max-width: 414px) {
-  nav .burgerMenu {
+  nav .mobileMenuBtn {
     right: -4px;
     top: 22px;
   }
 }
-nav .burgerMenu .burgerIcon {
+nav .mobileMenuBtn .burgerIcon {
   font-size: 2rem;
   color: #1f4a68;
 }
 @media (max-width: 414px) {
-  nav .burgerMenu .burgerIcon {
+  nav .mobileMenuBtn .burgerIcon {
     font-size: 1.5rem;
   }
 }
