@@ -4,23 +4,23 @@ import Logo from "./Logo";
 import ErrorData from "./ErrorData";
 import LoaderFooter from "../UI/LoaderFooter";
 
-
 const Footer = () => {
 
-    const [ footer, setFooter ] = useState([]);
+    const [contact, setContact] = useState([]);
+    const [socialMedia, setSocialMedia] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const getFooter = async () => {
+        const getContact = async () => {
             try {
                 const res = await Client.getEntries({
-                    content_type: "footer"
+                    content_type: "contact"
                 })
-                
+                console.log(res.items);
                 if(!!res) {
-                    const items = res?.items.map(item => ({email: item?.fields?.email, socialMedia: item?.fields?.socialMedia, id: item?.sys?.id})) || [];
-                    setFooter(items);
+                    const items = res?.items.map(item => ({type: item?.fields?.type, url: item?.fields?.url, id: item?.sys?.id})) || [];
+                    setContact(items);
                     setLoading(false);
                 }
             } catch (error) {
@@ -29,9 +29,27 @@ const Footer = () => {
                 setLoading(false);     
             }
         }
-        getFooter();
+        getContact();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        const getSocialMedia = async () => {
+            try {
+                const res = await Client.getEntries({
+                    content_type: "socialMedia"
+                })
+                console.log(res.items);
+                if(!!res) {
+                    const items = res?.items.map(item => ({type: item?.fields?.type, url: item?.fields?.url, id: item?.sys?.id})) || [];
+                    setSocialMedia(items);
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.log(`Error fetching footer: ${error}`);
+                setError(error);
+                setLoading(false);     
+            }
+        }
+        getSocialMedia();
+
     },[]);
 
     if (error) {
@@ -47,25 +65,29 @@ const Footer = () => {
                 ?
                 <LoaderFooter/>
                 :
-                footer.length !== 0 && footer.map((item) => {
-                    return (
-                            <div className="footerContainer" key={item.id}>
-                                <Logo />
-                                <div className="socialMediaContainer">
-                                    <p>{item.email}</p>
-                                    <ul >
-                                        {
-                                            item.socialMedia.map((item, index) => {
-                                                //WILL ADD href WHEN PROVIDED BY CLIENT
-                                                // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                                                return <li key={index}><a href=""><p>{item}</p></a></li>
-                                            })
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
-                        )
-                })
+                <>
+                <div className="footerContainer">
+                <Logo />
+                    <div className="socialMediaContainer">
+                        {
+                        contact.map((contact) => {
+                            return (
+                                <p>{contact.url}</p>
+                            )
+                        })
+                        }
+                        <ul>
+                        {
+                        socialMedia.map((media) => {
+                            return (
+                                    <li key={media.id}><a href={media.url} target="_blank" rel="noreferrer"><p>{media.type}</p></a></li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                </div>
+                </>
             }
         </footer>
     );
