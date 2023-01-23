@@ -90,8 +90,8 @@ const Nav = () => {
                   }               
                   </ul>
             </div>
-            <button className="burgerMenu" onClick={() => setIsClicked(!isClicked)}> <FiMenu className="burgerIcon"/></button>  
-            <NavMobile className="" isClicked={isClicked} setIsClicked={setIsClicked}/>  
+            <button className="mobileMenuBtn" onClick={() => setIsClicked(!isClicked)}> <FiMenu className="burgerIcon"/></button>  
+            <NavMobile isClicked={isClicked} setIsClicked={setIsClicked}/>  
       </nav>
     </header>
   )
