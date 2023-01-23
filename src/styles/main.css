@@ -487,15 +487,24 @@ nav ul.desktopMenu {
     z-index: 20;
   }
 }
+nav ul.desktopMenu p {
+  color: #1f4a68;
+}
+nav ul.desktopMenu p:active {
+  color: #1991eb;
+}
 nav ul.menuMobileItems {
   margin-top: 8rem;
-  margin-left: 2rem;
   display: flex;
   justify-content: flex-end;
   justify-items: center;
   align-items: center;
-  gap: 30px;
   font-weight: 800;
+}
+@media (max-height: 414px) {
+  nav ul.menuMobileItems {
+    margin-top: 4rem;
+  }
 }
 nav ul.menuMobileItems.showMenuItems {
   position: fixed;
@@ -506,14 +515,33 @@ nav ul.menuMobileItems.showMenuItems {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
-nav ul.menuMobileItems p {
+nav ul.menuMobileItems.showMenuItems li {
+  width: 100%;
+  padding: 0.7rem 0 0.7rem 2rem;
+  transition: background-color 0.2s ease;
+}
+@media (max-height: 375px) and (orientation: landscape) {
+  nav ul.menuMobileItems.showMenuItems li {
+    padding: 0.4rem 0 0.4rem 2rem;
+  }
+}
+nav ul.menuMobileItems.showMenuItems li p {
   color: #1f4a68;
 }
-nav ul.menuMobileItems p.menuItem {
+nav ul.menuMobileItems.showMenuItems li p.menuItem {
   font-size: 1.3rem;
   line-height: 1.8rem;
   z-index: 99999;
+}
+@media (max-height: 320px) {
+  nav ul.menuMobileItems.showMenuItems li p.menuItem {
+    line-height: 1.5rem;
+  }
+}
+nav ul.menuMobileItems.showMenuItems li:hover {
+  background-color: #eeeeee;
 }
 nav .burgerMenu {
   display: none;
@@ -942,9 +970,10 @@ footer .footerContainer .socialMediaContainer ul {
 .blockContentContainer ol li::marker {
   font-size: 0.7rem;
 }
-.blockContentContainer a {
+.blockContentContainer a,
+.blockContentContainer u {
   color: #1f4a68;
-  font-size: inherit;
+  font-size: 0.8rem;
   text-decoration: underline;
 }
 

@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavItem = (props) => {
 
     const goToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: "smooth",
+            behavior: "instant",
         });
     };
 
