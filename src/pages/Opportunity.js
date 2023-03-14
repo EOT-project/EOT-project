@@ -12,9 +12,9 @@ const Opportunity = () => {
                 <ContentOpportunity order={1}/>
                 <InfographicWithContent/>
                 <ContentOpportunity order={2}/>
-                <InfographicOnly order={1}/>
+                <InfographicOnly subtitle="Canadian Employee Ownership Trust Projections" order={1}/>
                 <ContentOpportunity order={3}/>
-                <InfographicOnly  order={2}/>
+                <InfographicOnly subtitle="CFIB Survey Results: Small Business Succession" order={2}/>
             </section>
         </main>
     );

@@ -45,6 +45,8 @@ const InfographicOnly = (props) => {
       :
         infographic.length !== 0
         ?
+        <>
+        {props.subtitle && <h3 className="subtitle" >{props.subtitle}</h3>}
         <ul className="galleryContainer loading">
           {
             infographic.length === 1
@@ -72,6 +74,7 @@ const InfographicOnly = (props) => {
                 })
           }
         </ul>
+        </>
         :
         null
     );
